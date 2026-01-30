@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://32202jf27v2j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
+size = Vector3(3, 1, 2)
+
+[sub_resource type="SphereMesh" id="SphereMesh_h2yge"]
+radius = 3.0
+height = 6.0
+
+[node name="terrain" type="Node3D" unique_id=659366181]
+
+[node name="plane" type="MeshInstance3D" parent="." unique_id=1293015099]
+mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="ramp1" type="MeshInstance3D" parent="." unique_id=1356969024]
+transform = Transform3D(-0.21333693, 0.109626174, 0.9708087, 0.45705137, 0.8894403, 0, -0.8634764, 0.44370943, -0.23985526, 10.742628, 0.62723255, 6.7240963)
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="ramp2" type="MeshInstance3D" parent="." unique_id=1811551559]
+transform = Transform3D(0.25655645, -0.1318351, 0.9574959, 0.45705137, 0.8894403, 0, -0.8516356, 0.43762487, 0.28844708, -3.131485, 0.62723255, 8.223181)
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="ramp3" type="MeshInstance3D" parent="." unique_id=1104494044]
+transform = Transform3D(-0.64657545, 0.3322518, -0.68669426, 0.45705134, 0.88944024, -7.1339024e-09, 0.6107737, -0.31385458, -0.72694635, 6.302313, 0.62723255, -5.1063967)
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="sphere1" type="MeshInstance3D" parent="." unique_id=658825166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5110197, -0.7895508, -6.750678)
+mesh = SubResource("SphereMesh_h2yge")
+
+[node name="sphere2" type="MeshInstance3D" parent="." unique_id=1357727868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1125383, -0.7895508, 9.771073)
+mesh = SubResource("SphereMesh_h2yge")
