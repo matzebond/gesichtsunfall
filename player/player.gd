@@ -22,14 +22,15 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+
 	# Handle jump (check if any contacts)
-	if Input.is_action_just_pressed("ui_select"):  # Space bar
+	if Input.is_action_just_pressed("player_jump"):
 		var contacts = get_contact_count()
 		if contacts > 0:
 			apply_central_impulse(Vector3.UP * jump_force)
 
 	# Handle brush toggle
-	if Input.is_action_just_pressed("ui_accept"):  # Enter key
+	if Input.is_action_just_pressed("player_brush"):
 		toggle_brush()
 
 	# Handle scene reset
@@ -37,9 +38,9 @@ func _physics_process(delta: float) -> void:
 		get_tree().reload_current_scene()
 
 	# Handle speed control
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("player_up"):
 		forward_speed += acceleration * delta
-	elif Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("player_down"):
 		forward_speed -= acceleration * delta
 
 	# Clamp speed to min/max range
@@ -47,9 +48,9 @@ func _physics_process(delta: float) -> void:
 
 	# Handle rotation using torque
 	var rotation_input = 0.0
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("player_left"):
 		rotation_input = 1.0
-	elif Input.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("player_right"):
 		rotation_input = -1.0
 
 	rotate_y(rotation_input * rotation_speed * delta)
