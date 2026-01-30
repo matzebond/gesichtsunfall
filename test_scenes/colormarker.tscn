@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://8tfglalmwuyi"]
+
+[ext_resource type="Script" uid="uid://dh15hs4kh8l0x" path="res://test_scenes/colormarker.gd" id="1_cb0qn"]
+[ext_resource type="Texture2D" uid="uid://cacwt2e5kq8ls" path="res://icon.svg" id="2_rqaag"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqaag"]
+resource_local_to_scene = true
+albedo_color = Color(0.7882353, 0.6784314, 0.87843144, 2)
+
+[sub_resource type="SphereMesh" id="SphereMesh_rqaag"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_rqaag")
+radius = 0.25
+height = 0.5
+radial_segments = 8
+rings = 8
+
+[node name="Node3D" type="Node3D" unique_id=1449059215]
+script = ExtResource("1_cb0qn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=804588658]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("SphereMesh_rqaag")
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D" unique_id=1481101232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7469964, 0)
+visible = false
+pixel_size = 0.0025
+billboard = 1
+texture = ExtResource("2_rqaag")
+
+[connection signal="editor_state_changed" from="MeshInstance3D" to="." method="_on_mesh_instance_3d_editor_state_changed"]

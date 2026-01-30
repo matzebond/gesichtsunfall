@@ -1,0 +1,1915 @@
+[gd_scene format=3 uid="uid://df37c3x6jtw47"]
+
+[ext_resource type="Script" uid="uid://w88cjc05l6c0" path="res://test_scenes/mesh_converter.gd" id="1_n7g86"]
+[ext_resource type="ArrayMesh" uid="uid://djp131uv62mm6" path="res://test_scenes/gesichtmesh.tres" id="2_p1flw"]
+[ext_resource type="PackedScene" uid="uid://8tfglalmwuyi" path="res://test_scenes/colormarker.tscn" id="3_i85sb"]
+[ext_resource type="Script" uid="uid://dh15hs4kh8l0x" path="res://test_scenes/colormarker.gd" id="4_b1hs0"]
+
+[node name="MeshConverter" type="Node3D" unique_id=893849540]
+script = ExtResource("1_n7g86")
+faceCount = 500
+
+[node name="MeshNode" type="MeshInstance3D" parent="." unique_id=1725094343]
+mesh = ExtResource("2_p1flw")
+
+[node name="MarkerNode" type="Node3D" parent="." unique_id=449619375]
+
+[node name="1575" type="Node3D" parent="MarkerNode" unique_id=1449059215 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.665536, -0.016626406, -0.04466915)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0, 0, 2)
+
+[node name="2250" type="Node3D" parent="MarkerNode" unique_id=427675670 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34860575, -0.121476114, -0.7723806)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="2275" type="Node3D" parent="MarkerNode" unique_id=819981085 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103392854, -0.04133749, 0.57357055)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="2300" type="Node3D" parent="MarkerNode" unique_id=335851138 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36051998, -0.07475335, -0.8310822)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.82875824, 0.72287583, 2)
+
+[node name="2325" type="Node3D" parent="MarkerNode" unique_id=41468412 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2628774, -0.10073006, -0.85910845)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.8287582, 0.72287583, 2)
+
+[node name="2350" type="Node3D" parent="MarkerNode" unique_id=440704667 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.61364186, -0.018702378, 0.006876965)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0.6666667, 0.6666667, 2)
+
+[node name="2375" type="Node3D" parent="MarkerNode" unique_id=754206711 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014812907, -0.22275653, 0.39886874)
+script = ExtResource("4_b1hs0")
+color = Color(0.41699347, 0.47320265, 0.83921576, 2)
+
+[node name="2400" type="Node3D" parent="MarkerNode" unique_id=1756389805 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039874732, -0.13655655, 0.50428075)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="2425" type="Node3D" parent="MarkerNode" unique_id=570158428 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027880767, -0.13019955, 0.51134217)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="2450" type="Node3D" parent="MarkerNode" unique_id=1794262211 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04787799, -0.14942345, 0.48997766)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="2475" type="Node3D" parent="MarkerNode" unique_id=1797017345 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010299763, -0.11728339, 0.5248616)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="2500" type="Node3D" parent="MarkerNode" unique_id=61617123 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109400764, -0.12553799, 0.281254)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="2525" type="Node3D" parent="MarkerNode" unique_id=407954970 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20926362, -0.1964078, 0.30645093)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.16209151, 0.05620915, 2)
+
+[node name="2550" type="Node3D" parent="MarkerNode" unique_id=1502323502 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3060645, -0.20896041, -0.39541304)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.5816994, 0.81960785, 2)
+
+[node name="2575" type="Node3D" parent="MarkerNode" unique_id=1925794003 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010263443, -0.3185481, 0.025357386)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="2600" type="Node3D" parent="MarkerNode" unique_id=488828607 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02975281, -0.27070755, 0.012222032)
+script = ExtResource("4_b1hs0")
+color = Color(0.7411765, 0.84183013, 0.96470594, 2)
+
+[node name="2650" type="Node3D" parent="MarkerNode" unique_id=1196216567 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008993685, -0.2658727, -0.2800319)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.5816994, 0.81960785, 2)
+
+[node name="2675" type="Node3D" parent="MarkerNode" unique_id=57696294 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005039215, -0.2613861, -0.31262735)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="2700" type="Node3D" parent="MarkerNode" unique_id=56034373 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05254356, -0.26083738, -0.31269786)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="2725" type="Node3D" parent="MarkerNode" unique_id=2098359638 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38561085, -0.13495626, -0.68747103)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="2750" type="Node3D" parent="MarkerNode" unique_id=1502690081 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011968573, -0.25408795, 0.10377771)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="2775" type="Node3D" parent="MarkerNode" unique_id=743826211 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1196896, -0.24543923, 0.07690352)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="2800" type="Node3D" parent="MarkerNode" unique_id=993345000 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5878327, -0.018882444, -0.106380224)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0, 0, 2)
+
+[node name="2825" type="Node3D" parent="MarkerNode" unique_id=1895547559 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17166355, -0.1870388, -0.70828694)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="2850" type="Node3D" parent="MarkerNode" unique_id=270417118 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011395355, -0.19961178, -0.6999324)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="2875" type="Node3D" parent="MarkerNode" unique_id=890688969 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5548546, -0.01816555, 0.041619837)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="2900" type="Node3D" parent="MarkerNode" unique_id=1706172170 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5666526, -0.016803097, -0.022630572)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="2925" type="Node3D" parent="MarkerNode" unique_id=1378515119 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5739158, -0.01960955, -0.11405301)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0.33333334, 0.33333334, 2)
+
+[node name="2950" type="Node3D" parent="MarkerNode" unique_id=1378643557 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48345658, -0.03825242, -0.0562135)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0.6666667, 0.6666667, 2)
+
+[node name="2975" type="Node3D" parent="MarkerNode" unique_id=879362384 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58179575, -0.019407382, -0.19139954)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3000" type="Node3D" parent="MarkerNode" unique_id=533411918 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23246074, -0.21782488, -0.62492913)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.7869282, 0.6810458, 2)
+
+[node name="3025" type="Node3D" parent="MarkerNode" unique_id=256954956 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32231042, -0.13269004, -0.7734543)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="3050" type="Node3D" parent="MarkerNode" unique_id=1891601556 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35158792, -0.1763583, -0.52638257)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3075" type="Node3D" parent="MarkerNode" unique_id=2053983547 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25395992, -0.213182, -0.6328527)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="3100" type="Node3D" parent="MarkerNode" unique_id=1406720728 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15393019, -0.22752514, -0.61171544)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="3125" type="Node3D" parent="MarkerNode" unique_id=803800913 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51117414, -0.07328218, -0.41053116)
+script = ExtResource("4_b1hs0")
+color = Color(0.96209157, 0.42352942, 0.4928105, 2)
+
+[node name="3150" type="Node3D" parent="MarkerNode" unique_id=872692180 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47488737, -0.0751203, -0.25394145)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3175" type="Node3D" parent="MarkerNode" unique_id=1096940294 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33068374, -0.16073082, 0.034550566)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="3200" type="Node3D" parent="MarkerNode" unique_id=1674380213 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20298728, -0.25302452, -0.2674765)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3225" type="Node3D" parent="MarkerNode" unique_id=137195073 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23399895, -0.21384624, 0.24071147)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3250" type="Node3D" parent="MarkerNode" unique_id=1349284585 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45459265, -0.050021876, 0.007919331)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3300" type="Node3D" parent="MarkerNode" unique_id=899672775 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18240227, -0.24987996, -0.34788746)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3325" type="Node3D" parent="MarkerNode" unique_id=1283167002 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35898176, -0.13244711, 0.0931111)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3350" type="Node3D" parent="MarkerNode" unique_id=112551265 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.066242695, -0.12127394, 0.26851833)
+script = ExtResource("4_b1hs0")
+color = Color(0.7738563, 0.6745098, 0.8810458, 2)
+
+[node name="3375" type="Node3D" parent="MarkerNode" unique_id=191952601 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14591965, -0.11905697, 0.28440455)
+script = ExtResource("4_b1hs0")
+color = Color(0.18169935, 0.5124183, 0.6522876, 2)
+
+[node name="3400" type="Node3D" parent="MarkerNode" unique_id=608469972 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19210343, -0.20997292, 0.3653328)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3425" type="Node3D" parent="MarkerNode" unique_id=1522462298 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2187253, -0.17657913, 0.39545953)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3450" type="Node3D" parent="MarkerNode" unique_id=1491770766 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22838289, -0.17745063, 0.3803021)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3475" type="Node3D" parent="MarkerNode" unique_id=1979444281 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19421488, -0.16644904, 0.28493747)
+script = ExtResource("4_b1hs0")
+color = Color(0.33594772, 0.44836605, 0.35555556, 2)
+
+[node name="3500" type="Node3D" parent="MarkerNode" unique_id=1208064838 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11773777, -0.17058909, 0.4613714)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3525" type="Node3D" parent="MarkerNode" unique_id=854329267 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2238915, -0.088705786, 0.49688238)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3550" type="Node3D" parent="MarkerNode" unique_id=1189448390 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17225131, -0.13355134, 0.49100435)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3575" type="Node3D" parent="MarkerNode" unique_id=2022467847 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0916746, -0.09524286, 0.5437809)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3600" type="Node3D" parent="MarkerNode" unique_id=878283891 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11075759, -0.20457914, 0.4201941)
+script = ExtResource("4_b1hs0")
+color = Color(0.7411765, 0.8418301, 0.96470594, 2)
+
+[node name="3625" type="Node3D" parent="MarkerNode" unique_id=393416323 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18492734, -0.1538353, 0.46173984)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.9098039, 2)
+
+[node name="3650" type="Node3D" parent="MarkerNode" unique_id=1095148118 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0047417283, -0.0661658, -0.93828905)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3675" type="Node3D" parent="MarkerNode" unique_id=1523040642 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006301721, -0.08848155, -0.90803695)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3700" type="Node3D" parent="MarkerNode" unique_id=396392771 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19639167, -0.13901985, -0.81489813)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3725" type="Node3D" parent="MarkerNode" unique_id=923726663 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15536681, -0.08640049, -0.90805256)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3750" type="Node3D" parent="MarkerNode" unique_id=753632922 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10202147, -0.06469632, 0.565506)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3775" type="Node3D" parent="MarkerNode" unique_id=749098713 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08435341, -0.2508364, -0.13817626)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="3800" type="Node3D" parent="MarkerNode" unique_id=1082397387 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07505858, -0.1262311, 0.26528153)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3825" type="Node3D" parent="MarkerNode" unique_id=1646752731 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12556687, -0.18549626, 0.25205207)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="3850" type="Node3D" parent="MarkerNode" unique_id=1168275324 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53617066, -0.050111912, -0.58084416)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.6156863, 0.73464054, 2)
+
+[node name="3875" type="Node3D" parent="MarkerNode" unique_id=310886278 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5508638, -0.026007302, -0.28011024)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3900" type="Node3D" parent="MarkerNode" unique_id=1094724995 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31977087, -0.064361654, -0.8688817)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3950" type="Node3D" parent="MarkerNode" unique_id=266196097 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017940205, -0.051365655, -0.95430064)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="3975" type="Node3D" parent="MarkerNode" unique_id=579391346 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0456142, -0.05599495, -0.94967663)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="4000" type="Node3D" parent="MarkerNode" unique_id=1803279503 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6904382, -0.016765714, -0.26811916)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="4025" type="Node3D" parent="MarkerNode" unique_id=86937849 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5026121, -0.019947598, 0.13998614)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="4050" type="Node3D" parent="MarkerNode" unique_id=32683500 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6873399, -0.016745338, -0.247601)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="4075" type="Node3D" parent="MarkerNode" unique_id=1251150844 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08401964, -0.042575926, -0.9607899)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="4100" type="Node3D" parent="MarkerNode" unique_id=621969466 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10328403, -0.042480797, -0.9607899)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="4125" type="Node3D" parent="MarkerNode" unique_id=905194976 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53266597, -0.035600565, -0.2787701)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="4150" type="Node3D" parent="MarkerNode" unique_id=316116462 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26698422, -0.04112514, 0.47716355)
+script = ExtResource("4_b1hs0")
+color = Color(0.7411765, 0.84183013, 0.96470594, 2)
+
+[node name="4175" type="Node3D" parent="MarkerNode" unique_id=1820811260 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.061809316, -0.06164013, 0.56886816)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="4200" type="Node3D" parent="MarkerNode" unique_id=632132792 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038394593, -0.061981604, 0.5689308)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="4225" type="Node3D" parent="MarkerNode" unique_id=650695914 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2512825, -0.045321237, 0.4905262)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="4250" type="Node3D" parent="MarkerNode" unique_id=386980448 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40935946, -0.1333271, -0.64373875)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.82875824, 0.72287583, 2)
+
+[node name="4275" type="Node3D" parent="MarkerNode" unique_id=1670380176 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02214861, -0.3013628, 0.025247652)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.8287582, 0.72287583, 2)
+
+[node name="4300" type="Node3D" parent="MarkerNode" unique_id=1833463007 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023382127, -0.25168923, 0.13667876)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="4325" type="Node3D" parent="MarkerNode" unique_id=1866877618 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.065778315, -0.26971373, 0.026148956)
+script = ExtResource("4_b1hs0")
+color = Color(0.703268, 0.81307197, 0.95555556, 2)
+
+[node name="4350" type="Node3D" parent="MarkerNode" unique_id=20022020 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099859215, -0.25075656, 0.030851364)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="4375" type="Node3D" parent="MarkerNode" unique_id=1844340885 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1802981, -0.22415808, 0.34240076)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="4400" type="Node3D" parent="MarkerNode" unique_id=924650254 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15813862, -0.18148702, 0.2620447)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="4425" type="Node3D" parent="MarkerNode" unique_id=51363364 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109574914, -0.12081526, 0.27826014)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="4450" type="Node3D" parent="MarkerNode" unique_id=2018581194 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13949817, -0.119272724, 0.27956107)
+script = ExtResource("4_b1hs0")
+color = Color(0.48235294, 0.68366015, 0.92941177, 2)
+
+[node name="4475" type="Node3D" parent="MarkerNode" unique_id=223840902 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03844533, -0.12620221, 0.27708453)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="4500" type="Node3D" parent="MarkerNode" unique_id=237706313 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040237527, -0.2450774, 0.20752037)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="4525" type="Node3D" parent="MarkerNode" unique_id=419242866 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016525289, -0.2421809, 0.33946964)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="4550" type="Node3D" parent="MarkerNode" unique_id=2098149315 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20177552, -0.21825296, 0.33254144)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="4575" type="Node3D" parent="MarkerNode" unique_id=905110914 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18096562, -0.21457162, 0.32127133)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0, 0, 2)
+
+[node name="4600" type="Node3D" parent="MarkerNode" unique_id=926542717 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22164938, -0.19778726, 0.29163057)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="4625" type="Node3D" parent="MarkerNode" unique_id=695881430 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19959879, -0.21611416, 0.32343447)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0.33333334, 0.33333334, 2)
+
+[node name="4650" type="Node3D" parent="MarkerNode" unique_id=646602255 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036943395, -0.20258641, 0.2894753)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0.99215686, 0.99215686, 2)
+
+[node name="4675" type="Node3D" parent="MarkerNode" unique_id=1997231888 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009334723, -0.20313004, 0.2888562)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="4701" type="Node3D" parent="MarkerNode" unique_id=2035371940 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13737221, -0.18206124, 0.30101967)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0, 0, 2)
+
+[node name="4725" type="Node3D" parent="MarkerNode" unique_id=931994742 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34269226, -0.16835514, -0.14190689)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0.33333334, 0.33333334, 2)
+
+[node name="4750" type="Node3D" parent="MarkerNode" unique_id=1186067194 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038191415, -0.26781106, 0.0012732744)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="4775" type="Node3D" parent="MarkerNode" unique_id=768813463 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21031569, -0.22848159, -0.12407692)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0, 0, 2)
+
+[node name="4800" type="Node3D" parent="MarkerNode" unique_id=146289198 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03234313, -0.27114075, -0.0028491218)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="4825" type="Node3D" parent="MarkerNode" unique_id=708404403 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024760723, -0.28829718, 0.022230307)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="4850" type="Node3D" parent="MarkerNode" unique_id=1701235749 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003188948, -0.33782807, 0.009972692)
+script = ExtResource("4_b1hs0")
+color = Color(0.13986929, 0.49934644, 0.41045752, 2)
+
+[node name="4900" type="Node3D" parent="MarkerNode" unique_id=1632698945 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.080239296, -0.28584406, 0.011759639)
+script = ExtResource("4_b1hs0")
+color = Color(0.7411765, 0.84183013, 0.96470594, 2)
+
+[node name="4925" type="Node3D" parent="MarkerNode" unique_id=1726412237 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05229682, -0.2858254, 0.020176927)
+script = ExtResource("4_b1hs0")
+color = Color(0.13986929, 0.49934644, 0.41045752, 2)
+
+[node name="4950" type="Node3D" parent="MarkerNode" unique_id=1527419555 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31379205, -0.19353, -0.27152836)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="4975" type="Node3D" parent="MarkerNode" unique_id=794868594 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29420835, -0.21350816, -0.2682524)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.8287582, 0.72287583, 2)
+
+[node name="5000" type="Node3D" parent="MarkerNode" unique_id=1056296917 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2765548, -0.23142734, -0.2592316)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5025" type="Node3D" parent="MarkerNode" unique_id=88456225 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09340874, -0.24238476, -0.28938183)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5050" type="Node3D" parent="MarkerNode" unique_id=1890671124 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32204202, -0.18825346, -0.25615156)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5075" type="Node3D" parent="MarkerNode" unique_id=863417129 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18521756, -0.2420331, -0.22199652)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.8287582, 0.72287583, 2)
+
+[node name="5100" type="Node3D" parent="MarkerNode" unique_id=1592641164 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12500817, -0.24875534, -0.2946407)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5125" type="Node3D" parent="MarkerNode" unique_id=1719545080 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0962313, -0.2684872, 0.019824246)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5150" type="Node3D" parent="MarkerNode" unique_id=1553998616 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29988974, -0.2019018, -0.23577449)
+script = ExtResource("4_b1hs0")
+color = Color(0.21568629, 0.52287585, 0.8941177, 2)
+
+[node name="5175" type="Node3D" parent="MarkerNode" unique_id=1905175493 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57947385, -0.019482136, -0.11311251)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0.33333334, 0.33333334, 2)
+
+[node name="5200" type="Node3D" parent="MarkerNode" unique_id=1590515418 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29656652, -0.20613527, -0.2368482)
+script = ExtResource("4_b1hs0")
+color = Color(0.20784315, 0.52026147, 0.8941177, 2)
+
+[node name="5225" type="Node3D" parent="MarkerNode" unique_id=1110781156 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22034338, -0.24753898, -0.23970884)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5250" type="Node3D" parent="MarkerNode" unique_id=321773691 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17788912, -0.25246388, -0.23792976)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5275" type="Node3D" parent="MarkerNode" unique_id=1209842623 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0509545, -0.25637117, -0.2774142)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5300" type="Node3D" parent="MarkerNode" unique_id=1134783933 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16178104, -0.2547522, -0.29027528)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5325" type="Node3D" parent="MarkerNode" unique_id=462095133 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09356111, -0.24589622, -0.22031927)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5350" type="Node3D" parent="MarkerNode" unique_id=396926325 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19727689, -0.25081602, -0.37477735)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5375" type="Node3D" parent="MarkerNode" unique_id=1052689520 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18445572, -0.25042358, -0.39072627)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5400" type="Node3D" parent="MarkerNode" unique_id=2056102099 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29486865, -0.19943172, -0.20764634)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0, 0, 2)
+
+[node name="5425" type="Node3D" parent="MarkerNode" unique_id=530979198 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34291717, -0.20035928, -0.31543308)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.16209151, 0.05620915, 2)
+
+[node name="5450" type="Node3D" parent="MarkerNode" unique_id=2112611914 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21823919, -0.23973459, -0.30072242)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="5475" type="Node3D" parent="MarkerNode" unique_id=170956057 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32393575, -0.18955645, -0.22276452)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0, 0, 2)
+
+[node name="5500" type="Node3D" parent="MarkerNode" unique_id=2060133471 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33760586, -0.19292861, -0.27739853)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5525" type="Node3D" parent="MarkerNode" unique_id=1464013000 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2986707, -0.22093882, -0.3198612)
+script = ExtResource("4_b1hs0")
+color = Color(0.44052288, 0.67058825, 0.6875817, 2)
+
+[node name="5550" type="Node3D" parent="MarkerNode" unique_id=1741402680 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13411434, -0.2576385, -0.25604182)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5575" type="Node3D" parent="MarkerNode" unique_id=628579456 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21802872, -0.22295362, -0.20246586)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0, 0, 2)
+
+[node name="5600" type="Node3D" parent="MarkerNode" unique_id=680995106 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23374498, -0.23116912, -0.33014375)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="5625" type="Node3D" parent="MarkerNode" unique_id=520400809 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31300837, -0.19278932, -0.24184057)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5650" type="Node3D" parent="MarkerNode" unique_id=1117442229 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5531567, -0.019917041, 0.04845395)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5675" type="Node3D" parent="MarkerNode" unique_id=1483336409 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10651289, -0.24053304, -0.3118044)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5700" type="Node3D" parent="MarkerNode" unique_id=1330221920 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56249493, -0.015977463, 0.01491026)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="5725" type="Node3D" parent="MarkerNode" unique_id=1698121941 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55722, -0.02058807, 0.07999927)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="5750" type="Node3D" parent="MarkerNode" unique_id=46022511 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65681446, -0.017022252, -0.23183233)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="5775" type="Node3D" parent="MarkerNode" unique_id=1804976206 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55714744, -0.020319661, -0.041714452)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0.6666667, 0.6666667, 2)
+
+[node name="5800" type="Node3D" parent="MarkerNode" unique_id=1761499540 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63784754, -0.014961559, -0.12650646)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="5825" type="Node3D" parent="MarkerNode" unique_id=1986927387 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5881882, -0.014699945, -0.06699766)
+script = ExtResource("4_b1hs0")
+color = Color(0.48235297, 0.68366015, 0.92941177, 2)
+
+[node name="5850" type="Node3D" parent="MarkerNode" unique_id=879304440 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64711326, -0.012355566, -0.1827785)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="5875" type="Node3D" parent="MarkerNode" unique_id=352876284 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6432314, -0.015347192, -0.14081746)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="5900" type="Node3D" parent="MarkerNode" unique_id=1023387346 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6036577, -0.014188599, -0.055351358)
+script = ExtResource("4_b1hs0")
+color = Color(0.48235294, 0.68366015, 0.92941177, 2)
+
+[node name="5925" type="Node3D" parent="MarkerNode" unique_id=1671247056 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57894415, -0.015481412, 0.0014065506)
+script = ExtResource("4_b1hs0")
+color = Color(0.6366013, 0.61960787, 0.63267976, 2)
+
+[node name="5950" type="Node3D" parent="MarkerNode" unique_id=1188764079 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035470426, -0.2658608, -0.19592951)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="5975" type="Node3D" parent="MarkerNode" unique_id=1002419139 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62768924, -0.012827843, -0.17722966)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="6000" type="Node3D" parent="MarkerNode" unique_id=1419259425 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015023351, -0.27518564, -0.22969276)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.24836601, 0.4862745, 2)
+
+[node name="6025" type="Node3D" parent="MarkerNode" unique_id=882992906 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11693238, -0.2486619, -0.016595801)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="6050" type="Node3D" parent="MarkerNode" unique_id=1176138807 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15094797, -0.23723564, -0.19519281)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0.08496732, 0.08496732, 2)
+
+[node name="6075" type="Node3D" parent="MarkerNode" unique_id=1440988999 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10349444, -0.24106309, -0.31431234)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6100" type="Node3D" parent="MarkerNode" unique_id=458230669 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09429397, -0.24200082, -0.23242012)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6125" type="Node3D" parent="MarkerNode" unique_id=419934841 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.080631115, -0.245796, -0.3011927)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="6150" type="Node3D" parent="MarkerNode" unique_id=765669802 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3257787, -0.1858581, -0.23804736)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0.89150333, 0.89150333, 2)
+
+[node name="6175" type="Node3D" parent="MarkerNode" unique_id=933911848 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27809304, -0.20531815, -0.20164296)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0, 0, 2)
+
+[node name="6200" type="Node3D" parent="MarkerNode" unique_id=1560367790 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56271267, -0.019497424, 0.036901735)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6225" type="Node3D" parent="MarkerNode" unique_id=1236606504 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09274846, -0.24248838, -0.25227207)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6250" type="Node3D" parent="MarkerNode" unique_id=1773394787 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.098865174, -0.24152856, -0.2352024)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6275" type="Node3D" parent="MarkerNode" unique_id=233647669 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31271812, -0.19413307, -0.26116744)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6300" type="Node3D" parent="MarkerNode" unique_id=2146351223 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17615497, -0.23057795, -0.2045506)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0, 0, 2)
+
+[node name="6325" type="Node3D" parent="MarkerNode" unique_id=312967576 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26104894, -0.23848087, -0.36628953)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6350" type="Node3D" parent="MarkerNode" unique_id=1179436743 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2900798, -0.23211367, -0.34215838)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6375" type="Node3D" parent="MarkerNode" unique_id=1709769829 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32255715, -0.22253743, -0.33407027)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6400" type="Node3D" parent="MarkerNode" unique_id=1109530974 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33143836, -0.19486865, -0.49638915)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.5816994, 0.81960785, 2)
+
+[node name="6425" type="Node3D" parent="MarkerNode" unique_id=1555060151 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.120495036, -0.23066118, -0.545443)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6450" type="Node3D" parent="MarkerNode" unique_id=1062394926 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048676193, -0.23537031, -0.55686194)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6475" type="Node3D" parent="MarkerNode" unique_id=1020308196 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33206236, -0.18805979, -0.5176439)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6500" type="Node3D" parent="MarkerNode" unique_id=948039870 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37980616, -0.16927761, -0.48376322)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6525" type="Node3D" parent="MarkerNode" unique_id=1535338360 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119580746, -0.23172975, -0.6075146)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="6550" type="Node3D" parent="MarkerNode" unique_id=1711648810 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19007176, -0.23196077, -0.5040227)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.5816994, 0.81960785, 2)
+
+[node name="6575" type="Node3D" parent="MarkerNode" unique_id=125885282 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42080194, -0.13341373, -0.6065898)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6600" type="Node3D" parent="MarkerNode" unique_id=694389923 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41022283, -0.1467444, -0.4695698)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6625" type="Node3D" parent="MarkerNode" unique_id=356960124 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11993627, -0.22863281, -0.59803146)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="6650" type="Node3D" parent="MarkerNode" unique_id=2022293369 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32838365, -0.1864306, -0.6246235)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.82875824, 0.72287583, 2)
+
+[node name="6675" type="Node3D" parent="MarkerNode" unique_id=748655764 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31930646, -0.1871781, -0.61647266)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.82875824, 0.72287583, 2)
+
+[node name="6700" type="Node3D" parent="MarkerNode" unique_id=2018604810 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048603635, -0.23303783, -0.5756402)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6725" type="Node3D" parent="MarkerNode" unique_id=183413382 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048741497, -0.23850974, -0.5384756)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="6750" type="Node3D" parent="MarkerNode" unique_id=1893776334 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19044906, -0.23123197, -0.47115296)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="6775" type="Node3D" parent="MarkerNode" unique_id=281673527 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2682758, -0.21383435, -0.49558192)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="6800" type="Node3D" parent="MarkerNode" unique_id=561968617 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3550418, -0.17740476, -0.4593656)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="6825" type="Node3D" parent="MarkerNode" unique_id=1659043347 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36256614, -0.17358921, -0.4773209)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="6850" type="Node3D" parent="MarkerNode" unique_id=1219637842 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20149255, -0.2351206, -0.49248615)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.12418301, 0.24313726, 2)
+
+[node name="6875" type="Node3D" parent="MarkerNode" unique_id=1153986294 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.097290635, -0.24485993, -0.48609874)
+script = ExtResource("4_b1hs0")
+color = Color(0.57385623, 0.41045752, 0.5424837, 2)
+
+[node name="6900" type="Node3D" parent="MarkerNode" unique_id=582190189 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19018057, -0.2323736, -0.46030605)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="6925" type="Node3D" parent="MarkerNode" unique_id=231413811 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09721086, -0.2465333, -0.4944533)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="6975" type="Node3D" parent="MarkerNode" unique_id=626283680 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22408015, -0.0316644, -0.94662005)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.24836601, 0.4862745, 2)
+
+[node name="7250" type="Node3D" parent="MarkerNode" unique_id=1446875836 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.575026, -0.021050144, -0.27215537)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.82875824, 0.72287583, 2)
+
+[node name="7575" type="Node3D" parent="MarkerNode" unique_id=1226535082 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5736401, -0.018413574, 0.13604392)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="7650" type="Node3D" parent="MarkerNode" unique_id=1399591993 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07222156, -0.042618394, -0.9607899)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="7700" type="Node3D" parent="MarkerNode" unique_id=1104907187 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69449425, -0.016456524, -0.15043384)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="7725" type="Node3D" parent="MarkerNode" unique_id=801989725 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19515815, -0.08141616, -0.90801334)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.9098039, 2)
+
+[node name="7750" type="Node3D" parent="MarkerNode" unique_id=1450166912 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33089417, -0.10646869, -0.81218636)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="7775" type="Node3D" parent="MarkerNode" unique_id=917115547 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61638457, -0.017633816, 0.054614127)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0, 0, 2)
+
+[node name="7800" type="Node3D" parent="MarkerNode" unique_id=1942332680 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15503305, -0.15973869, -0.7736894)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="7825" type="Node3D" parent="MarkerNode" unique_id=1572664870 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02873699, -0.20930868, 0.41959852)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.5816994, 0.81960785, 2)
+
+[node name="7876" type="Node3D" parent="MarkerNode" unique_id=1568158698 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025428273, -0.2833553, 0.019549927)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="7900" type="Node3D" parent="MarkerNode" unique_id=124010022 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1308927, -0.13728026, 0.28966343)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="7925" type="Node3D" parent="MarkerNode" unique_id=333638174 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.160787, -0.24625638, -0.4140345)
+script = ExtResource("4_b1hs0")
+color = Color(0.90849674, 0.76862746, 0.903268, 2)
+
+[node name="7950" type="Node3D" parent="MarkerNode" unique_id=257382213 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02788802, -0.27183217, -0.00051363313)
+script = ExtResource("4_b1hs0")
+color = Color(0.7411765, 0.8418301, 0.96470594, 2)
+
+[node name="8000" type="Node3D" parent="MarkerNode" unique_id=628842748 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11498779, -0.2466777, 0.03982514)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8025" type="Node3D" parent="MarkerNode" unique_id=1305235816 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07183697, -0.2652764, -0.3478875)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="8050" type="Node3D" parent="MarkerNode" unique_id=354070223 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037705243, -0.25815666, -0.26889506)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="8075" type="Node3D" parent="MarkerNode" unique_id=1726565067 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.093771555, -0.21838209, -0.6432058)
+script = ExtResource("4_b1hs0")
+color = Color(0.13986929, 0.49934644, 0.41045752, 2)
+
+[node name="8100" type="Node3D" parent="MarkerNode" unique_id=1821860097 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13549295, -0.24209598, 0.13919458)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8125" type="Node3D" parent="MarkerNode" unique_id=1594328726 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040288348, -0.1637751, -0.77393234)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8150" type="Node3D" parent="MarkerNode" unique_id=1079535198 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5546296, -0.021050155, -0.1440229)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8175" type="Node3D" parent="MarkerNode" unique_id=1116736073 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6251787, -0.014981945, -0.18038811)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8200" type="Node3D" parent="MarkerNode" unique_id=1427125273 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5624297, -0.018107781, -0.008045316)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8225" type="Node3D" parent="MarkerNode" unique_id=486717367 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41750777, -0.106492475, -0.1535453)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.5816994, 0.81960785, 2)
+
+[node name="8250" type="Node3D" parent="MarkerNode" unique_id=21433962 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59913003, -0.018753331, -0.19146226)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8275" type="Node3D" parent="MarkerNode" unique_id=1551355270 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28226516, -0.15920696, 0.3191317)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="8300" type="Node3D" parent="MarkerNode" unique_id=1684463787 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2907473, -0.16742076, -0.71794254)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="8325" type="Node3D" parent="MarkerNode" unique_id=2054916109 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31406775, -0.1353419, -0.77382267)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="8350" type="Node3D" parent="MarkerNode" unique_id=1091414028 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48048168, -0.08046819, -0.30834815)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8375" type="Node3D" parent="MarkerNode" unique_id=1551172627 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23029119, -0.21353704, -0.6388717)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8400" type="Node3D" parent="MarkerNode" unique_id=1185263638 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26435035, -0.20937493, -0.6375472)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8425" type="Node3D" parent="MarkerNode" unique_id=1905636858 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32104063, -0.17759164, -0.07823642)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0.33333334, 0.33333334, 2)
+
+[node name="8450" type="Node3D" parent="MarkerNode" unique_id=926856112 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45874304, -0.08131592, -0.21422186)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="8475" type="Node3D" parent="MarkerNode" unique_id=997437360 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2551281, -0.20878373, 0.03762285)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8500" type="Node3D" parent="MarkerNode" unique_id=1457268205 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33183745, -0.20434472, -0.34845957)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8525" type="Node3D" parent="MarkerNode" unique_id=490140129 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29878685, -0.19827822, -0.15714262)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8550" type="Node3D" parent="MarkerNode" unique_id=1758298219 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44626284, -0.05712805, 0.005865912)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8575" type="Node3D" parent="MarkerNode" unique_id=1274213772 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37802845, -0.16357295, -0.51516736)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8600" type="Node3D" parent="MarkerNode" unique_id=560394448 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23452865, -0.2367056, -0.3354496)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.82875824, 0.72287583, 2)
+
+[node name="8625" type="Node3D" parent="MarkerNode" unique_id=1001427118 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23627004, -0.03870942, -0.9364315)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="8650" type="Node3D" parent="MarkerNode" unique_id=1627420463 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3954934, -0.08491402, 0.20248884)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="8675" type="Node3D" parent="MarkerNode" unique_id=1298724692 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22775888, -0.1540935, 0.42364255)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.24836601, 0.4862745, 2)
+
+[node name="8700" type="Node3D" parent="MarkerNode" unique_id=2078916101 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14533192, -0.12023085, 0.27983537)
+script = ExtResource("4_b1hs0")
+color = Color(0.48235294, 0.68366015, 0.92941177, 2)
+
+[node name="8725" type="Node3D" parent="MarkerNode" unique_id=261935821 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21654856, -0.14835997, 0.44575948)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.20915033, 0.3281046, 2)
+
+[node name="8750" type="Node3D" parent="MarkerNode" unique_id=456512889 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2756623, -0.1305835, 0.386039)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0, 0, 2)
+
+[node name="8775" type="Node3D" parent="MarkerNode" unique_id=1342494679 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2393828, -0.17299291, 0.37143022)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.45751634, 0.5764706, 2)
+
+[node name="8800" type="Node3D" parent="MarkerNode" unique_id=571078618 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19509283, -0.1659394, 0.2894753)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="8825" type="Node3D" parent="MarkerNode" unique_id=165638480 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21602613, -0.1341612, 0.4657368)
+script = ExtResource("4_b1hs0")
+color = Color(0.48235294, 0.3503268, 0.59607846, 2)
+
+[node name="8850" type="Node3D" parent="MarkerNode" unique_id=1023036730 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1794056, -0.1042772, 0.51523733)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="8875" type="Node3D" parent="MarkerNode" unique_id=2122106544 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10101292, -0.113644525, 0.5257237)
+script = ExtResource("4_b1hs0")
+color = Color(0.64705884, 0.7712419, 0.9464053, 2)
+
+[node name="8900" type="Node3D" parent="MarkerNode" unique_id=1555230859 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2637844, -0.12322588, 0.41987276)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0, 0, 2)
+
+[node name="8925" type="Node3D" parent="MarkerNode" unique_id=140810199 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11780308, -0.22321355, 0.38813162)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="8950" type="Node3D" parent="MarkerNode" unique_id=904927499 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16064912, -0.17930064, 0.44004607)
+script = ExtResource("4_b1hs0")
+color = Color(0.37777779, 0.46143794, 0.59738564, 2)
+
+[node name="8975" type="Node3D" parent="MarkerNode" unique_id=1762453564 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112702176, -0.105371244, -0.8801125)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9000" type="Node3D" parent="MarkerNode" unique_id=716616194 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0394757, -0.06606387, -0.93828905)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9025" type="Node3D" parent="MarkerNode" unique_id=751263183 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10667978, -0.087569274, -0.9080447)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9050" type="Node3D" parent="MarkerNode" unique_id=2113499032 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14130491, -0.06464026, -0.93828905)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.5816994, 0.81960785, 2)
+
+[node name="9075" type="Node3D" parent="MarkerNode" unique_id=1074581478 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15599084, -0.116575, 0.5136151)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="9100" type="Node3D" parent="MarkerNode" unique_id=611374171 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14762478, -0.12462571, 0.27726474)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="9125" type="Node3D" parent="MarkerNode" unique_id=209526079 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.060430724, -0.254759, -0.16903964)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="9150" type="Node3D" parent="MarkerNode" unique_id=1686798063 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12709787, -0.12541738, 0.2712065)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="9200" type="Node3D" parent="MarkerNode" unique_id=316496583 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4921927, -0.09067474, -0.5654595)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9225" type="Node3D" parent="MarkerNode" unique_id=994261338 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6831751, -0.016403854, -0.101716995)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9250" type="Node3D" parent="MarkerNode" unique_id=1029760841 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52657837, -0.021104515, 0.08340849)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.49542487, 0.3895425, 2)
+
+[node name="9275" type="Node3D" parent="MarkerNode" unique_id=1933368758 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32749113, -0.04123217, 0.39249697)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0.92156863, 0.92156863, 2)
+
+[node name="9300" type="Node3D" parent="MarkerNode" unique_id=784382488 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5437894, -0.019057434, 0.1543363)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9325" type="Node3D" parent="MarkerNode" unique_id=849431181 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6640848, -0.017057925, -0.25421572)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9375" type="Node3D" parent="MarkerNode" unique_id=130736392 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34704578, -0.04107418, 0.35878858)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9400" type="Node3D" parent="MarkerNode" unique_id=1103202637 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26767355, -0.05955398, 0.47130913)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.24836601, 0.4862745, 2)
+
+[node name="9425" type="Node3D" parent="MarkerNode" unique_id=1791822685 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43633682, -0.053431433, -0.79110396)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9450" type="Node3D" parent="MarkerNode" unique_id=959457351 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20907497, -0.18657841, 0.2975869)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="9475" type="Node3D" parent="MarkerNode" unique_id=1617629577 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17423214, -0.22944823, 0.23265466)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9500" type="Node3D" parent="MarkerNode" unique_id=2111135645 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2370682, -0.21425393, 0.16999528)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9525" type="Node3D" parent="MarkerNode" unique_id=103244168 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018687546, -0.28110433, 0.039856493)
+script = ExtResource("4_b1hs0")
+color = Color(0.18169937, 0.5124183, 0.6522876, 2)
+
+[node name="9550" type="Node3D" parent="MarkerNode" unique_id=803695641 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.084462225, -0.2634264, 0.025984365)
+script = ExtResource("4_b1hs0")
+color = Color(0.41960785, 0.47450984, 0.83921576, 2)
+
+[node name="9575" type="Node3D" parent="MarkerNode" unique_id=1858380338 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17198282, -0.22385567, 0.24634653)
+script = ExtResource("4_b1hs0")
+color = Color(0.7411765, 0.8418301, 0.96470594, 2)
+
+[node name="9600" type="Node3D" parent="MarkerNode" unique_id=430321909 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1381631, -0.2329461, 0.33791783)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9625" type="Node3D" parent="MarkerNode" unique_id=1852957452 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25467825, -0.17788723, 0.33405405)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.32418302, 0.1124183, 2)
+
+[node name="9650" type="Node3D" parent="MarkerNode" unique_id=1809202530 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24266249, -0.19859928, 0.31047153)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="9675" type="Node3D" parent="MarkerNode" unique_id=46864748 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22841191, -0.20985568, 0.31001696)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="9700" type="Node3D" parent="MarkerNode" unique_id=398901476 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13972312, -0.15558338, 0.2636592)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="9725" type="Node3D" parent="MarkerNode" unique_id=561372332 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24579704, -0.2057989, 0.27170807)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="9750" type="Node3D" parent="MarkerNode" unique_id=841417882 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19147943, -0.21211854, 0.3206835)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9775" type="Node3D" parent="MarkerNode" unique_id=83404209 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12463085, -0.2374123, 0.2177481)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9800" type="Node3D" parent="MarkerNode" unique_id=1712352303 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.122062266, -0.24559554, 0.04622823)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9825" type="Node3D" parent="MarkerNode" unique_id=1707144408 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02575481, -0.28389382, 0.03138429)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.5816994, 0.81960785, 2)
+
+[node name="9850" type="Node3D" parent="MarkerNode" unique_id=1344592566 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04191369, -0.26851946, 0.005223314)
+script = ExtResource("4_b1hs0")
+color = Color(0.7411765, 0.84183013, 0.96470594, 2)
+
+[node name="9875" type="Node3D" parent="MarkerNode" unique_id=925723635 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16862334, -0.23774529, 0.011352082)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="9900" type="Node3D" parent="MarkerNode" unique_id=900690869 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037393253, -0.26928905, -0.00038039684)
+script = ExtResource("4_b1hs0")
+color = Color(0.7411765, 0.84183013, 0.96470594, 2)
+
+[node name="9975" type="Node3D" parent="MarkerNode" unique_id=932665106 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037864886, -0.26995158, 0.025451442)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="10000" type="Node3D" parent="MarkerNode" unique_id=399195477 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.052456476, -0.2680608, 0.027888875)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="10025" type="Node3D" parent="MarkerNode" unique_id=169485412 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2181013, -0.23478422, -0.30600482)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="10050" type="Node3D" parent="MarkerNode" unique_id=1948144526 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2853634, -0.21788773, -0.27923247)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="10075" type="Node3D" parent="MarkerNode" unique_id=240237810 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2744578, -0.21784016, -0.2919211)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="10100" type="Node3D" parent="MarkerNode" unique_id=198422142 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27669263, -0.20892984, -0.30450785)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10125" type="Node3D" parent="MarkerNode" unique_id=576650172 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32327548, -0.18779817, -0.2617474)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10150" type="Node3D" parent="MarkerNode" unique_id=499984841 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1524572, -0.23432723, -0.324399)
+script = ExtResource("4_b1hs0")
+color = Color(0.48235294, 0.68366015, 0.92941177, 2)
+
+[node name="10175" type="Node3D" parent="MarkerNode" unique_id=285042360 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19618848, -0.2277613, -0.3203314)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10200" type="Node3D" parent="MarkerNode" unique_id=2007885636 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10046874, -0.2664894, 0.017943284)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="10225" type="Node3D" parent="MarkerNode" unique_id=729743429 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2253136, -0.24308297, -0.29217973)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10250" type="Node3D" parent="MarkerNode" unique_id=1835251612 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21659932, -0.25036073, -0.27056438)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10275" type="Node3D" parent="MarkerNode" unique_id=1728660649 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28659695, -0.22220784, -0.25137863)
+script = ExtResource("4_b1hs0")
+color = Color(0.3385621, 0.579085, 0.903268, 2)
+
+[node name="10300" type="Node3D" parent="MarkerNode" unique_id=1121265686 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17791091, -0.25246388, -0.23792976)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10325" type="Node3D" parent="MarkerNode" unique_id=383794567 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0844695, -0.24803504, -0.22270966)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="10350" type="Node3D" parent="MarkerNode" unique_id=50336968 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12682211, -0.2576232, -0.27010983)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="10375" type="Node3D" parent="MarkerNode" unique_id=1702992322 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22444293, -0.23898372, -0.40224713)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10400" type="Node3D" parent="MarkerNode" unique_id=560681189 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05726713, -0.25495267, -0.28586286)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="10425" type="Node3D" parent="MarkerNode" unique_id=758550111 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2960949, -0.21833453, -0.38161927)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10450" type="Node3D" parent="MarkerNode" unique_id=839868577 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22414546, -0.24404451, -0.38455832)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10475" type="Node3D" parent="MarkerNode" unique_id=2053649686 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2508036, -0.21650319, -0.18622693)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10500" type="Node3D" parent="MarkerNode" unique_id=1660252707 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3235802, -0.21603261, -0.34621027)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10525" type="Node3D" parent="MarkerNode" unique_id=10202669 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32954457, -0.18648838, -0.23708332)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10550" type="Node3D" parent="MarkerNode" unique_id=258963309 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30342335, -0.19671528, -0.21071857)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10575" type="Node3D" parent="MarkerNode" unique_id=2004742986 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18418723, -0.22925624, -0.33222067)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10600" type="Node3D" parent="MarkerNode" unique_id=317164116 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33620545, -0.2094157, -0.31573087)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.82875824, 0.72287583, 2)
+
+[node name="10625" type="Node3D" parent="MarkerNode" unique_id=1474937762 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13391113, -0.2590893, -0.26789185)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="10650" type="Node3D" parent="MarkerNode" unique_id=380575614 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09052092, -0.24313903, -0.27987513)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="10675" type="Node3D" parent="MarkerNode" unique_id=1160293367 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18584885, -0.22850367, -0.19787319)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10700" type="Node3D" parent="MarkerNode" unique_id=1835632760 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17931855, -0.23243135, -0.21438643)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.82875824, 0.72287583, 2)
+
+[node name="10725" type="Node3D" parent="MarkerNode" unique_id=849990320 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30290818, -0.19726062, -0.2286739)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10750" type="Node3D" parent="MarkerNode" unique_id=957228709 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10350169, -0.24103588, -0.3046646)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="10775" type="Node3D" parent="MarkerNode" unique_id=1870392124 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65683615, -0.017022252, -0.23183233)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10800" type="Node3D" parent="MarkerNode" unique_id=1125502485 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6258245, -0.016432753, -0.18509051)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10825" type="Node3D" parent="MarkerNode" unique_id=1962275970 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5667542, -0.019996881, -0.066449046)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="10850" type="Node3D" parent="MarkerNode" unique_id=1980087149 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66207486, -0.01683878, -0.17751178)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="10875" type="Node3D" parent="MarkerNode" unique_id=1097669296 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6031861, -0.01878052, -0.027842382)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.5816994, 0.81960785, 2)
+
+[node name="10900" type="Node3D" parent="MarkerNode" unique_id=1583221677 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64915943, -0.013962645, -0.1867834)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.9098039, 2)
+
+[node name="10925" type="Node3D" parent="MarkerNode" unique_id=1853149070 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62584627, -0.013160814, -0.122611366)
+script = ExtResource("4_b1hs0")
+color = Color(0.13986929, 0.49934644, 0.41045752, 2)
+
+[node name="10950" type="Node3D" parent="MarkerNode" unique_id=662522117 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5874699, -0.014725426, -0.068620004)
+script = ExtResource("4_b1hs0")
+color = Color(0.48235294, 0.68366015, 0.92941177, 2)
+
+[node name="10975" type="Node3D" parent="MarkerNode" unique_id=828505517 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5530624, -0.017085096, 0.03560078)
+script = ExtResource("4_b1hs0")
+color = Color(0.57385623, 0.41045752, 0.5424837, 2)
+
+[node name="11000" type="Node3D" parent="MarkerNode" unique_id=250957578 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55790204, -0.01642085, 0.03681556)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="11025" type="Node3D" parent="MarkerNode" unique_id=1752134720 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56462824, -0.016025027, 0.026517332)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="11051" type="Node3D" parent="MarkerNode" unique_id=867609627 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09464226, -0.25392315, -0.06398028)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.24836601, 0.4862745, 2)
+
+[node name="11075" type="Node3D" parent="MarkerNode" unique_id=303172631 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105039954, -0.24827799, 0.035655636)
+script = ExtResource("4_b1hs0")
+color = Color(0.97124183, 0.97777784, 0.9934641, 2)
+
+[node name="11100" type="Node3D" parent="MarkerNode" unique_id=1248170846 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.091805205, -0.24266338, -0.23091537)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="11125" type="Node3D" parent="MarkerNode" unique_id=1419122593 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06941352, -0.24549192, -0.25925514)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="11150" type="Node3D" parent="MarkerNode" unique_id=1718251660 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32535064, -0.18584621, -0.2380787)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="11175" type="Node3D" parent="MarkerNode" unique_id=1531210060 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07695238, -0.24508929, -0.2951266)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="11200" type="Node3D" parent="MarkerNode" unique_id=1068378990 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32625037, -0.18579696, -0.25586158)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="11225" type="Node3D" parent="MarkerNode" unique_id=2008478680 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24936692, -0.21436945, -0.19683868)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="11250" type="Node3D" parent="MarkerNode" unique_id=1293194551 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.093009695, -0.2439307, -0.27949893)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="11275" type="Node3D" parent="MarkerNode" unique_id=112822346 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111091375, -0.24146399, -0.29982114)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="11300" type="Node3D" parent="MarkerNode" unique_id=776106823 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13718358, -0.23991978, -0.22709075)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="11325" type="Node3D" parent="MarkerNode" unique_id=254872914 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10929188, -0.24085751, -0.30065972)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="11350" type="Node3D" parent="MarkerNode" unique_id=2115941553 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30990288, -0.19667622, -0.2564729)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="11375" type="Node3D" parent="MarkerNode" unique_id=1538706266 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26959637, -0.21183652, -0.21618903)
+script = ExtResource("4_b1hs0")
+color = Color(0.48235294, 0.68366015, 0.92941177, 2)
+
+[node name="11400" type="Node3D" parent="MarkerNode" unique_id=13881063 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12744616, -0.26221853, -0.35834247)
+script = ExtResource("4_b1hs0")
+color = Color(0.41960785, 0.47450984, 0.83921576, 2)
+
+[node name="11425" type="Node3D" parent="MarkerNode" unique_id=959567596 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20433688, -0.1733089, -0.73915035)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="11450" type="Node3D" parent="MarkerNode" unique_id=60847613 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23378852, -0.2378574, -0.22463766)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.82875824, 0.72287583, 2)
+
+[node name="11475" type="Node3D" parent="MarkerNode" unique_id=248546342 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09435203, -0.24320868, -0.3107542)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="11500" type="Node3D" parent="MarkerNode" unique_id=301141873 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38489252, -0.08806364, 0.23180827)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.82875824, 0.72287583, 2)
+
+[node name="11525" type="Node3D" parent="MarkerNode" unique_id=1603499526 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39058113, -0.1634931, -0.47832412)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="11550" type="Node3D" parent="MarkerNode" unique_id=2074917214 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15584572, -0.23448864, -0.506029)
+script = ExtResource("4_b1hs0")
+color = Color(0.45620918, 0.4875817, 0.8418301, 2)
+
+[node name="11575" type="Node3D" parent="MarkerNode" unique_id=1755252051 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16665702, -0.2244095, -0.56015366)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="11600" type="Node3D" parent="MarkerNode" unique_id=653090786 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3845442, -0.16198625, -0.50081724)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="11625" type="Node3D" parent="MarkerNode" unique_id=1649876651 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09638365, -0.2303792, -0.6003278)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="11650" type="Node3D" parent="MarkerNode" unique_id=718965951 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.064639114, -0.15846968, 0.28488263)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="11675" type="Node3D" parent="MarkerNode" unique_id=1608775167 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.119602546, -0.23172975, -0.6075146)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="11700" type="Node3D" parent="MarkerNode" unique_id=418935865 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57393754, -0.01960955, -0.11405301)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="11725" type="Node3D" parent="MarkerNode" unique_id=280688829 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13951994, -0.119272724, 0.27956107)
+script = ExtResource("4_b1hs0")
+color = Color(0.7411765, 0.8418301, 0.96470594, 2)
+
+[node name="11750" type="Node3D" parent="MarkerNode" unique_id=1375048219 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40778488, -0.14839736, -0.47802627)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="11775" type="Node3D" parent="MarkerNode" unique_id=1176084306 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42197013, -0.13538267, -0.5855309)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="11825" type="Node3D" parent="MarkerNode" unique_id=928166787 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18946229, -0.22279732, -0.5511642)
+script = ExtResource("4_b1hs0")
+color = Color(0.47712418, 0.68235296, 0.92941177, 2)
+
+[node name="11850" type="Node3D" parent="MarkerNode" unique_id=1567582752 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26566368, -0.2066653, -0.624647)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="11900" type="Node3D" parent="MarkerNode" unique_id=1175757723 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3756848, -0.16452767, -0.60933286)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="11925" type="Node3D" parent="MarkerNode" unique_id=808790931 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27823088, -0.047877967, -0.907982)
+script = ExtResource("4_b1hs0")
+color = Color(0.8745098, 0.5816994, 0.81960785, 2)
+
+[node name="11950" type="Node3D" parent="MarkerNode" unique_id=113213259 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37442225, -0.16585106, -0.61582214)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="11975" type="Node3D" parent="MarkerNode" unique_id=1629235460 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19020237, -0.2323736, -0.46030605)
+script = ExtResource("4_b1hs0")
+color = Color(0.9333334, 0.9477124, 0.985621, 2)
+
+[node name="12000" type="Node3D" parent="MarkerNode" unique_id=762685159 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24711764, -0.21851969, -0.30826193)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.9098039, 2)
+
+[node name="12025" type="Node3D" parent="MarkerNode" unique_id=154871111 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1503965, -0.23544507, -0.21926123)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="12050" type="Node3D" parent="MarkerNode" unique_id=1875816037 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16169398, -0.23274565, -0.3300105)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="12075" type="Node3D" parent="MarkerNode" unique_id=891062280 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15540309, -0.23765182, -0.4573514)
+script = ExtResource("4_b1hs0")
+color = Color(0.8366014, 0.551634, 0.8117647, 2)
+
+[node name="12100" type="Node3D" parent="MarkerNode" unique_id=665809636 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54497206, -0.020742666, 0.004674733)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="12125" type="Node3D" parent="MarkerNode" unique_id=500570478 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22402933, -0.22552735, -0.48942178)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="12150" type="Node3D" parent="MarkerNode" unique_id=640898355 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012672404, -0.30562517, 0.030647594)
+script = ExtResource("4_b1hs0")
+color = Color(0.098039225, 0.48627454, 0.16862746, 2)
+
+[node name="12175" type="Node3D" parent="MarkerNode" unique_id=2017961059 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35335112, -0.17813696, -0.47939777)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="12200" type="Node3D" parent="MarkerNode" unique_id=174704799 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25704366, -0.22250003, -0.5051199)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="12225" type="Node3D" parent="MarkerNode" unique_id=347353247 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.082452334, -0.22654492, 0.38678357)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="12250" type="Node3D" parent="MarkerNode" unique_id=726708511 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16756397, -0.23910263, -0.48511124)
+script = ExtResource("4_b1hs0")
+color = Color(0.18169937, 0.5124183, 0.6522876, 2)
+
+[node name="12275" type="Node3D" parent="MarkerNode" unique_id=1669902593 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121068224, -0.24334118, -0.4836535)
+script = ExtResource("4_b1hs0")
+color = Color(0.33594772, 0.44836602, 0.35555556, 2)
+
+[node name="12300" type="Node3D" parent="MarkerNode" unique_id=830101758 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35115263, -0.18305504, -0.48770538)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="12325" type="Node3D" parent="MarkerNode" unique_id=420522813 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35714597, -0.18286988, -0.4882148)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="12425" type="Node3D" parent="MarkerNode" unique_id=950514598 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67367715, -0.016490499, -0.08427898)
+script = ExtResource("4_b1hs0")
+color = Color(1, 0, 0, 2)
+
+[node name="12450" type="Node3D" parent="MarkerNode" unique_id=1298715750 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.077395, -0.11579014, 0.52493995)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="12475" type="Node3D" parent="MarkerNode" unique_id=1178883347 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12820803, -0.12882861, 0.26977223)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="12500" type="Node3D" parent="MarkerNode" unique_id=52534711 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009726524, -0.27799886, 0.04519369)
+script = ExtResource("4_b1hs0")
+color = Color(0.13986929, 0.49934644, 0.41045752, 2)
+
+[node name="12525" type="Node3D" parent="MarkerNode" unique_id=656306200 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045128047, -0.25092816, -0.43029696)
+script = ExtResource("4_b1hs0")
+color = Color(0.7411765, 0.8418301, 0.96470594, 2)
+
+[node name="12550" type="Node3D" parent="MarkerNode" unique_id=2057416099 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14435238, -0.2602445, -0.26935744)
+script = ExtResource("4_b1hs0")
+color = Color(1, 1, 1, 2)
+
+[node name="12575" type="Node3D" parent="MarkerNode" unique_id=2066851722 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55332357, -0.025027085, -0.28520453)
+script = ExtResource("4_b1hs0")
+color = Color(0.39869282, 0.65751636, 0.44575164, 2)
+
+[node name="12600" type="Node3D" parent="MarkerNode" unique_id=2050595138 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11894223, -0.042399257, -0.9607899)
+script = ExtResource("4_b1hs0")
+color = Color(0.8117647, 0.37254903, 0.7294118, 2)
+
+[node name="12625" type="Node3D" parent="MarkerNode" unique_id=435613442 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13124824, -0.16258761, 0.4687698)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="12650" type="Node3D" parent="MarkerNode" unique_id=1732952617 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3285215, -0.10590978, 0.3276039)
+script = ExtResource("4_b1hs0")
+color = Color(0.6993464, 0.82875824, 0.72287583, 2)
+
+[node name="12675" type="Node3D" parent="MarkerNode" unique_id=1139613559 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5700049, -0.01559183, -0.021666566)
+script = ExtResource("4_b1hs0")
+color = Color(0.9372549, 0.7908497, 0.909804, 2)
+
+[node name="12700" type="Node3D" parent="MarkerNode" unique_id=15286573 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1298696, -0.22387439, -0.6229306)
+script = ExtResource("4_b1hs0")
+color = Color(0.22352943, 0.5254902, 0.8941177, 2)
+
+[node name="12725" type="Node3D" parent="MarkerNode" unique_id=877276645 instance=ExtResource("3_i85sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6185686, -0.01377069, -0.08147323)
+script = ExtResource("4_b1hs0")
+color = Color(0.6366013, 0.61960787, 0.63267976, 2)
