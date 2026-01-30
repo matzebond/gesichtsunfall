@@ -3,34 +3,107 @@
 [sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
 size = Vector3(30, 1, 30)
 
-[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
-size = Vector3(3, 1, 2)
+[sub_resource type="BoxShape3D" id="BoxShape3D_mqteh"]
+size = Vector3(30, 1, 30)
 
-[sub_resource type="SphereMesh" id="SphereMesh_h2yge"]
+[sub_resource type="BoxMesh" id="BoxMesh_mqteh"]
+size = Vector3(3, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_206su"]
+size = Vector3(3, 1, 5)
+
+[sub_resource type="SphereMesh" id="SphereMesh_mqteh"]
 radius = 3.0
 height = 6.0
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_206su"]
+radius = 3.0
+
 [node name="terrain" type="Node3D" unique_id=659366181]
 
-[node name="plane" type="MeshInstance3D" parent="." unique_id=1293015099]
+[node name="plane" type="StaticBody3D" parent="." unique_id=6629425]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="plane" unique_id=1293015099]
 mesh = SubResource("BoxMesh_ig7tw")
+metadata/_edit_lock_ = true
 
-[node name="ramp1" type="MeshInstance3D" parent="." unique_id=1356969024]
-transform = Transform3D(-0.21333693, 0.109626174, 0.9708087, 0.45705137, 0.8894403, 0, -0.8634764, 0.44370943, -0.23985526, 10.742628, 0.62723255, 6.7240963)
-mesh = SubResource("BoxMesh_0xm2m")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plane" unique_id=1852417357]
+shape = SubResource("BoxShape3D_mqteh")
+metadata/_edit_lock_ = true
 
-[node name="ramp2" type="MeshInstance3D" parent="." unique_id=1811551559]
-transform = Transform3D(0.25655645, -0.1318351, 0.9574959, 0.45705137, 0.8894403, 0, -0.8516356, 0.43762487, 0.28844708, -3.131485, 0.62723255, 8.223181)
-mesh = SubResource("BoxMesh_0xm2m")
+[node name="ramp1" type="StaticBody3D" parent="." unique_id=1168266837]
+transform = Transform3D(0.88422257, -0.13660361, -0.44664297, 0, 0.95627415, -0.29247186, 0.4670658, 0.25861022, 0.8455592, -6.346574, 0.75590944, 7.863161)
 
-[node name="ramp3" type="MeshInstance3D" parent="." unique_id=1104494044]
-transform = Transform3D(-0.64657545, 0.3322518, -0.68669426, 0.45705134, 0.88944024, -7.1339024e-09, 0.6107737, -0.31385458, -0.72694635, 6.302313, 0.62723255, -5.1063967)
-mesh = SubResource("BoxMesh_0xm2m")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ramp1" unique_id=1213376278]
+mesh = SubResource("BoxMesh_mqteh")
+metadata/_edit_lock_ = true
 
-[node name="sphere1" type="MeshInstance3D" parent="." unique_id=658825166]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5110197, -0.7895508, -6.750678)
-mesh = SubResource("SphereMesh_h2yge")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ramp1" unique_id=609937995]
+shape = SubResource("BoxShape3D_206su")
+metadata/_edit_lock_ = true
 
-[node name="sphere2" type="MeshInstance3D" parent="." unique_id=1357727868]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1125383, -0.7895508, 9.771073)
-mesh = SubResource("SphereMesh_h2yge")
+[node name="ramp2" type="StaticBody3D" parent="." unique_id=1331884988]
+transform = Transform3D(-0.5679443, 0.24072394, 0.7870777, 0, 0.95627415, -0.29247186, -0.823067, -0.16610771, -0.54311043, 8.076925, 0.75590944, -7.5403605)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ramp2" unique_id=1703848916]
+mesh = SubResource("BoxMesh_mqteh")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ramp2" unique_id=1274979119]
+shape = SubResource("BoxShape3D_206su")
+metadata/_edit_lock_ = true
+
+[node name="ramp3" type="StaticBody3D" parent="." unique_id=428371255]
+transform = Transform3D(0.652892, 0.2215331, 0.72433084, 0, 0.95627415, -0.29247186, -0.75745106, 0.19095254, 0.6243437, 9.128733, 0.75590944, 2.6301346)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ramp3" unique_id=252076937]
+mesh = SubResource("BoxMesh_mqteh")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ramp3" unique_id=1316419793]
+shape = SubResource("BoxShape3D_206su")
+metadata/_edit_lock_ = true
+
+[node name="ramp4" type="StaticBody3D" parent="." unique_id=1277408911]
+transform = Transform3D(0.99934435, -0.010589749, -0.034624457, 9.728849e-09, 0.95627415, -0.29247186, 0.036207676, 0.29228005, 0.9556471, 0.013988495, 0.75590944, -14.162053)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ramp4" unique_id=1238949261]
+mesh = SubResource("BoxMesh_mqteh")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ramp4" unique_id=735745336]
+shape = SubResource("BoxShape3D_206su")
+metadata/_edit_lock_ = true
+
+[node name="sphere1" type="StaticBody3D" parent="." unique_id=1618975961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.67501354, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="sphere1" unique_id=1664551992]
+mesh = SubResource("SphereMesh_mqteh")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sphere1" unique_id=995369395]
+shape = SubResource("SphereShape3D_206su")
+metadata/_edit_lock_ = true
+
+[node name="sphere2" type="StaticBody3D" parent="." unique_id=712886353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.312505, -0.67501354, -10.137149)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="sphere2" unique_id=188065318]
+mesh = SubResource("SphereMesh_mqteh")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sphere2" unique_id=1007597735]
+shape = SubResource("SphereShape3D_206su")
+metadata/_edit_lock_ = true
+
+[node name="sphere3" type="StaticBody3D" parent="." unique_id=808468273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0648165, -0.67501354, 9.514947)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="sphere3" unique_id=1519046993]
+mesh = SubResource("SphereMesh_mqteh")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sphere3" unique_id=1324158077]
+shape = SubResource("SphereShape3D_206su")
+metadata/_edit_lock_ = true
