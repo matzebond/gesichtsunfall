@@ -3,22 +3,66 @@
 [ext_resource type="Script" uid="uid://ctuuxdhbpmy2n" path="res://player/player.gd" id="1_7y2xn"]
 [ext_resource type="PackedScene" uid="uid://0sveskcw4r00" path="res://player/player.glb" id="3_g1dw6"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yw30f"]
-height = 3.0733643
+[sub_resource type="BoxShape3D" id="BoxShape3D_rkbax"]
+size = Vector3(1.2296143, 2.3778763, 1)
 
-[node name="player" type="RigidBody3D" unique_id=438127430]
-mass = 10.0
+[sub_resource type="CylinderMesh" id="CylinderMesh_rkbax"]
+height = 0.2
+
+[node name="player" type="VehicleBody3D" unique_id=1542969857]
+mass = 119.203
 center_of_mass_mode = 1
-center_of_mass = Vector3(0, -0.4, 0)
+inertia = Vector3(0, 0, 50)
 script = ExtResource("1_7y2xn")
+MAX_STEER = 0.4
+ENGINE_POWER = 520
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=301575850]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.2296753, -1.0039427e-08, 0)
-shape = SubResource("CapsuleShape3D_yw30f")
+
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.49604416, 0.5752028, 0)
+shape = SubResource("BoxShape3D_rkbax")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1176138545]
-transform = Transform3D(0.025398448, -0.40441063, 0.9142247, -0.020216119, 0.9141249, 0.4049282, -0.9994729, -0.028766623, 0.015041751, 2.619835, 2.0926275, 0)
+transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 3.3070688, 2.73694, 0)
 current = true
 
 [node name="player" parent="." unique_id=531196072 instance=ExtResource("3_g1dw6")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.5777813, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.117385626, 0)
+
+[node name="VehicleWheel3DBackRight" type="VehicleWheel3D" parent="." unique_id=1731042382]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0, 0.6)
+use_as_traction = true
+suspension_travel = 0.05
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DBackRight" unique_id=1117932260]
+transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, -1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_rkbax")
+
+[node name="VehicleWheel3DBackLeft" type="VehicleWheel3D" parent="." unique_id=1019779226]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0, -0.6)
+use_as_traction = true
+suspension_travel = 0.05
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DBackLeft" unique_id=1111960941]
+transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, -1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_rkbax")
+
+[node name="VehicleWheel3DFrontRight" type="VehicleWheel3D" parent="." unique_id=668803543]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.297, 0, 0.6)
+use_as_traction = true
+use_as_steering = true
+suspension_travel = 0.05
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DFrontRight" unique_id=1201728721]
+transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, -1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_rkbax")
+
+[node name="VehicleWheel3DFrontLeft" type="VehicleWheel3D" parent="." unique_id=1894315503]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.297, 0, -0.6)
+use_as_traction = true
+use_as_steering = true
+suspension_travel = 0.05
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DFrontLeft" unique_id=1609390704]
+transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, -1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_rkbax")

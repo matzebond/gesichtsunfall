@@ -13,7 +13,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 [node name="terrain" parent="." unique_id=659366181 instance=ExtResource("1_c6xj6")]
 
 [node name="player" parent="." unique_id=116514080 instance=ExtResource("2_6bw2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 7.9675503, -5.552185)
+transform = Transform3D(-0.4750715, 0, -0.87994725, 0, 1, 0, 0.87994725, 0, -0.4750715, -15.101009, 1.5260973, 29.97591)
 
 [node name="Decal" parent="player" unique_id=914606903 instance=ExtResource("3_kem5a")]
 

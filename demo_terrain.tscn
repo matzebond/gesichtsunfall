@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://32202jf27v2j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
-size = Vector3(30, 1, 30)
+size = Vector3(70, 1, 70)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mqteh"]
-size = Vector3(30, 1, 30)
+size = Vector3(70, 1, 70)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mqteh"]
 size = Vector3(3, 1, 5)

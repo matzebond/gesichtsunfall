@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://d0fuhxf2l2ft8"]
 
-[sub_resource type="Gradient" id="Gradient_05x1w"]
-offsets = PackedFloat32Array(0, 0.116883114, 0.17532468, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.116883114, 0.116883114, 0.116883114, 1, 0.17532468, 0.17532468, 0.17532468, 1, 1, 1, 1, 1)
+[sub_resource type="Gradient" id="Gradient_u3qf3"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.44372293, 1)
+colors = PackedColorArray(0.8901961, 0.5058824, 0, 1, 0.8901961, 0.5058824, 0, 1, 0.89, 0.5043333, 0, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_0uskj"]
-gradient = SubResource("Gradient_05x1w")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dyefd"]
+gradient = SubResource("Gradient_u3qf3")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [node name="Decal" type="Decal" unique_id=914606903]
-texture_albedo = SubResource("GradientTexture1D_0uskj")
+texture_albedo = SubResource("GradientTexture2D_dyefd")
