@@ -5,6 +5,13 @@
 
 [node name="root" type="Node3D" unique_id=1124768642]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1934783813]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10.929583, 0)
+
 [node name="terrain" parent="." unique_id=659366181 instance=ExtResource("1_0xm2m")]
 
 [node name="player" parent="." unique_id=116514080 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -1)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=153819132]
+transform = Transform3D(1, 0, 0, 0, 0.47559348, 0.8796652, 0, -0.8796652, 0.47559348, 1.3484964, 14.089825, 11.140112)
