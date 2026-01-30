@@ -1,6 +1,9 @@
 extends CharacterBody3D
 
 @onready var animation_player = $AnimationPlayer
+var trail_scene = preload("res://player/decal.tscn")
+var last_pos = Vector3.ZERO
+var distance_threshold = 0.5
 
 # Movement settings
 var forward_speed = 5.0
@@ -59,8 +62,20 @@ func _physics_process(delta: float) -> void:
 	velocity.z = forward_direction.z * forward_speed
 
 	move_and_slide()
+	process_decal()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func process_decal():
+	if global_position.distance_to(last_pos) > distance_threshold:
+		spawn_decal()
+		last_pos = global_position
+	
+func spawn_decal():
+	var t = trail_scene.instantiate()
+	get_parent().add_child(t)
+	# Spawn at player's current position
+	t.global_position = global_position

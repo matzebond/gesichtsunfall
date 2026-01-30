@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3fcf3nkdn5su"]
 
-[ext_resource type="Script" uid="uid://ctuuxdhbpmy2n" path="res://player.gd" id="1_7y2xn"]
+[ext_resource type="Script" uid="uid://ctuuxdhbpmy2n" path="res://player/player.gd" id="1_7y2xn"]
 [ext_resource type="AnimationLibrary" uid="uid://cglafag8soe81" path="res://animations.res" id="2_onrkg"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_mesh"]
