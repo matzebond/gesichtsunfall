@@ -8,7 +8,7 @@ var distance_threshold = 0.5
 # Movement settings
 var forward_speed = 5.0
 var min_speed = 2.0
-var max_speed = 10.0
+var max_speed = 100.0
 var acceleration = 5.0
 var rotation_speed = 2.0
 var jump_force = 5.0
