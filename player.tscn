@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://3fcf3nkdn5su"]
 
 [ext_resource type="Script" uid="uid://ctuuxdhbpmy2n" path="res://player.gd" id="1_7y2xn"]
+[ext_resource type="AnimationLibrary" uid="uid://cglafag8soe81" path="res://animations.res" id="2_onrkg"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_mesh"]
 
@@ -11,13 +12,9 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
 albedo_color = Color(1, 0, 0, 1)
 
-[sub_resource type="Animation" id="Animation_4flbx"]
-resource_name = "brush_down"
+[sub_resource type="SphereMesh" id="SphereMesh_4flbx"]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_onrkg"]
-_data = {
-&"brush_down": SubResource("Animation_4flbx")
-}
+[sub_resource type="PrismMesh" id="PrismMesh_onrkg"]
 
 [node name="player" type="CharacterBody3D" unique_id=116514080]
 script = ExtResource("1_7y2xn")
@@ -28,16 +25,29 @@ mesh = SubResource("SphereMesh_mesh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=301575850]
 shape = SubResource("SphereShape3D_sphere")
 
-[node name="brush2" type="Node3D" parent="." unique_id=2136274607]
+[node name="brush" type="Node3D" parent="." unique_id=2136274607]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="brush" type="MeshInstance3D" parent="brush2" unique_id=1781741633]
+[node name="brush" type="MeshInstance3D" parent="brush" unique_id=1781741633]
 transform = Transform3D(-6.294441e-09, 1.1, 0, -0.14400002, -4.8082526e-08, 0, 0, 0, 0.14400001, 0.49573517, 0.37544584, 0)
 mesh = SubResource("BoxMesh_4flbx")
 
-[node name="tip" type="MeshInstance3D" parent="brush2" unique_id=2002841174]
+[node name="tip" type="MeshInstance3D" parent="brush" unique_id=2002841174]
 transform = Transform3D(0.20449379, 0, 0, 0, 0.19652936, 0, 0, 0, 0.15481932, 1.0645397, 0.37783816, 0)
 mesh = SubResource("BoxMesh_4flbx")
 surface_material_override/0 = SubResource("StandardMaterial3D_4flbx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=443972388]
-libraries/ = SubResource("AnimationLibrary_onrkg")
+libraries/ = ExtResource("2_onrkg")
+
+[node name="eye_l" type="MeshInstance3D" parent="." unique_id=40068665]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, -0.36940733, 0.35627753, -0.08611623)
+mesh = SubResource("SphereMesh_4flbx")
+
+[node name="eye_r" type="MeshInstance3D" parent="." unique_id=438701332]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, -0.369, 0.356, 0.086)
+mesh = SubResource("SphereMesh_4flbx")
+
+[node name="mouth" type="MeshInstance3D" parent="." unique_id=1756568127]
+transform = Transform3D(-1.150246e-08, -0.26314563, 0, 0.26314563, -1.150246e-08, 0, 0, 0, 0.26314563, -0.58127534, 0.034830153, 0)
+mesh = SubResource("PrismMesh_onrkg")
