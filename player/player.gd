@@ -1,5 +1,7 @@
 extends VehicleBody3D
 
+@onready var decal_spawn_point = $DecalSpawnPoint
+
 var trail_scene = preload("res://player/decal.tscn")
 var last_pos = Vector3.ZERO
 var distance_threshold = 0.5
@@ -57,4 +59,4 @@ func process_decal():
 func spawn_decal():
 	var t = trail_scene.instantiate()
 	get_parent().add_child(t)
-	t.global_position = global_position
+	t.global_position = decal_spawn_point.global_position
