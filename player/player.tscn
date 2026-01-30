@@ -16,7 +16,8 @@ albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="PrismMesh" id="PrismMesh_onrkg"]
 
-[node name="player" type="CharacterBody3D" unique_id=116514080]
+[node name="player" type="RigidBody3D" unique_id=438127430]
+lock_rotation = true
 script = ExtResource("1_7y2xn")
 
 [node name="body" type="MeshInstance3D" parent="." unique_id=2041847720]
@@ -53,4 +54,5 @@ transform = Transform3D(-1.150246e-08, -0.26314563, 0, 0.26314563, -1.150246e-08
 mesh = SubResource("PrismMesh_onrkg")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1176138545]
-transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 1.5228958, 1.2742082, 0)
+transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 2.2021985, 1.3528863, 0)
+current = true

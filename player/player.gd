@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends RigidBody3D
 
 @onready var animation_player = $AnimationPlayer
 var trail_scene = preload("res://player/decal.tscn")
@@ -11,10 +11,10 @@ var min_speed = 2.0
 var max_speed = 10.0
 var acceleration = 5.0
 var rotation_speed = 2.0
-var jump_velocity = 4.5
+var jump_force = 5.0
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+# Brush state
+var brush_down = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,17 +22,18 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	# Add gravity
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+	# Handle jump (check if on ground by raycasting down)
+	if Input.is_action_just_pressed("ui_select"):  # Space bar
+		var space_state = get_world_3d().direct_space_state
+		var query = PhysicsRayQueryParameters3D.create(global_position, global_position + Vector3.DOWN * 0.6)
+		query.exclude = [self]
+		var result = space_state.intersect_ray(query)
+		if result:
+			apply_central_impulse(Vector3.UP * jump_force)
 
-	# Handle jump
-	if Input.is_action_just_pressed("ui_select") and is_on_floor():  # Space bar
-		velocity.y = jump_velocity
-
-	# Handle brush animation
+	# Handle brush toggle
 	if Input.is_action_just_pressed("ui_accept"):  # Enter key
-		animation_player.play("brush_down")
+		toggle_brush()
 
 	# Handle scene reset
 	if Input.is_action_just_pressed("ui_cancel"):  # ESC key
@@ -47,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	# Clamp speed to min/max range
 	forward_speed = clamp(forward_speed, min_speed, max_speed)
 
-	# Handle rotation
+	# Handle rotation using torque
 	var rotation_input = 0.0
 	if Input.is_action_pressed("ui_left"):
 		rotation_input = 1.0
@@ -58,11 +59,20 @@ func _physics_process(delta: float) -> void:
 
 	# Always move forward in the direction the player is facing
 	var forward_direction = -transform.basis.x
-	velocity.x = forward_direction.x * forward_speed
-	velocity.z = forward_direction.z * forward_speed
+	var target_velocity = forward_direction * forward_speed
 
-	move_and_slide()
+	# Apply force to reach target velocity
+	var velocity_diff = target_velocity - Vector3(linear_velocity.x, 0, linear_velocity.z)
+	apply_central_force(velocity_diff * mass * 10.0)
 	process_decal()
+
+
+func toggle_brush() -> void:
+	brush_down = !brush_down
+	if brush_down:
+		animation_player.play("brush_down")
+	else:
+		animation_player.play_backwards("brush_down")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
