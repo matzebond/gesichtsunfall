@@ -3,7 +3,11 @@ extends CharacterBody3D
 @onready var animation_player = $AnimationPlayer
 
 # Movement settings
-var speed = 5.0
+var forward_speed = 5.0
+var min_speed = 2.0
+var max_speed = 10.0
+var acceleration = 5.0
+var rotation_speed = 2.0
 var jump_velocity = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -27,17 +31,32 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):  # Enter key
 		animation_player.play("brush_down")
 
-	# Get input direction
-	var input_dir = Input.get_vector("ui_up", "ui_down", "ui_right", "ui_left")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	# Handle scene reset
+	if Input.is_action_just_pressed("ui_cancel"):  # ESC key
+		get_tree().reload_current_scene()
 
-	# Apply movement
-	if direction:
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-		velocity.z = move_toward(velocity.z, 0, speed)
+	# Handle speed control
+	if Input.is_action_pressed("ui_up"):
+		forward_speed += acceleration * delta
+	elif Input.is_action_pressed("ui_down"):
+		forward_speed -= acceleration * delta
+
+	# Clamp speed to min/max range
+	forward_speed = clamp(forward_speed, min_speed, max_speed)
+
+	# Handle rotation
+	var rotation_input = 0.0
+	if Input.is_action_pressed("ui_left"):
+		rotation_input = 1.0
+	elif Input.is_action_pressed("ui_right"):
+		rotation_input = -1.0
+
+	rotate_y(rotation_input * rotation_speed * delta)
+
+	# Always move forward in the direction the player is facing
+	var forward_direction = -transform.basis.x
+	velocity.x = forward_direction.x * forward_speed
+	velocity.z = forward_direction.z * forward_speed
 
 	move_and_slide()
 
