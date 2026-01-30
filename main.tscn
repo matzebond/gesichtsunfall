@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://3fcf3nkdn5su" path="res://player/player.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b4dhm7h2dvl66" path="res://ui/game_ui.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://d0fuhxf2l2ft8" path="res://player/decal.tscn" id="3_lquwl"]
+[ext_resource type="Script" uid="uid://hx2vfkfspbhn" path="res://global_player_cam.gd" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dkelp60jagl1e" path="res://game_state/game_state_manager.tscn" id="5_lquwl"]
 
 [node name="root" type="Node3D" unique_id=1124768642]
@@ -18,9 +19,9 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 
 [node name="Decal" parent="player" unique_id=914606903 instance=ExtResource("3_lquwl")]
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=153819132]
-transform = Transform3D(1, 0, 0, 0, 0.47559348, 0.8796652, 0, -0.8796652, 0.47559348, 1.3484964, 14.089825, 11.140112)
-visible = false
+[node name="GlobalPlayerCam" type="Camera3D" parent="." unique_id=153819132]
+transform = Transform3D(1, 0, 0, 0, 0.47559348, 0.8796652, 0, -0.8796652, 0.47559348, 1.3484964, 5.613556, 11.140112)
+script = ExtResource("4_lquwl")
 
 [node name="GameUI" parent="." unique_id=1594824260 instance=ExtResource("3_h2yge")]
 
