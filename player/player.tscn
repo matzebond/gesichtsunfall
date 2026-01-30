@@ -2,57 +2,27 @@
 
 [ext_resource type="Script" uid="uid://ctuuxdhbpmy2n" path="res://player/player.gd" id="1_7y2xn"]
 [ext_resource type="AnimationLibrary" uid="uid://cglafag8soe81" path="res://animations.res" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://0sveskcw4r00" path="res://player/player.glb" id="3_g1dw6"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_mesh"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_sphere"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_4flbx"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_4flbx"]
-
-[sub_resource type="PrismMesh" id="PrismMesh_onrkg"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yw30f"]
+height = 3.0733643
 
 [node name="player" type="RigidBody3D" unique_id=438127430]
-lock_rotation = true
+mass = 10.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.4, 0)
 script = ExtResource("1_7y2xn")
 
-[node name="body" type="MeshInstance3D" parent="." unique_id=2041847720]
-mesh = SubResource("SphereMesh_mesh")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=301575850]
-shape = SubResource("SphereShape3D_sphere")
-
-[node name="brush" type="Node3D" parent="." unique_id=2136274607]
-transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="brush" type="MeshInstance3D" parent="brush" unique_id=1781741633]
-transform = Transform3D(-6.294441e-09, 1.1, 0, -0.14400002, -4.8082526e-08, 0, 0, 0, 0.14400001, 0.49573517, 0.37544584, 0)
-mesh = SubResource("BoxMesh_4flbx")
-
-[node name="tip" type="MeshInstance3D" parent="brush" unique_id=2002841174]
-transform = Transform3D(0.20449379, 0, 0, 0, 0.19652936, 0, 0, 0, 0.15481932, 1.0645397, 0.37783816, 0)
-mesh = SubResource("BoxMesh_4flbx")
-surface_material_override/0 = SubResource("StandardMaterial3D_4flbx")
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.2296753, -1.0039427e-08, 0)
+shape = SubResource("CapsuleShape3D_yw30f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=443972388]
 libraries/ = ExtResource("2_onrkg")
 
-[node name="eye_l" type="MeshInstance3D" parent="." unique_id=438701332]
-transform = Transform3D(0.12, 0, -4.440892e-16, 0, 0.12, 0, 4.440892e-16, 0, 0.12, -0.369, 0.356, 0.08600002)
-mesh = SubResource("SphereMesh_4flbx")
-
-[node name="eye_r" type="MeshInstance3D" parent="." unique_id=40068665]
-transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, -0.36940733, 0.35627753, -0.08611623)
-mesh = SubResource("SphereMesh_4flbx")
-
-[node name="mouth" type="MeshInstance3D" parent="." unique_id=1756568127]
-transform = Transform3D(-1.150246e-08, -0.26314563, 0, 0.26314563, -1.150246e-08, 0, 0, 0, 0.26314563, -0.58127534, 0.034830153, 0)
-mesh = SubResource("PrismMesh_onrkg")
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1176138545]
 transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 2.2021985, 1.3528863, 0)
 current = true
+
+[node name="player" parent="." unique_id=531196072 instance=ExtResource("3_g1dw6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.5777813, 0)

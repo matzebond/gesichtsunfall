@@ -22,13 +22,10 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	# Handle jump (check if on ground by raycasting down)
+	# Handle jump (check if any contacts)
 	if Input.is_action_just_pressed("ui_select"):  # Space bar
-		var space_state = get_world_3d().direct_space_state
-		var query = PhysicsRayQueryParameters3D.create(global_position, global_position + Vector3.DOWN * 0.6)
-		query.exclude = [self]
-		var result = space_state.intersect_ray(query)
-		if result:
+		var contacts = get_contact_count()
+		if contacts > 0:
 			apply_central_impulse(Vector3.UP * jump_force)
 
 	# Handle brush toggle
