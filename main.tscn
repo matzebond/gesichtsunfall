@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://coqgf2w8jxdxq"]
 
-[ext_resource type="PackedScene" uid="uid://5aummqcjxxf2" path="res://gesicht.tscn" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://c2wwfrnqpasgj" path="res://gesicht/gesicht.glb" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://3fcf3nkdn5su" path="res://player/player.tscn" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://dlj8lnntue4ls" path="res://gesicht.gd" id="2_5vw27"]
 [ext_resource type="PackedScene" uid="uid://b4dhm7h2dvl66" path="res://ui/game_ui.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://d0fuhxf2l2ft8" path="res://player/decal.tscn" id="3_lquwl"]
 [ext_resource type="Script" uid="uid://hx2vfkfspbhn" path="res://global_player_cam.gd" id="4_lquwl"]
@@ -12,7 +13,9 @@
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1934783813]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10.929583, 0)
 
-[node name="gesicht" parent="." unique_id=53585864 instance=ExtResource("1_1bvp3")]
+[node name="gesicht" parent="." unique_id=1899767975 instance=ExtResource("1_272bh")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -37.005238, 0)
+script = ExtResource("2_5vw27")
 
 [node name="player" parent="." unique_id=116514080 instance=ExtResource("2_1bvp3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
@@ -30,3 +33,5 @@ script = ExtResource("4_lquwl")
 [connection signal="playing_done" from="GameStateManager" to="GameUI" method="_on_game_state_manager_playing_done"]
 [connection signal="playing_started" from="GameStateManager" to="GameUI" method="_on_game_state_manager_playing_started"]
 [connection signal="preview_started" from="GameStateManager" to="GameUI" method="_on_game_state_manager_preview_started"]
+
+[editable path="gesicht"]

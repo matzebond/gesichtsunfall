@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://5aummqcjxxf2"]
-
-[ext_resource type="PackedScene" uid="uid://cybm6xeaeciql" path="res://gesicht/gesicht.blend" id="1_2gqbh"]
-[ext_resource type="Script" uid="uid://dlj8lnntue4ls" path="res://gesicht.gd" id="2_hbag1"]
-
-[node name="gesicht" unique_id=53585864 instance=ExtResource("1_2gqbh")]
-transform = Transform3D(100, 0, 0, 0, -4.371139e-06, -100, 0, 100, -4.371139e-06, 0, -42.362587, 0)
-script = ExtResource("2_hbag1")
