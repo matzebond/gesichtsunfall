@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://3fcf3nkdn5su"]
 
 [ext_resource type="Script" uid="uid://ctuuxdhbpmy2n" path="res://player/player.gd" id="1_7y2xn"]
-[ext_resource type="AnimationLibrary" uid="uid://cglafag8soe81" path="res://animations.res" id="2_onrkg"]
 [ext_resource type="PackedScene" uid="uid://0sveskcw4r00" path="res://player/player.glb" id="3_g1dw6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yw30f"]
@@ -17,11 +16,8 @@ script = ExtResource("1_7y2xn")
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.2296753, -1.0039427e-08, 0)
 shape = SubResource("CapsuleShape3D_yw30f")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=443972388]
-libraries/ = ExtResource("2_onrkg")
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1176138545]
-transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 2.2021985, 1.3528863, 0)
+transform = Transform3D(0.025398448, -0.40441063, 0.9142247, -0.020216119, 0.9141249, 0.4049282, -0.9994729, -0.028766623, 0.015041751, 2.619835, 2.0926275, 0)
 current = true
 
 [node name="player" parent="." unique_id=531196072 instance=ExtResource("3_g1dw6")]

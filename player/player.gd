@@ -1,6 +1,5 @@
 extends RigidBody3D
 
-@onready var animation_player = $AnimationPlayer
 var trail_scene = preload("res://player/decal.tscn")
 var last_pos = Vector3.ZERO
 var distance_threshold = 0.5
@@ -67,10 +66,6 @@ func _physics_process(delta: float) -> void:
 
 func toggle_brush() -> void:
 	brush_down = !brush_down
-	if brush_down:
-		animation_player.play("brush_down")
-	else:
-		animation_player.play_backwards("brush_down")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
