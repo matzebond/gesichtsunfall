@@ -151,38 +151,36 @@ material = SubResource("StandardMaterial3D_oul6g")
 size = Vector2(0.2, 0.2)
 
 [node name="player" type="VehicleBody3D" unique_id=1542969857]
-mass = 119.203
+mass = 100.0
 center_of_mass_mode = 1
-inertia = Vector3(0, 0, 50)
 script = ExtResource("1_7y2xn")
-MAX_STEER = 0.4
-ENGINE_POWER = 520
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=301575850]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.49604416, 0.5752028, 0)
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.49604416, 1.0835994, 0)
 shape = SubResource("BoxShape3D_rkbax")
 
 [node name="player" type="Node3D" parent="." unique_id=531196072]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.117385626, 0)
 
 [node name="Cylinder" type="MeshInstance3D" parent="player" unique_id=2121739422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5083966, 0)
 layers = 2
 mesh = SubResource("ArrayMesh_oswxj")
 
 [node name="Cube" type="MeshInstance3D" parent="player" unique_id=970873957]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3074428, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8158394, 0)
 layers = 2
 mesh = SubResource("ArrayMesh_n8gyb")
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="player" unique_id=2056478973]
-transform = Transform3D(0.2532464, 0.08181608, 0, -0.08181608, 0.2532464, 0, 0, 0, 0.26613456, -0.70367205, 1.8632936, 0.17560709)
+transform = Transform3D(0.2532464, 0.08181608, 0, -0.08181608, 0.2532464, 0, 0, 0, 0.26613456, -0.70367205, 2.3716903, 0.17560709)
 layers = 2
 mesh = SubResource("ArrayMesh_pipap")
 
 [node name="VehicleWheel3DBackRight" type="VehicleWheel3D" parent="." unique_id=1731042382]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0, 0.6)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0.5083966, 0.6)
 use_as_traction = true
-suspension_travel = 0.05
+suspension_travel = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DBackRight" unique_id=1117932260]
 transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, -1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 0, 0, 0)
@@ -190,9 +188,9 @@ layers = 2
 mesh = SubResource("CylinderMesh_rkbax")
 
 [node name="VehicleWheel3DBackLeft" type="VehicleWheel3D" parent="." unique_id=1019779226]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0, -0.6)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0.5083966, -0.6)
 use_as_traction = true
-suspension_travel = 0.05
+suspension_travel = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DBackLeft" unique_id=1111960941]
 transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, -1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 0, 0, 0)
@@ -200,10 +198,10 @@ layers = 2
 mesh = SubResource("CylinderMesh_rkbax")
 
 [node name="VehicleWheel3DFrontRight" type="VehicleWheel3D" parent="." unique_id=668803543]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.297, 0, 0.6)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.297, 0.5083966, 0.6)
 use_as_traction = true
 use_as_steering = true
-suspension_travel = 0.05
+suspension_travel = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DFrontRight" unique_id=1201728721]
 transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, -1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 0, 0, 0)
@@ -211,10 +209,10 @@ layers = 2
 mesh = SubResource("CylinderMesh_rkbax")
 
 [node name="VehicleWheel3DFrontLeft" type="VehicleWheel3D" parent="." unique_id=1894315503]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.297, 0, -0.6)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.297, 0.5083966, -0.6)
 use_as_traction = true
 use_as_steering = true
-suspension_travel = 0.05
+suspension_travel = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DFrontLeft" unique_id=1609390704]
 transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, -1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 0, 0, 0)
@@ -225,7 +223,7 @@ mesh = SubResource("CylinderMesh_rkbax")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4310081, 0, 0)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=849120482]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1107408, 0.47684735, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1107408, 0.985244, 0)
 amount = 64
 lifetime = 0.5
 randomness = 1.0
@@ -233,7 +231,7 @@ process_material = SubResource("ParticleProcessMaterial_oul6g")
 draw_pass_1 = SubResource("QuadMesh_oul6g")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=194443426]
-transform = Transform3D(-4.2452704e-08, -0.23824526, 0.9712049, -1.04140305e-08, 0.9712049, 0.2382453, -0.9999999, 5.2939553e-23, -4.371138e-08, 0.95181286, 1.3356111, 0)
+transform = Transform3D(-4.2452704e-08, -0.23824526, 0.9712049, -1.04140305e-08, 0.9712049, 0.2382453, -0.9999999, 5.2939553e-23, -4.371138e-08, 0.95181286, 1.8440077, 0)
 spring_length = 3.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=1176138545]
