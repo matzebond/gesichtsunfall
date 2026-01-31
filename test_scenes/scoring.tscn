@@ -11,3 +11,36 @@ script = ExtResource("1_g6fki")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -37.751553, -8.069331)
 
 [node name="root" parent="." unique_id=1124768642 instance=ExtResource("2_g6fki")]
+
+[node name="LevelProgress" type="ProgressBar" parent="." unique_id=604942461]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -304.0
+offset_top = -67.0
+offset_right = 304.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+step = 1.0
+
+[node name="CheckProgress" type="ProgressBar" parent="LevelProgress" unique_id=1775993052]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -304.0
+offset_top = -67.0
+offset_right = 304.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+step = 1.0
