@@ -135,10 +135,6 @@ func reset_position():
 	angular_velocity = Vector3.ZERO
 
 func handle_decal():
-	if Input.is_action_just_pressed("player_increase_brush_size"):
-		$DecalSpawner.change_size(0.5)
-	elif Input.is_action_just_pressed("player_decrease_brush_size"):
-		$DecalSpawner.change_size(-0.5)
 	$DecalSpawner.enable_spawning(brush_down)
 
 func get_camera() -> Camera3D:

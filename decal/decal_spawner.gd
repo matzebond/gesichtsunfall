@@ -39,6 +39,10 @@ func _process(_delta: float) -> void:
 				selected_brush_color = brush_colors[brush]
 				print("Selected brush ", brush + 1)
 				break
+	if Input.is_action_just_pressed("player_increase_brush_size"):
+		change_size(0.5)
+	elif Input.is_action_just_pressed("player_decrease_brush_size"):
+		change_size(-0.5)
 
 	if spawning_enabled and decal_spawn_point.global_position.distance_to(last_pos) > distance_threshold:
 		_spawn_decal()
