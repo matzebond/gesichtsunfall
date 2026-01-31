@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://vqv6gey041o1" path="res://scoring/scoring_node.tscn" id="9_vivmo"]
 [ext_resource type="PackedScene" uid="uid://cug12yvxcog00" path="res://gesicht/Gesicht.tscn" id="10_4c57u"]
 [ext_resource type="Script" uid="uid://dboxj5j43i1pf" path="res://level/level_manager.gd" id="10_dg77c"]
-[ext_resource type="PackedScene" uid="uid://c1urnjapkoipd" path="res://level/levels/level00.tscn" id="11_dg77c"]
+[ext_resource type="PackedScene" uid="uid://c1urnjapkoipd" path="res://level/levels/level_bandit.tscn" id="11_dg77c"]
 [ext_resource type="PackedScene" uid="uid://bfaf5mxvrhjrs" path="res://screenshoot/screenshot_manager.tscn" id="11_efxa6"]
 [ext_resource type="AudioStream" uid="uid://1c64hqypufo8" path="res://gui/sneeze.mp3" id="12_dg77c"]
 [ext_resource type="Script" uid="uid://c4nql2cjjsb1n" path="res://nasenwind.gd" id="12_w48qg"]

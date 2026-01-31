@@ -34,6 +34,6 @@ func load_level(level_scene_path: String):
 	$ScoringNode.levelDecalsNode = new_level
 	
 func _ready():
-	load_level("res://level/levels/level_mask.tscn")
+	load_level("res://level/levels/level_corona.tscn")
 	
 	
