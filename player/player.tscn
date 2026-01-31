@@ -162,10 +162,6 @@ ENGINE_POWER = 520
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.49604416, 0.5752028, 0)
 shape = SubResource("BoxShape3D_rkbax")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1176138545]
-transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 3.3070688, 2.73694, 0)
-current = true
-
 [node name="player" type="Node3D" parent="." unique_id=531196072]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.117385626, 0)
 
@@ -235,3 +231,11 @@ lifetime = 0.5
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_oul6g")
 draw_pass_1 = SubResource("QuadMesh_oul6g")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=194443426]
+transform = Transform3D(-4.2452704e-08, -0.23824526, 0.9712049, -1.04140305e-08, 0.9712049, 0.2382453, -0.9999999, 5.2939553e-23, -4.371138e-08, 0.95181286, 1.3356111, 0)
+spring_length = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=1176138545]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+current = true
