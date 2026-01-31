@@ -6,22 +6,24 @@ var distance_threshold = 0.5
 
 @onready var decal_spawner = $DecalSpawner
 @onready var decal_spawn_point = $DecalSpawnPoint
-@onready var ray_cast: RayCast3D = $RayCast3D
 @onready var camera: Camera3D = $Camera3D
 @onready var face = $DynamicFace
+@onready var name_edit = $CanvasLayer/VBoxContainer/Name
+@export var level_name = "test"
+
 @export var save_path = "res://level/editor/level--%s--%s.tscn"
 
 func _process(delta: float) -> void:
 	var paint = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
 	var erase = Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT)
-	
 	if paint or erase:
 		var mouse_pos = camera.get_viewport().get_mouse_position()
-		ray_cast.position = camera.project_ray_origin(mouse_pos)
-		ray_cast.target_position = camera.project_ray_normal(mouse_pos) * 1000
-
-		if ray_cast.is_colliding():
-			var pos = ray_cast.get_collision_point()
+		var ray_origin = camera.project_ray_origin(mouse_pos)
+		var ray_target = ray_origin + camera.project_ray_normal(mouse_pos) * 10000
+		var ray = PhysicsRayQueryParameters3D.create(ray_origin,ray_target)
+		var ray_res = get_world_3d().direct_space_state.intersect_ray(ray)
+		if ray_res:
+			var pos = ray_res["position"]
 			if paint:
 				decal_spawner.spawn_decal(pos)
 			elif erase:
