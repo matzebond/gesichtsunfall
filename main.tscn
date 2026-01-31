@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://coqgf2w8jxdxq"]
 
+[ext_resource type="Script" uid="uid://nbui8baxuiud" path="res://world_environment.gd" id="1_w48qg"]
 [ext_resource type="PackedScene" uid="uid://3fcf3nkdn5su" path="res://player/player.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b4dhm7h2dvl66" path="res://ui/game_ui.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dkelp60jagl1e" path="res://game_state/game_state_manager.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://buabsabuo7yhv" path="res://game_state/dynamic_camera.gd" id="7_4c57u"]
-[ext_resource type="Script" path="res://area_3d.gd" id="7_5vw27"]
+[ext_resource type="Script" uid="uid://coad6f6mm35op" path="res://area_3d.gd" id="7_5vw27"]
 [ext_resource type="AudioStream" uid="uid://b3527wgiyspso" path="res://gui/nomnom.wav" id="8_4c57u"]
 [ext_resource type="Texture2D" uid="uid://dcaofdty3phmt" path="res://gui/verputzt.png" id="8_kek77"]
 [ext_resource type="PackedScene" uid="uid://cug12yvxcog00" path="res://gesicht/Gesicht.tscn" id="10_4c57u"]
@@ -14,6 +15,21 @@
 [ext_resource type="AudioStream" uid="uid://1c64hqypufo8" path="res://gui/sneeze.mp3" id="12_dg77c"]
 [ext_resource type="Script" uid="uid://c4nql2cjjsb1n" path="res://nasenwind.gd" id="12_w48qg"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ycdy4"]
+sky_top_color = Color(1, 0.39, 0.4001665, 1)
+sky_horizon_color = Color(0.9191476, 0.80110365, 0.81266713, 1)
+ground_bottom_color = Color(0.13192701, 0.27254754, 4.813075e-08, 1)
+ground_horizon_color = Color(0.9191476, 0.80110365, 0.81266713, 1)
+
+[sub_resource type="Sky" id="Sky_w48qg"]
+sky_material = SubResource("ProceduralSkyMaterial_ycdy4")
+
+[sub_resource type="Environment" id="Environment_vivmo"]
+background_mode = 1
+sky = SubResource("Sky_w48qg")
+tonemap_mode = 2
+glow_enabled = true
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
 size = Vector3(45, 10.68988, 12.757294)
 
@@ -21,6 +37,10 @@ size = Vector3(45, 10.68988, 12.757294)
 size = Vector3(11.416946, 3.0893784, 7.806549)
 
 [node name="root" type="Node3D" unique_id=1124768642]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2036193609]
+environment = SubResource("Environment_vivmo")
+script = ExtResource("1_w48qg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1934783813]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10.929583, 0)
