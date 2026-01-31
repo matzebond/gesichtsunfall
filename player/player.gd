@@ -38,12 +38,8 @@ var downforce: Vector3
 @export var anti_roll_force: float = 20.0  # Force to resist rolling
 @export var downforce_factor: float = 50.0 # Pushes car down at speed
 
-@export_group("Brush")
-var brush_down = false
-
 # Arm-Bewegungs-Zeug
 var arm_angle = 0
-
 var spawn_position
 var disable_controls = false
 
@@ -53,14 +49,14 @@ func _ready() -> void:
 		pass # man könnte hier iwie was berechnen
 	$GPUParticles3D.emitting = brush_down
 	spawn_position = position
-		
+
 func _process(delta: float) -> void:
 	if arm_angle < 360:
 		arm_angle += delta * 5
 	else:
 		arm_angle = 0
 	$player_model/arm_mit_hut.rotation = Vector3(-arm_angle,0,0)
-	
+
 	# Handle scene reset
 	if Input.is_action_just_pressed("ui_cancel"):  # ESC key
 		get_tree().reload_current_scene()
@@ -69,8 +65,6 @@ func _physics_process(delta):
 	if disable_controls:
 		return
 
-	if Input.is_action_just_pressed("player_brush"):
-		toggle_brush()
 	if Input.is_action_just_pressed("player_reset"):
 		reset_position()
 
@@ -87,7 +81,7 @@ func handle_vehicle_control(delta):
 
 func handle_engine_velocity():
 	engine_force = Input.get_axis("player_down", "player_up") * ENGINE_POWER
-	
+
 	if Input.is_action_pressed("player_down"):
 		$player_model/Cylinder.rotation_degrees = Vector3(-15,0,0)
 		$player_model/Cylinder_001.rotation_degrees = Vector3(-15,0,0)
@@ -104,7 +98,7 @@ func handle_engine_velocity():
 func handle_anti_roll_force():
 	anti_roll_torque = -global_transform.basis.x * global_rotation.x * anti_roll_force * max_speed
 	apply_torque(anti_roll_torque)
-	
+
 func handle_speed_based_downforce():
 	# oder get_contact_count()
 	if not any_wheel_in_contact():
@@ -112,12 +106,12 @@ func handle_speed_based_downforce():
 
 	downforce = -global_transform.basis.y * linear_velocity.length() * downforce_factor
 	apply_central_force(downforce)
-	
+
 func handle_air_control(delta):
 	var in_air = not any_wheel_in_contact()
 	if not in_air:
 		return
-	
+
 	var air_control_torque = global_transform.basis.y * steering_input * steering_speed_air
 	apply_torque(air_control_torque * delta)
 
@@ -127,20 +121,18 @@ func any_wheel_in_contact():
 			return true
 	return false
 
-func toggle_brush() -> void:
-	brush_down = !brush_down
-	$GPUParticles3D.emitting = brush_down
-	
 func set_particle_color(color: Color):
 	$GPUParticles3D.draw_pass_1.material.albedo_color = color
-	
+
+func handle_decal():
+	var brush_down = Input.is_action_pressed("player_brush_down")
+	$GPUParticles3D.emitting = brush_down
+	$DecalSpawner.enable_spawning(brush_down)
+
 func reset_position():
 	position = spawn_position
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
-
-func handle_decal():
-	$DecalSpawner.enable_spawning(brush_down)
 
 func get_camera() -> Camera3D:
 	return $SpringArm3D/Camera3D
@@ -153,6 +145,6 @@ func _on_game_state_manager_playing_started(_game_timer: Timer) -> void:
 
 func _on_game_state_manager_playing_done() -> void:
 	disable_controls = true
-	
+
 func _on_decal_spawner_color_changed(color: Color) -> void:
 	set_particle_color(color)

@@ -48,10 +48,10 @@ func _process(_delta: float) -> void:
 		change_size(-0.5)
 
 	if spawning_enabled and decal_spawn_point.global_position.distance_to(last_pos) > distance_threshold:
-		_spawn_decal()
+		spawn_decal()
 		last_pos = decal_spawn_point.global_position
 
-func _spawn_decal():
+func spawn_decal():
 	var d = decal_scene.instantiate()
 	root_node.get_parent().add_child(d)
 	var new_decal_position = decal_spawn_point.global_position
