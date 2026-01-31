@@ -9,7 +9,9 @@
 [ext_resource type="Script" uid="uid://coad6f6mm35op" path="res://area_3d.gd" id="7_5vw27"]
 [ext_resource type="AudioStream" uid="uid://b3527wgiyspso" path="res://gui/nomnom.wav" id="8_4c57u"]
 [ext_resource type="Texture2D" uid="uid://dcaofdty3phmt" path="res://gui/verputzt.png" id="8_kek77"]
+[ext_resource type="Script" uid="uid://c4nql2cjjsb1n" path="res://nasenwind.gd" id="11_dg77c"]
 [ext_resource type="PackedScene" uid="uid://bfaf5mxvrhjrs" path="res://screenshoot/screenshot_manager.tscn" id="11_efxa6"]
+[ext_resource type="AudioStream" uid="uid://1c64hqypufo8" path="res://gui/sneeze.mp3" id="12_dg77c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
 size = Vector3(45, 10.68988, 12.757294)
@@ -168,6 +170,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fuj6v")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_efxa6"]
+size = Vector3(12.240051, 3.4549255, 10.710327)
+
 [node name="root" type="Node3D" unique_id=1124768642]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1934783813]
@@ -223,6 +228,17 @@ script = ExtResource("2_5vw27")
 [node name="spahn" type="MeshInstance3D" parent="gesicht3" unique_id=2034840663]
 mesh = SubResource("ArrayMesh_pnfkl")
 
+[node name="nasenwind" type="Area3D" parent="." unique_id=442696100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31.15506, -20.78209)
+script = ExtResource("11_dg77c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="nasenwind" unique_id=642082464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0731506, 12.248043, 19.961725)
+shape = SubResource("BoxShape3D_efxa6")
+
+[node name="hatschi" type="AudioStreamPlayer" parent="nasenwind" unique_id=346290161]
+stream = ExtResource("12_dg77c")
+
 [connection signal="playing_done" from="GameStateManager" to="player" method="_on_game_state_manager_playing_done"]
 [connection signal="playing_done" from="GameStateManager" to="GameUI" method="_on_game_state_manager_playing_done"]
 [connection signal="playing_done" from="GameStateManager" to="DynamicCamera" method="_on_game_state_manager_playing_done"]
@@ -233,3 +249,4 @@ mesh = SubResource("ArrayMesh_pnfkl")
 [connection signal="preview_started" from="GameStateManager" to="GameUI" method="_on_game_state_manager_preview_started"]
 [connection signal="preview_started" from="GameStateManager" to="DynamicCamera" method="_on_game_state_manager_preview_started"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="nasenwind" to="nasenwind" method="_on_body_entered"]
