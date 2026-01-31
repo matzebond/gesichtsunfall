@@ -4,8 +4,11 @@
 
 [node name="spahn_ki_platt" unique_id=1136553383 instance=ExtResource("1_atvpq")]
 
+[node name="spahn_001" parent="." index="0" unique_id=88220629]
+transform = Transform3D(299.99997, 0, 0, 0, -1.3113416e-05, 149.99998, 0, -299.99997, -6.556708e-06, 0, -141.634, 27.345673)
+
 [node name="CollisionShape3D" parent="spahn_001/StaticBody3D" parent_id_path=PackedInt32Array(832176726) index="0" unique_id=416226317]
 visible = false
 
 [node name="spawn" type="Node3D" parent="." index="1" unique_id=127477747]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6907256, 0.44756162)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6907256, -152.25723)
