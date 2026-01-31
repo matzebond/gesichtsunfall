@@ -8,7 +8,8 @@ var distance_threshold = 0.5
 @onready var decal_spawn_point = $DecalSpawnPoint
 @onready var ray_cast: RayCast3D = $RayCast3D
 @onready var camera: Camera3D = $Camera3D
-@export var save_path = "res://level/editor/level.tscn"
+@onready var face = $DynamicFace
+@export var save_path = "res://level/editor/level--%s--%s.tscn"
 
 func _process(delta: float) -> void:
 	var paint = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
@@ -43,15 +44,23 @@ func save():
 		printerr("Failed to pack decals scene")
 		$CanvasLayer/Label.text = "Error"
 		return
-
-	var err := ResourceSaver.save(scene, save_path)
+		
+	var face_name
+	if face:
+		face_name = Global.FaceScenes.find_key(face.selected_face)
+	else:
+		face_name = "any"
+	var level_name = "test"
+	var file_path = save_path % [face_name, level_name]
+	
+	var err := ResourceSaver.save(scene, file_path)
 	if err != OK:
 		printerr("Save failed: %s" % err)
 		$CanvasLayer/Label.text = "Error"
 		return
 	
-	scene.take_over_path(save_path)
-	print("Successfully saved to %s (if it does not show/update try leaving and entering godot window again)" % save_path)
+	scene.take_over_path(file_path)
+	print("Successfully saved to %s (if it does not show/update try leaving and entering godot window again)" % file_path)
 	$CanvasLayer/Label.text = "OK"
 
 
