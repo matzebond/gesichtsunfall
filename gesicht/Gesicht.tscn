@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cug12yvxcog00"]
+[gd_scene load_steps=0 format=4 uid="uid://cug12yvxcog00"]
 
 [ext_resource type="Script" uid="uid://dlj8lnntue4ls" path="res://gesicht/gesicht.gd" id="1_v8g16"]
 

@@ -100,7 +100,6 @@ func handle_engine_velocity():
 	# Apply to vehicle
 	#engine_force = throttle * acceleration * speed_factor
 	AudioManager.set_global_parameter("Speed", speed_factor)
-	print(speed_factor)
 
 func handle_anti_roll_force():
 	anti_roll_torque = -global_transform.basis.x * global_rotation.x * anti_roll_force * max_speed

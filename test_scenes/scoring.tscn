@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://blp4b0a3immia"]
+[gd_scene load_steps=0 format=3 uid="uid://blp4b0a3immia"]
 
 [ext_resource type="Script" uid="uid://dfqkduybhlq5o" path="res://test_scenes/scoring.gd" id="1_g6fki"]
 [ext_resource type="PackedScene" uid="uid://dijx17aqvejuq" path="res://level/level00.tscn" id="1_tonip"]

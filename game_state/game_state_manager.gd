@@ -29,6 +29,7 @@ func set_current_state(new_state: GameState):
 		GameState.PREVIEW:
 			$PreviewTimer.start()
 			preview_started.emit()
+			AudioManager.play_one_shot("Gong")
 		GameState.PLAYING:
 			$PlayingTimer.start()
 			if not debug:
