@@ -1,6 +1,7 @@
 extends Camera3D
 
-@export var static_camera: Camera3D
+@export var static_camera_preview: Camera3D
+@export var static_camera_rating: Camera3D
 @export var player: Node
 
 @onready var player_camera: Camera3D = player.get_camera()
@@ -10,14 +11,14 @@ var _transition_tween: Tween
 
 func _on_game_state_manager_preview_started() -> void:
 	# Snap this cam to the static cam and make it current
-	_copy_camera_pose(static_camera, self)
+	_copy_camera_pose(static_camera_preview, self)
 	self.current = true
 
 func _on_game_state_manager_preview_done() -> void:
-	_interpolate_camera(self, static_camera, player_camera, 0.7)
+	_interpolate_camera(self, static_camera_preview, player_camera, 0.7)
 
 func _on_game_state_manager_playing_done() -> void:
-	_interpolate_camera(self, player_camera, static_camera, 0.7)
+	_interpolate_camera(self, player_camera, static_camera_rating, 0.7)
 
 func _copy_camera_pose(source_camera: Camera3D, target_camera: Camera3D) -> void:
 	target_camera.global_transform = source_camera.global_transform

@@ -1,5 +1,6 @@
 extends Node3D
 
+signal color_changed(color: Color)
 @export var decal_spawn_point: Node3D
 @export var root_node: Node3D
 
@@ -21,6 +22,7 @@ func _ready() -> void:
 	assert(len(brush_colors) > 0, "Must set at least one brush color")
 	assert(len(brush_colors) <= 9, "At most 9 brush colors are supported")
 	selected_brush_color = brush_colors[0]
+	color_changed.emit(selected_brush_color)
 
 func enable_spawning(enable: bool):
 	spawning_enabled = enable
@@ -38,6 +40,7 @@ func _process(_delta: float) -> void:
 			if brush < len(brush_colors):
 				selected_brush_color = brush_colors[brush]
 				print("Selected brush ", brush + 1)
+				color_changed.emit(selected_brush_color)
 				break
 	if Input.is_action_just_pressed("player_increase_brush_size"):
 		change_size(0.5)
