@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://coqgf2w8jxdxq"]
+[gd_scene load_steps=13 format=3 uid="uid://coqgf2w8jxdxq"]
 
 [ext_resource type="PackedScene" uid="uid://c2wwfrnqpasgj" path="res://gesicht/gesicht.glb" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://3fcf3nkdn5su" path="res://player/player.tscn" id="2_1bvp3"]
@@ -15,47 +15,47 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
 size = Vector3(45, 16, 18)
 
-[node name="root" type="Node3D" unique_id=1124768642]
+[node name="root" type="Node3D"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1934783813]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10.929583, 0)
 
-[node name="gesicht" parent="." unique_id=1899767975 instance=ExtResource("1_272bh")]
+[node name="gesicht" parent="." instance=ExtResource("1_272bh")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -37.005238, 0)
 script = ExtResource("2_5vw27")
 
-[node name="player" parent="." unique_id=116514080 instance=ExtResource("2_1bvp3")]
+[node name="player" parent="." instance=ExtResource("2_1bvp3")]
 transform = Transform3D(-0.24789521, 0, -0.96878684, 0, 1, 0, 0.96878684, 0, -0.24789521, -0.33164597, -11.117437, 55.410625)
 
-[node name="GlobalPlayerCam" type="Camera3D" parent="." unique_id=153819132 node_paths=PackedStringArray("target")]
+[node name="GlobalPlayerCam" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 0.47559348, 0.8796652, 0, -0.8796652, 0.47559348, 1.3484964, 5.613556, 11.140112)
 script = ExtResource("4_lquwl")
 target = NodePath("../player")
 
-[node name="GameUI" parent="." unique_id=1594824260 instance=ExtResource("3_h2yge")]
+[node name="GameUI" parent="." instance=ExtResource("3_h2yge")]
 
-[node name="PreviewStaticCamera" type="Camera3D" parent="." unique_id=1926876491]
+[node name="PreviewStaticCamera" type="Camera3D" parent="."]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 76.92769, 18.186455)
 
-[node name="DynamicCamera" type="Camera3D" parent="." unique_id=234388864 node_paths=PackedStringArray("static_camera", "player")]
+[node name="DynamicCamera" type="Camera3D" parent="." node_paths=PackedStringArray("static_camera", "player")]
 transform = Transform3D(1, -8.742278e-08, 8.742277e-08, 8.742278e-08, 1, 5.3731366e-16, -8.742277e-08, 7.1054274e-15, 1, 6.725232e-06, 95.114136, 95.11414)
 script = ExtResource("7_4c57u")
 static_camera = NodePath("../PreviewStaticCamera")
 player = NodePath("../player")
 
-[node name="GameStateManager" parent="." unique_id=1001160322 instance=ExtResource("5_lquwl")]
+[node name="GameStateManager" parent="." instance=ExtResource("5_lquwl")]
 
-[node name="Area3D" type="Area3D" parent="." unique_id=397403153]
+[node name="Area3D" type="Area3D" parent="."]
 script = ExtResource("7_5vw27")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=819064943]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.5, -27.5)
 shape = SubResource("BoxShape3D_4c57u")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area3D" unique_id=449942279]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area3D"]
 stream = ExtResource("8_4c57u")
 
-[node name="TextureRect" type="TextureRect" parent="Area3D" unique_id=2052095938]
+[node name="TextureRect" type="TextureRect" parent="Area3D"]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,7 +65,7 @@ grow_vertical = 2
 texture = ExtResource("8_kek77")
 expand_mode = 2
 
-[node name="ScreenshotManager" parent="." unique_id=1855676447 instance=ExtResource("11_efxa6")]
+[node name="ScreenshotManager" parent="." instance=ExtResource("11_efxa6")]
 
 [connection signal="playing_done" from="GameStateManager" to="player" method="_on_game_state_manager_playing_done"]
 [connection signal="playing_done" from="GameStateManager" to="GameUI" method="_on_game_state_manager_playing_done"]

@@ -8,16 +8,30 @@
 
 config_version=5
 
+[Fmod]
+
+General/banks_path="res://fmod/gesichtsunfall 2.03/Build/Desktop"
+
 [application]
 
 config/name="Gesichtsunfall"
 run/main_scene="uid://coqgf2w8jxdxq"
-config/features=PackedStringArray("4.6", "Mobile")
+config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+FmodManager="*res://addons/fmod/FmodManager.gd"
+AudioManager="*res://AudioManager.gd"
+GlobalFmodBankLoader="*res://fmod_bank_loader.tscn"
 
 [display]
 
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
 [filesystem]
 

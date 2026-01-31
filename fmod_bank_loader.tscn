@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://h7ibwpeljpjp"]
+
+[node name="FmodBankLoader" type="FmodBankLoader"]
+bank_paths = ["res://fmod/gesichtsunfall 2.03/Build/Desktop/Master.strings.bank", "res://fmod/gesichtsunfall 2.03/Build/Desktop/Master.bank"]
