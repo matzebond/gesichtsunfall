@@ -93,6 +93,8 @@ func handle_engine_velocity():
 	var speed_factor = 1.0 - min(vehicle_linear_velocity / max_speed, 1.0)
 	# Apply to vehicle
 	#engine_force = throttle * acceleration * speed_factor
+	AudioManager.set_global_parameter("Speed", speed_factor)
+	print(speed_factor)
 
 func handle_anti_roll_force():
 	anti_roll_torque = -global_transform.basis.x * global_rotation.x * anti_roll_force * max_speed
@@ -113,6 +115,10 @@ func any_wheel_in_contact():
 
 func toggle_brush() -> void:
 	brush_down = !brush_down
+	if brush_down:
+		AudioManager.play_event("Painting")
+	else:
+		AudioManager.stop_event("Painting")
 	
 func reset_position():
 	position = spawn_position
