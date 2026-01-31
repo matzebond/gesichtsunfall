@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cop3imneylyer"]
+
+[ext_resource type="PackedScene" uid="uid://ckpkmoqfx4yy8" path="res://gesicht/affe.glb" id="1_k277g"]
+
+[node name="affe" unique_id=175588883 instance=ExtResource("1_k277g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -707.39844, 297.24496)
+
+[node name="Suzanne" parent="." index="0" unique_id=1171418406]
+transform = Transform3D(1000, 0, 0, 0, -4.371139e-05, 1000, 0, -1000, -4.371139e-05, 0, -87.0367, 0)
