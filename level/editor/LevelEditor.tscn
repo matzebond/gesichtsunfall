@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dc54kui2l73rl"]
 
-[ext_resource type="PackedScene" uid="uid://c2wwfrnqpasgj" path="res://gesicht/gesicht.glb" id="1_3dw7s"]
 [ext_resource type="Script" uid="uid://bs3oyux0x1g73" path="res://level/editor/level_editor.gd" id="1_ymrce"]
 [ext_resource type="PackedScene" uid="uid://ddj7iodaol0cy" path="res://decal/decal_spawner.tscn" id="2_mpqra"]
+[ext_resource type="PackedScene" uid="uid://c48s7os2yek2u" path="res://gesicht/gesicht2.glb" id="3_ymrce"]
 
 [node name="LevelEditor" type="Node3D" unique_id=142715042]
 script = ExtResource("1_ymrce")
@@ -13,11 +13,12 @@ root_node = NodePath("../Decals/DecalsRoot")
 
 [node name="DecalSpawnPoint" type="Node3D" parent="." unique_id=1426239805]
 
-[node name="gesicht" parent="." unique_id=39814600 instance=ExtResource("1_3dw7s")]
-
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1709459298]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1368684e-13, 0, 0)
 collide_with_areas = true
+
+[node name="gesicht2" parent="." unique_id=1543315026 instance=ExtResource("3_ymrce")]
+transform = Transform3D(-100, 0, -8.742278e-06, 0, 100, 0, 8.742278e-06, 0, -100, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=708539691]
 transform = Transform3D(-1, 8.742278e-08, 0, 8.742278e-08, 1, 8.742278e-08, 7.642742e-15, 8.742278e-08, -1, 0, 16.917702, -111.76599)
@@ -44,4 +45,4 @@ offset_bottom = 28.0
 
 [connection signal="pressed" from="CanvasLayer/Save" to="." method="save"]
 
-[editable path="gesicht"]
+[editable path="gesicht2"]

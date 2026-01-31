@@ -8,11 +8,12 @@ var distance_threshold = 0.5
 @onready var decal_spawn_point = $DecalSpawnPoint
 @onready var ray_cast: RayCast3D = $RayCast3D
 @onready var camera: Camera3D = $Camera3D
+@onready var face: MeshInstance3D = $gesicht2/spahn
 @export var save_path = "res://level/editor/level.tscn"
 
 func _ready() -> void:
-	$gesicht/Plane.create_trimesh_collision()
-	$gesicht/Plane.get_child(0).get_child(0).shape.backface_collision = true
+	face.create_trimesh_collision()
+	face.get_child(0).get_child(0).shape.backface_collision = true
 
 func _process(delta: float) -> void:
 	var pressed = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
