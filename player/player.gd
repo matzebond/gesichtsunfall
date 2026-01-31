@@ -56,7 +56,7 @@ func _process(delta: float) -> void:
 		arm_angle += delta * 5
 	else:
 		arm_angle = 0
-	$player_model/Cylinder_001.rotation = Vector3(arm_angle,0,0)
+	$player_model/arm_mit_hut.rotation = Vector3(-arm_angle,0,0)
 	
 	# Handle scene reset
 	if Input.is_action_just_pressed("ui_cancel"):  # ESC key
@@ -83,6 +83,13 @@ func handle_vehicle_control(delta):
 
 func handle_engine_velocity():
 	engine_force = Input.get_axis("player_down", "player_up") * ENGINE_POWER
+	
+	if Input.is_action_pressed("player_down"):
+		$player_model/Cylinder.rotation_degrees = Vector3(-15,0,0)
+		$player_model/Cylinder_001.rotation_degrees = Vector3(-15,0,0)
+	else:
+		$player_model/Cylinder.rotation_degrees = Vector3(30,0,0)
+		$player_model/Cylinder_001.rotation_degrees = Vector3(30,0,0)
 
 	# Calculate engine force
 	vehicle_linear_velocity = linear_velocity.length()
