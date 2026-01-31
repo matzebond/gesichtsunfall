@@ -28,9 +28,9 @@ func _process(delta: float) -> void:
 			decal_spawn_point.global_position = ray_cast.get_collision_point()
 			
 func save():
+	$CanvasLayer/Label.text = "Saving..."
 	var root = Node3D.new()
 	root.name = "Level"
-	root.owner = root
 	for child in $Decals.get_children():
 		if child == decal_spawner.root_node:
 			continue
@@ -45,15 +45,18 @@ func save():
 	
 	if ok != OK:
 		printerr("Failed to pack decals scene")
+		$CanvasLayer/Label.text = "Error"
 		return
 
 	var err := ResourceSaver.save(scene, save_path)
 	if err != OK:
 		printerr("Save failed: %s" % err)
+		$CanvasLayer/Label.text = "Error"
 		return
 	
 	scene.take_over_path(save_path)
 	print("Successfully saved to %s (if it does not show/update try leaving and entering godot window again)" % save_path)
+	$CanvasLayer/Label.text = "OK"
 
 
 func _set_owner_recursive(n: Node, owner: Node) -> void:
