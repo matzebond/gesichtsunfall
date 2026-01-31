@@ -12,7 +12,7 @@ var distance_threshold = 0.5
 var jump_force = 5.0
 
 # Brush state
-var brush_down = false
+var brush_down = true
 
 # Arm-Bewegungs-Zeug
 var arm_angle = 0
@@ -55,7 +55,7 @@ func toggle_brush() -> void:
 	brush_down = !brush_down
 
 func process_decal():
-	if global_position.distance_to(last_pos) > distance_threshold:
+	if brush_down and global_position.distance_to(last_pos) > distance_threshold:
 		spawn_decal()
 		last_pos = global_position
 
