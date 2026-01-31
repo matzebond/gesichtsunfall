@@ -40,6 +40,15 @@ var downforce: Vector3
 @export var anti_roll_force: float = 20.0  # Force to resist rolling
 @export var downforce_factor: float = 50.0 # Pushes car down at speed
 
+@export_group("Decal")
+@export var decal_root_node: Node3D:
+	set(value):
+		_decal_root_node = value
+		$DecalSpawner.root_node = value
+	get:
+		return _decal_root_node
+var _decal_root_node: Node3D
+
 # Arm-Bewegungs-Zeug
 var arm_angle = 0
 var spawn_position

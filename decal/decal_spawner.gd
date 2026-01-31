@@ -53,7 +53,7 @@ func _process(_delta: float) -> void:
 
 func spawn_decal():
 	var d = decal_scene.instantiate()
-	root_node.get_parent().add_child(d)
+	root_node.add_child(d)
 	var new_decal_position = decal_spawn_point.global_position
 	d.global_position = new_decal_position
 	d.size = Vector3(size, size, size)
