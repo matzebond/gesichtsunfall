@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://blp4b0a3immia"]
+
+[ext_resource type="Script" uid="uid://dfqkduybhlq5o" path="res://test_scenes/scoring.gd" id="1_g6fki"]
+[ext_resource type="PackedScene" uid="uid://dijx17aqvejuq" path="res://level/level00.tscn" id="1_tonip"]
+[ext_resource type="PackedScene" uid="uid://coqgf2w8jxdxq" path="res://main.tscn" id="2_g6fki"]
+
+[node name="Node3D" type="Node3D" unique_id=1333813495]
+script = ExtResource("1_g6fki")
+
+[node name="Level" parent="." unique_id=159555151 instance=ExtResource("1_tonip")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -37.751553, -8.069331)
+
+[node name="root" parent="." unique_id=1124768642 instance=ExtResource("2_g6fki")]

@@ -2,7 +2,6 @@ extends VehicleBody3D
 
 # Movement Zeug
 var throttle: float = 0.0
-var steering_input: float = 0.0
 
 @export_group("Speed")
 ## hängt auf jeden fall von mass ab
@@ -14,8 +13,11 @@ var steering_input: float = 0.0
 var vehicle_linear_velocity: float = 0.0
 
 @export_group("Steering & Brake")
-@export var steering_speed = 1.5
-@export var max_steering_angle = 0.65
+var steering_input
+@export var steering_speed = 2.5
+@export var max_steering_angle = 1.65
+@export var steering_speed_air = 40000.0
+## unused
 @export var handbrake_force = 5.0
 var handbrake: bool = false
 
@@ -39,10 +41,6 @@ var downforce: Vector3
 @export_group("Brush")
 var brush_down = true
 
-# Decal Zeug
-var last_pos = Vector3.ZERO
-var distance_threshold = 0.5
-
 # Arm-Bewegungs-Zeug
 var arm_angle = 0
 
@@ -60,7 +58,7 @@ func _process(delta: float) -> void:
 		arm_angle += delta * 5
 	else:
 		arm_angle = 0
-	$player_model/Cylinder_001.rotation = Vector3(arm_angle,0,0)
+	$player_model/arm_mit_hut.rotation = Vector3(-arm_angle,0,0)
 	
 	# Handle scene reset
 	if Input.is_action_just_pressed("ui_cancel"):  # ESC key
@@ -79,14 +77,22 @@ func _physics_process(delta):
 	handle_engine_velocity()
 	handle_anti_roll_force()
 	handle_speed_based_downforce()
+	handle_air_control(delta)
 	handle_decal()
 
 func handle_vehicle_control(delta):
 	steering_input = Input.get_axis("player_right", "player_left")
-	steering = move_toward(steering, steering_input, delta * steering_speed)
+	steering = move_toward(steering, steering_input * max_steering_angle, delta * steering_speed)
 
 func handle_engine_velocity():
 	engine_force = Input.get_axis("player_down", "player_up") * ENGINE_POWER
+	
+	if Input.is_action_pressed("player_down"):
+		$player_model/Cylinder.rotation_degrees = Vector3(-15,0,0)
+		$player_model/Cylinder_001.rotation_degrees = Vector3(-15,0,0)
+	else:
+		$player_model/Cylinder.rotation_degrees = Vector3(30,0,0)
+		$player_model/Cylinder_001.rotation_degrees = Vector3(30,0,0)
 
 	# Calculate engine force
 	vehicle_linear_velocity = linear_velocity.length()
@@ -107,11 +113,20 @@ func handle_speed_based_downforce():
 
 	downforce = -global_transform.basis.y * linear_velocity.length() * downforce_factor
 	apply_central_force(downforce)
+	
+func handle_air_control(delta):
+	var in_air = not any_wheel_in_contact()
+	if not in_air:
+		return
+	
+	var air_control_torque = global_transform.basis.y * steering_input * steering_speed_air
+	apply_torque(air_control_torque * delta)
 
 func any_wheel_in_contact():
 	for wheel:VehicleWheel3D in [front_left_wheel, front_right_wheel, rear_left_wheel, rear_right_wheel]:
 		if wheel.is_in_contact():
 			return true
+	return false
 
 func toggle_brush() -> void:
 	brush_down = !brush_down
@@ -126,9 +141,7 @@ func reset_position():
 	angular_velocity = Vector3.ZERO
 
 func handle_decal():
-	if brush_down and global_position.distance_to(last_pos) > distance_threshold:
-		$DecalSpawner.spawn_decal()
-		last_pos = global_position
+	$DecalSpawner.enable_spawning(brush_down)
 
 func get_camera() -> Camera3D:
 	return $SpringArm3D/Camera3D

@@ -15,3 +15,9 @@ export_credentials.cfg
 data_*/
 mono_crash.*.json
 /android/
+
+# Game-specific ignores
+level/editor/level.tscn
+addons/fmod/libs/windows/fmodL.dll
+addons/fmod/libs/windows/fmodstudioL.dll
+addons/fmod/libs/windows/~libGodotFmod.windows.editor.x86_64.dll
