@@ -18,7 +18,7 @@ func _on_game_state_manager_playing_done() -> void:
 	level_objective_mesh.position = Vector3(122, 0, 0)
 	level_objective_mesh.visible = true
 	
-func load_level(level_scene_path: String):
+func load_level(level_scene: PackedScene):
 	# remove prev level
 	if level_objective_mesh.has_node("Level"):
 		var prev_level = level_objective_mesh.get_node("Level")
@@ -26,14 +26,13 @@ func load_level(level_scene_path: String):
 		prev_level.queue_free()
 	
 	# add new level
-	var level_scene: PackedScene = load(level_scene_path)
 	var new_level = level_scene.instantiate()
 	level_objective_mesh.add_child(new_level)
 	
 	# reattach Scoring to level
 	$ScoringNode.levelDecalsNode = new_level
-	
+
 func _ready():
-	load_level("res://level/levels/level_corona.tscn")
+	load_level(Global.selected_level)
 	
 	

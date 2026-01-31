@@ -28,6 +28,7 @@ config/icon="res://icon.svg"
 FmodManager="*res://addons/fmod/FmodManager.gd"
 AudioManager="*res://AudioManager.gd"
 GlobalFmodBankLoader="*res://fmod_bank_loader.tscn"
+Global="*uid://dypxdw42cbn13"
 
 [display]
 

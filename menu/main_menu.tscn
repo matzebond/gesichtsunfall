@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c5gtyvofhsbvo"]
 
-[ext_resource type="Texture2D" uid="uid://d184n1jojis6o" path="res://sonstiges/banner.svg" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://b4pdataeth6ak" path="res://menu/main_menu.gd" id="1_f5okj"]
+[ext_resource type="Texture2D" uid="uid://d184n1jojis6o" path="res://sonstiges/banner.svg" id="2_o5w3e"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=767686827]
+script = ExtResource("1_f5okj")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1604894436]
 anchors_preset = 15
@@ -13,7 +15,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=1810325400]
 layout_mode = 2
-texture = ExtResource("1_06t4h")
+texture = ExtResource("2_o5w3e")
 expand_mode = 5
 
 [node name="select_level_btn" type="Button" parent="." unique_id=616593668]
@@ -31,3 +33,5 @@ offset_right = 703.0
 offset_bottom = 236.0
 scale = Vector2(4.719015, 3.4631383)
 text = "Exit"
+
+[connection signal="pressed" from="select_level_btn" to="." method="_on_select_level_btn_pressed"]
