@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://btgskieybollo"]
+
+[ext_resource type="Texture2D" uid="uid://cacwt2e5kq8ls" path="res://icon.svg" id="1_xkyxc"]
+
+[node name="FakeDecal" type="Node3D" unique_id=922439838]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=914818756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0315542, 0)
+pixel_size = 0.005
+billboard = 1
+texture = ExtResource("1_xkyxc")

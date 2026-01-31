@@ -56,10 +56,9 @@ func _ready() -> void:
 	spawn_position = position
 
 func _process(delta: float) -> void:
-	if arm_angle < 360:
-		arm_angle += delta * 5
-	else:
-		arm_angle = 0
+	
+	arm_angle = fmod(arm_angle + delta * linear_velocity.length() * 0.75, 360)
+	
 	$player_model/arm_mit_hut.rotation = Vector3(-arm_angle,0,0)
 
 	# Handle scene reset
@@ -162,12 +161,18 @@ func get_camera() -> Camera3D:
 
 func _on_game_state_manager_preview_started() -> void:
 	disable_controls = true
+	visible = false
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_game_state_manager_playing_started(_game_timer: Timer) -> void:
 	disable_controls = false
+	visible = true
+	process_mode = Node.PROCESS_MODE_INHERIT
 
 func _on_game_state_manager_playing_done() -> void:
 	disable_controls = true
+	visible = false
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_decal_spawner_color_changed(color: Color) -> void:
 	set_particle_color(color)
