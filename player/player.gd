@@ -52,7 +52,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
-	arm_angle = fmod(arm_angle + delta * linear_velocity.length_squared() * 0.1, 360)
+	arm_angle = fmod(arm_angle + delta * linear_velocity.length() * 0.75, 360)
 	
 	$player_model/arm_mit_hut.rotation = Vector3(-arm_angle,0,0)
 

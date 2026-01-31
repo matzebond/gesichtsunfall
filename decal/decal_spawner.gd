@@ -16,7 +16,7 @@ var selected_brush_color: Color
 var last_pos = Vector3.ZERO
 var distance_threshold = 0.5
 var spawning_enabled = false
-var size = 1.0
+var size = 2.0
 
 func _ready() -> void:
 	assert(len(brush_colors) > 0, "Must set at least one brush color")
