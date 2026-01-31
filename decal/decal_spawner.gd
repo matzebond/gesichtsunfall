@@ -33,13 +33,15 @@ func change_size(amount: float):
 	print("Updated brush size to ", size)
 
 func _process(_delta: float) -> void:
-	var brush_count = 9
+	var brush_count : int = 9
 	for brush in range(brush_count):
 		if Input.is_action_just_pressed("player_brush_" + str(brush + 1)):
 			# Check if valid brush color
 			if brush < len(brush_colors):
 				selected_brush_color = brush_colors[brush]
 				print("Selected brush ", brush + 1)
+				AudioManager.set_global_parameter("Color", brush)
+				AudioManager.play_one_shot("ColorSwitch")
 				color_changed.emit(selected_brush_color)
 				break
 	if Input.is_action_just_pressed("player_increase_brush_size"):

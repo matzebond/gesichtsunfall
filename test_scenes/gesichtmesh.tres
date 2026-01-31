@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" format=4 uid="uid://djp131uv62mm6"]
+[gd_resource type="ArrayMesh" load_steps=4 format=4 uid="uid://djp131uv62mm6"]
 
 [ext_resource type="Texture2D" uid="uid://cfp1qidmfb5kk" path="res://gesicht/gesicht_test.png" id="1_sx3xv"]
 

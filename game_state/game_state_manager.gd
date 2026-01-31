@@ -31,7 +31,6 @@ func set_current_state(new_state: GameState):
 			preview_started.emit()
 			AudioManager.play_one_shot("Gong")
 			AudioManager.suppress_bgm(true)
-			AudioManager.stop_event("Painting")
 		GameState.PLAYING:
 			$PlayingTimer.start()
 			if not debug:
@@ -39,7 +38,7 @@ func set_current_state(new_state: GameState):
 			playing_started.emit($PlayingTimer)
 			AudioManager.suppress_bgm(false)
 		GameState.RATING:
-			AudioManager.stop_event("Painting")
+			AudioManager.play_one_shot("Gong")
 			AudioManager.suppress_bgm(true)
 			playing_done.emit()
 

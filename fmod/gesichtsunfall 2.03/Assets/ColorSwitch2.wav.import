@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ba8oy5j4xw08i"
+path="res://.godot/imported/ColorSwitch2.wav-e08366aa2a73c025ee45f123915d74b3.sample"
+
+[deps]
+
+source_file="res://fmod/gesichtsunfall 2.03/Assets/ColorSwitch2.wav"
+dest_files=["res://.godot/imported/ColorSwitch2.wav-e08366aa2a73c025ee45f123915d74b3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

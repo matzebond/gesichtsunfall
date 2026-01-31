@@ -56,6 +56,7 @@ var disable_controls = false
 
 var in_air_time = 0
 var allow_yeehaw = 0
+var can_brake = true
 
 
 func _ready() -> void:
@@ -94,20 +95,27 @@ func handle_vehicle_control(delta):
 
 func handle_engine_velocity():
 	engine_force = Input.get_axis("player_down", "player_up") * ENGINE_POWER
-
-	if Input.is_action_pressed("player_down"):
-		$player_model/Cylinder.rotation_degrees = Vector3(-15,0,0)
-		$player_model/Cylinder_001.rotation_degrees = Vector3(-15,0,0)
-	else:
-		$player_model/Cylinder.rotation_degrees = Vector3(30,0,0)
-		$player_model/Cylinder_001.rotation_degrees = Vector3(30,0,0)
-
+	
 	# Calculate engine force
 	vehicle_linear_velocity = linear_velocity.length()
 	var speed_factor = 1.0 - min(vehicle_linear_velocity / max_speed, 1.0)
 	# Apply to vehicle
 	#engine_force = throttle * acceleration * speed_factor
 	AudioManager.set_global_parameter("Speed", speed_factor)
+
+	if Input.is_action_pressed("player_down"):
+		$player_model/Cylinder.rotation_degrees = Vector3(-15,0,0)
+		$player_model/Cylinder_001.rotation_degrees = Vector3(-15,0,0)
+		if (speed_factor < 0.9 and can_brake and any_wheel_in_contact()):
+			AudioManager.play_event("Brake")
+			can_brake = false
+	else:
+		$player_model/Cylinder.rotation_degrees = Vector3(30,0,0)
+		$player_model/Cylinder_001.rotation_degrees = Vector3(30,0,0)
+		can_brake = true
+		AudioManager.stop_event("Brake")
+
+	
 
 func handle_anti_roll_force():
 	anti_roll_torque = -global_transform.basis.x * global_rotation.x * anti_roll_force * max_speed

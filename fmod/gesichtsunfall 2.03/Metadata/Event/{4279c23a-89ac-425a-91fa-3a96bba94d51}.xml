@@ -120,7 +120,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{473b66c4-6ada-4366-b286-237b948291de}">
 		<property name="volume">
-			<value>-3</value>
+			<value>-1</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -139,6 +139,7 @@
 		<relationship name="effects">
 			<destination>{10577ae3-0ae5-4022-a588-53dda549333f}</destination>
 			<destination>{5977f83e-40d8-433b-bc6b-dc6bf1f4fe2b}</destination>
+			<destination>{f6a027e2-00d6-4a0a-8d67-2fb84674c5e8}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{89d75431-5a16-4cf2-ac72-88e751319c4b}" />
@@ -167,6 +168,29 @@
 	<object class="MixerBusPanner" id="{1a3de5bc-0d83-42b1-aede-600d7c61b3e2}" />
 	<object class="MixerBusFader" id="{10577ae3-0ae5-4022-a588-53dda549333f}" />
 	<object class="ObjectSpatialiserEffect" id="{5977f83e-40d8-433b-bc6b-dc6bf1f4fe2b}" />
+	<object class="SFXReverbEffect" id="{f6a027e2-00d6-4a0a-8d67-2fb84674c5e8}">
+		<property name="earlyDelay">
+			<value>7</value>
+		</property>
+		<property name="lateDelay">
+			<value>11</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>67</value>
+		</property>
+		<property name="diffusion">
+			<value>50</value>
+		</property>
+		<property name="highCut">
+			<value>4050</value>
+		</property>
+		<property name="earlyLateMix">
+			<value>66</value>
+		</property>
+		<property name="wetLevel">
+			<value>-26</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{bf6effe1-8eab-4b75-8f0f-8768d8122174}">
 		<property name="position">
 			<value>0</value>

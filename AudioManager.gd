@@ -33,8 +33,9 @@ func play_one_shot(eventName, obj_transform = null):
 func play_event(eventName, stop_mode = 0):
 	
 	if events.has(eventName):
-		if events[eventName] != null:
-			events[eventName].stop(stop_mode)
+		if events[eventName].get_playback_state() == FmodServer.FMOD_STUDIO_PLAYBACK_PLAYING:
+			return
+			#events[eventName].stop(stop_mode)
 	
 	events[eventName] = FmodServer.create_event_instance("event:/" + eventName)
 	events[eventName].start()
@@ -71,7 +72,9 @@ func stop_all(stop_mode = 0):
 		stop_event(event_name, stop_mode)
 		
 func suppress_bgm(suppress):
+	
 	if suppress:
+		stop_non_one_shots()
 		if suppress_snapshot != null:
 			if suppress_snapshot.get_playback_state() == FmodServer.FMOD_STUDIO_PLAYBACK_PLAYING:
 				return
@@ -82,4 +85,9 @@ func suppress_bgm(suppress):
 			if suppress_snapshot.get_playback_state() != FmodServer.FMOD_STUDIO_PLAYBACK_PLAYING:
 				return
 		suppress_snapshot.stop(0)
+		
+func stop_non_one_shots(stop_mode = 0):
+	for event_name in events.keys():
+		print("stopped " + event_name)
+		stop_event(event_name, stop_mode)
 		
