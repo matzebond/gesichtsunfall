@@ -29,4 +29,13 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 
 [node name="DecalsRoot" type="Node3D" parent="Decals" unique_id=446848806]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=537720859]
+
+[node name="Save" type="Button" parent="CanvasLayer" unique_id=1418010465]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Save"
+
+[connection signal="pressed" from="CanvasLayer/Save" to="." method="save"]
+
 [editable path="gesicht"]
