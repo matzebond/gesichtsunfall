@@ -9,7 +9,7 @@ script = ExtResource("1_ymrce")
 
 [node name="DecalSpawner" parent="." unique_id=818907089 node_paths=PackedStringArray("decal_spawn_point", "root_node") instance=ExtResource("2_mpqra")]
 decal_spawn_point = NodePath("../DecalSpawnPoint")
-root_node = NodePath("../Decals/DecalsRoot")
+root_node = NodePath("../Decals")
 
 [node name="DecalSpawnPoint" type="Node3D" parent="." unique_id=1426239805]
 
@@ -27,8 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 56.06381)
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 
 [node name="Decals" type="Node3D" parent="." unique_id=1856804919]
-
-[node name="DecalsRoot" type="Node3D" parent="Decals" unique_id=446848806]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=537720859]
 

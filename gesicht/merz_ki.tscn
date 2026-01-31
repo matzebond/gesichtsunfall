@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://by3llj4sstn8u"]
+
+[ext_resource type="PackedScene" uid="uid://mmoki5vfjxv7" path="res://gesicht/merz_ki.glb" id="1_nwgt7"]
+
+[node name="merz_ki" unique_id=1762937351 instance=ExtResource("1_nwgt7")]
+
+[node name="merz" parent="." index="0" unique_id=175358513]
+transform = Transform3D(800, 0, 0, 0, -3.496911e-05, 800, 0, -800, -3.496911e-05, 0, -897.07684, 689.9357)
