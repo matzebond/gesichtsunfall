@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dtrfng2efy7xx"]
+
+[ext_resource type="PackedScene" uid="uid://vqv6gey041o1" path="res://scoring/scoring_node.tscn" id="1_w8rmb"]
+[ext_resource type="PackedScene" uid="uid://coqgf2w8jxdxq" path="res://main.tscn" id="2_6u6gf"]
+[ext_resource type="PackedScene" uid="uid://c1urnjapkoipd" path="res://level/level00.tscn" id="3_kmds4"]
+
+[node name="ScoringTest" type="Node3D" unique_id=499059369]
+
+[node name="ScoringNode" parent="." unique_id=1333813495 node_paths=PackedStringArray("levelDecalsNode", "playerDecalsNode") instance=ExtResource("1_w8rmb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.40217, -26.990023, 16.85177)
+levelDecalsNode = NodePath("../Level")
+playerDecalsNode = NodePath("../root")
+
+[node name="root" parent="." unique_id=1124768642 instance=ExtResource("2_6u6gf")]
+
+[node name="Level" parent="." unique_id=159555151 instance=ExtResource("3_kmds4")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -42.385284, -9.280636)
+visible = false
