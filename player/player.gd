@@ -39,7 +39,7 @@ var downforce: Vector3
 @export var downforce_factor: float = 50.0 # Pushes car down at speed
 
 @export_group("Brush")
-var brush_down = true
+var brush_down = false
 
 # Arm-Bewegungs-Zeug
 var arm_angle = 0
@@ -51,6 +51,7 @@ var disable_controls = false
 func _ready() -> void:
 	for wheel: VehicleWheel3D in [front_left_wheel, front_right_wheel]:
 		pass # man könnte hier iwie was berechnen
+	$GPUParticles3D.emitting = brush_down
 	spawn_position = position
 		
 func _process(delta: float) -> void:
@@ -128,6 +129,10 @@ func any_wheel_in_contact():
 
 func toggle_brush() -> void:
 	brush_down = !brush_down
+	$GPUParticles3D.emitting = brush_down
+	
+func set_particle_color(color: Color):
+	$GPUParticles3D.draw_pass_1.material.albedo_color = color
 	
 func reset_position():
 	position = spawn_position
@@ -148,3 +153,6 @@ func _on_game_state_manager_playing_started(_game_timer: Timer) -> void:
 
 func _on_game_state_manager_playing_done() -> void:
 	disable_controls = true
+	
+func _on_decal_spawner_color_changed(color: Color) -> void:
+	set_particle_color(color)

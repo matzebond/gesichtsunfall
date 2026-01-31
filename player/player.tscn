@@ -24,7 +24,7 @@ initial_velocity_max = 5.0
 [sub_resource type="Gradient" id="Gradient_oul6g"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0.45238096, 1)
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_rkbax"]
 gradient = SubResource("Gradient_oul6g")
@@ -450,3 +450,5 @@ mesh = SubResource("ArrayMesh_lmiwe")
 transform = Transform3D(0.18010275, 0, 0, 0, 0.6109561, 0, 0, 0, 0.18010275, -0.43270466, 0.5182075, -0.08908683)
 layers = 2
 mesh = SubResource("ArrayMesh_4pbki")
+
+[connection signal="color_changed" from="DecalSpawner" to="." method="_on_decal_spawner_color_changed"]
