@@ -39,6 +39,10 @@ func _process(_delta: float) -> void:
 				selected_brush_color = brush_colors[brush]
 				print("Selected brush ", brush + 1)
 				break
+	if Input.is_action_just_pressed("player_increase_brush_size"):
+		change_size(0.5)
+	elif Input.is_action_just_pressed("player_decrease_brush_size"):
+		change_size(-0.5)
 
 	if spawning_enabled and decal_spawn_point.global_position.distance_to(last_pos) > distance_threshold:
 		_spawn_decal()
@@ -56,9 +60,14 @@ func _spawn_decal():
 
 func paint_over_decals(new_decal_position: Vector3):
 	var decals_to_remove = []
+	var overlap_threshold = 0.8
+	var new_radius = size / 2.0
 	for decal in spawned_decals:
-		if decal.position.distance_to(new_decal_position) < 0.8 and decal.modulate != selected_brush_color:
-			decals_to_remove.append(decal)
+		var existing_radius = decal.size.x / 2.0
+		var max_distance = (existing_radius + new_radius) * overlap_threshold
+		if decal.position.distance_to(new_decal_position) < max_distance:
+			if decal.modulate != selected_brush_color:
+				decals_to_remove.append(decal)
 	for i in range(spawned_decals.size() - 1, -1, -1):
 		if spawned_decals[i] in decals_to_remove:
 			spawned_decals[i].queue_free()
