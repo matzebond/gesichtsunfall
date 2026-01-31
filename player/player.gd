@@ -51,10 +51,9 @@ func _ready() -> void:
 	spawn_position = position
 
 func _process(delta: float) -> void:
-	if arm_angle < 360:
-		arm_angle += delta * 5
-	else:
-		arm_angle = 0
+	
+	arm_angle = fmod(arm_angle + delta * linear_velocity.length_squared() * 0.1, 360)
+	
 	$player_model/arm_mit_hut.rotation = Vector3(-arm_angle,0,0)
 
 	# Handle scene reset
