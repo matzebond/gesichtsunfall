@@ -33,6 +33,7 @@ func load_level(level_scene: PackedScene):
 	$ScoringNode.levelDecalsNode = new_level
 
 func _ready():
-	load_level(Global.selected_level)
+	if Global.selected_level:
+		load_level(Global.selected_level)
 	
 	
