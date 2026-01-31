@@ -26,8 +26,6 @@ func save():
 	var root = Node3D.new()
 	root.name = "Level"
 	for child in $Decals.get_children():
-		if child == decal_spawner.root_node:
-			continue
 		var duplicated_child = child.duplicate()
 		root.add_child(duplicated_child)
 	_set_owner_recursive(root, root)
