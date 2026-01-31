@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b4dhm7h2dvl66" path="res://ui/game_ui.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://hx2vfkfspbhn" path="res://global_player_cam.gd" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dkelp60jagl1e" path="res://game_state/game_state_manager.tscn" id="5_lquwl"]
-[ext_resource type="Script" uid="uid://coad6f6mm35op" path="res://area_3d.gd" id="7_5vw27"]
+[ext_resource type="Script" uid="uid://buabsabuo7yhv" path="res://game_state/dynamic_camera.gd" id="7_4c57u"]
+[ext_resource type="Script" path="res://area_3d.gd" id="7_5vw27"]
 [ext_resource type="AudioStream" uid="uid://b3527wgiyspso" path="res://gui/nomnom.wav" id="8_4c57u"]
 [ext_resource type="Texture2D" uid="uid://dcaofdty3phmt" path="res://gui/verputzt.png" id="8_kek77"]
 
@@ -33,6 +34,16 @@ target = NodePath("../player")
 [node name="GameUI" parent="." unique_id=1594824260 instance=ExtResource("3_h2yge")]
 
 [node name="GameStateManager" parent="." unique_id=1001160322 instance=ExtResource("5_lquwl")]
+debug = true
+
+[node name="PreviewStaticCamera" type="Camera3D" parent="." unique_id=1926876491]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 76.92769, 18.186455)
+
+[node name="DynamicCamera" type="Camera3D" parent="." unique_id=234388864 node_paths=PackedStringArray("static_camera", "player")]
+transform = Transform3D(1, -8.742278e-08, 8.742277e-08, 8.742278e-08, 1, 5.3731366e-16, -8.742277e-08, 7.1054274e-15, 1, 6.725232e-06, 95.114136, 95.11414)
+script = ExtResource("7_4c57u")
+static_camera = NodePath("../PreviewStaticCamera")
+player = NodePath("../player")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=397403153]
 script = ExtResource("7_5vw27")
@@ -55,8 +66,11 @@ texture = ExtResource("8_kek77")
 expand_mode = 2
 
 [connection signal="playing_done" from="GameStateManager" to="GameUI" method="_on_game_state_manager_playing_done"]
+[connection signal="playing_done" from="GameStateManager" to="DynamicCamera" method="_on_game_state_manager_playing_done"]
 [connection signal="playing_started" from="GameStateManager" to="GameUI" method="_on_game_state_manager_playing_started"]
+[connection signal="playing_started" from="GameStateManager" to="DynamicCamera" method="_on_game_state_manager_playing_started"]
 [connection signal="preview_started" from="GameStateManager" to="GameUI" method="_on_game_state_manager_preview_started"]
+[connection signal="preview_started" from="GameStateManager" to="DynamicCamera" method="_on_game_state_manager_preview_started"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 
 [editable path="gesicht"]

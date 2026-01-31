@@ -63,3 +63,6 @@ func spawn_decal():
 	var t = trail_scene.instantiate()
 	get_parent().add_child(t)
 	t.global_position = decal_spawn_point.global_position
+
+func get_camera() -> Camera3D:
+	return $SpringArm3D/Camera3D
