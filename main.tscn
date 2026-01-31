@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://b4dhm7h2dvl66" path="res://ui/game_ui.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://hx2vfkfspbhn" path="res://global_player_cam.gd" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dkelp60jagl1e" path="res://game_state/game_state_manager.tscn" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://coad6f6mm35op" path="res://area_3d.gd" id="7_5vw27"]
+[ext_resource type="AudioStream" uid="uid://b3527wgiyspso" path="res://gui/nomnom.wav" id="8_4c57u"]
+[ext_resource type="Texture2D" uid="uid://dcaofdty3phmt" path="res://gui/verputzt.png" id="8_kek77"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
+size = Vector3(45, 16, 18)
 
 [node name="root" type="Node3D" unique_id=1124768642]
 
@@ -28,8 +34,29 @@ target = NodePath("../player")
 
 [node name="GameStateManager" parent="." unique_id=1001160322 instance=ExtResource("5_lquwl")]
 
+[node name="Area3D" type="Area3D" parent="." unique_id=397403153]
+script = ExtResource("7_5vw27")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=819064943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.5, -27.5)
+shape = SubResource("BoxShape3D_4c57u")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area3D" unique_id=449942279]
+stream = ExtResource("8_4c57u")
+
+[node name="TextureRect" type="TextureRect" parent="Area3D" unique_id=2052095938]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_kek77")
+expand_mode = 2
+
 [connection signal="playing_done" from="GameStateManager" to="GameUI" method="_on_game_state_manager_playing_done"]
 [connection signal="playing_started" from="GameStateManager" to="GameUI" method="_on_game_state_manager_playing_started"]
 [connection signal="preview_started" from="GameStateManager" to="GameUI" method="_on_game_state_manager_preview_started"]
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 
 [editable path="gesicht"]
