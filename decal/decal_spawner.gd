@@ -16,7 +16,10 @@ var selected_brush_color: Color
 var last_pos = Vector3.ZERO
 var distance_threshold = 0.5
 var spawning_enabled = false
-var size = 2.0
+@export var size = 2.0
+@export var size_increase = 0.5
+@export var max_size = 100
+@export var min_size = 1
 
 func _ready() -> void:
 	assert(len(brush_colors) > 0, "Must set at least one brush color")
@@ -29,7 +32,7 @@ func enable_spawning(enable: bool):
 
 func change_size(amount: float):
 	size += amount
-	size = clamp(size, 1.0, 10.0)
+	size = clamp(size, min_size, max_size)
 	print("Updated brush size to ", size)
 
 func _process(_delta: float) -> void:
@@ -43,25 +46,29 @@ func _process(_delta: float) -> void:
 				color_changed.emit(selected_brush_color)
 				break
 	if Input.is_action_just_pressed("player_increase_brush_size"):
-		change_size(0.5)
+		change_size(size_increase)
 	elif Input.is_action_just_pressed("player_decrease_brush_size"):
-		change_size(-0.5)
+		change_size(-size_increase)
 
 	if spawning_enabled and decal_spawn_point.global_position.distance_to(last_pos) > distance_threshold:
 		spawn_decal()
 		last_pos = decal_spawn_point.global_position
 
-func spawn_decal():
+func spawn_decal(new_decal_position = null):
+	if new_decal_position == null:
+		new_decal_position = decal_spawn_point.global_position
 	var d = decal_scene.instantiate()
 	root_node.add_child(d)
-	var new_decal_position = decal_spawn_point.global_position
 	d.global_position = new_decal_position
+	print(d.global_position)
 	d.size = Vector3(size, size, size)
 	d.modulate = selected_brush_color
+	print(d.position)
 	paint_over_decals(d.position)
 	spawned_decals.append(d)
 
 func paint_over_decals(new_decal_position: Vector3):
+	print(new_decal_position)
 	var decals_to_remove = []
 	var overlap_threshold = 0.8
 	var new_radius = size / 2.0
@@ -71,6 +78,22 @@ func paint_over_decals(new_decal_position: Vector3):
 		if decal.position.distance_to(new_decal_position) < max_distance:
 			if decal.modulate != selected_brush_color:
 				decals_to_remove.append(decal)
+	print("remove ", len(decals_to_remove))
+	for i in range(spawned_decals.size() - 1, -1, -1):
+		if spawned_decals[i] in decals_to_remove:
+			spawned_decals[i].queue_free()
+			spawned_decals.remove_at(i)
+			
+func erase_decals(new_decal_position: Vector3):
+	print(new_decal_position)
+	var decals_to_remove = []
+	var overlap_threshold = 0.8
+	var new_radius = size / 2.0
+	for decal in spawned_decals:
+		var existing_radius = decal.size.x / 2.0
+		var max_distance = (existing_radius + new_radius) * overlap_threshold
+		if decal.position.distance_to(new_decal_position) < max_distance:
+			decals_to_remove.append(decal)
 	for i in range(spawned_decals.size() - 1, -1, -1):
 		if spawned_decals[i] in decals_to_remove:
 			spawned_decals[i].queue_free()

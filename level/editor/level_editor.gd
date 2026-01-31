@@ -11,16 +11,21 @@ var distance_threshold = 0.5
 @export var save_path = "res://level/editor/level.tscn"
 
 func _process(delta: float) -> void:
-	var pressed = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)	
-	if pressed:
+	var paint = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
+	var erase = Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT)
+	
+	if paint or erase:
 		var mouse_pos = camera.get_viewport().get_mouse_position()
 		ray_cast.position = camera.project_ray_origin(mouse_pos)
 		ray_cast.target_position = camera.project_ray_normal(mouse_pos) * 1000
-		
+
 		if ray_cast.is_colliding():
-			decal_spawn_point.global_position = ray_cast.get_collision_point()
-			decal_spawner.spawn_decal()
-			
+			var pos = ray_cast.get_collision_point()
+			if paint:
+				decal_spawner.spawn_decal(pos)
+			elif erase:
+				decal_spawner.erase_decals(pos)
+
 func save():
 	$CanvasLayer/Label.text = "Saving..."
 	var root = Node3D.new()
