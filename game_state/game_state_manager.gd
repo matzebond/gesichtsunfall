@@ -3,6 +3,7 @@ extends Node
 @export var debug: bool = false
 
 signal preview_started()
+signal preview_done()
 signal playing_started(game_timer: Timer)
 signal playing_done()
 
@@ -21,6 +22,7 @@ func _ready() -> void:
 
 func set_current_state(new_state: GameState):
 	print("GameStateManager: entering state ", GameState.keys()[new_state])
+	
 	current_state = new_state
 	
 	match current_state:
@@ -29,6 +31,8 @@ func set_current_state(new_state: GameState):
 			preview_started.emit()
 		GameState.PLAYING:
 			$PlayingTimer.start()
+			if not debug:
+				preview_done.emit()
 			playing_started.emit($PlayingTimer)
 		GameState.RATING:
 			playing_done.emit()

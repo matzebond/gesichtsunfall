@@ -13,13 +13,11 @@ func _on_game_state_manager_preview_started() -> void:
 	_copy_camera_pose(static_camera, self)
 	self.current = true
 
-
-func _on_game_state_manager_playing_started(game_timer: Timer) -> void:
+func _on_game_state_manager_preview_done() -> void:
 	_interpolate_camera(self, static_camera, player_camera, 0.7)
 
 func _on_game_state_manager_playing_done() -> void:
 	_interpolate_camera(self, player_camera, static_camera, 0.7)
-	
 
 func _copy_camera_pose(source_camera: Camera3D, target_camera: Camera3D) -> void:
 	target_camera.global_transform = source_camera.global_transform
