@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://3fcf3nkdn5su"]
 
 [ext_resource type="Script" uid="uid://ctuuxdhbpmy2n" path="res://player/player.gd" id="1_7y2xn"]
+[ext_resource type="PackedScene" uid="uid://ddj7iodaol0cy" path="res://decal/decal_spawner.tscn" id="2_rkbax"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rkbax"]
 size = Vector3(1.1499634, 1.9387074, 1)
@@ -190,7 +191,6 @@ front_left_wheel = NodePath("VehicleWheel3DFrontLeft")
 front_right_wheel = NodePath("VehicleWheel3DFrontRight")
 rear_left_wheel = NodePath("VehicleWheel3DBackLeft")
 rear_right_wheel = NodePath("VehicleWheel3DBackLeft")
-brush_colors = Array[Color]([Color(0.9437293, 0.7933064, 0.18490851, 1), Color(0.91240376, 0.2230595, 0.45916617, 1), Color(0.25798154, 0.6871544, 0.4016019, 1), Color(0.7435644, 0.16701159, 0.81802505, 1), Color(0.92156863, 0.03137255, 0, 1), Color(0.851769, 0.8517689, 0.85176885, 1), Color(0, 0, 0.6745098, 1), Color(0.47843137, 0.23137255, 0.7882353, 1), Color(0, 0, 0, 1)])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=301575850]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.29036236, 1.1234249, 0)
@@ -249,6 +249,10 @@ suspension_stiffness = 50.0
 transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, -1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 0, 0, 0)
 layers = 2
 mesh = SubResource("CylinderMesh_rkbax")
+
+[node name="DecalSpawner" parent="." unique_id=818907089 node_paths=PackedStringArray("decal_spawn_point", "root_node") instance=ExtResource("2_rkbax")]
+decal_spawn_point = NodePath("../DecalSpawnPoint")
+root_node = NodePath("..")
 
 [node name="DecalSpawnPoint" type="Node3D" parent="." unique_id=15448948]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4310081, 0, 0)

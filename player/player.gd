@@ -1,13 +1,5 @@
 extends VehicleBody3D
 
-@onready var decal_spawn_point = $DecalSpawnPoint
-
-var decal_scene = preload("res://player/decal.tscn")
-
-# Decal Zeug
-var last_pos = Vector3.ZERO
-var distance_threshold = 0.5
-
 # Movement Zeug
 var throttle: float = 0.0
 var steering_input: float = 0.0
@@ -44,11 +36,12 @@ var downforce: Vector3
 @export var anti_roll_force: float = 20.0  # Force to resist rolling
 @export var downforce_factor: float = 50.0 # Pushes car down at speed
 
-# Brush Zeug
 @export_group("Brush")
 var brush_down = true
-@export var brush_colors: Array[Color]
-var selected_brush_color: Color
+
+# Decal Zeug
+var last_pos = Vector3.ZERO
+var distance_threshold = 0.5
 
 # Arm-Bewegungs-Zeug
 var arm_angle = 0
@@ -57,10 +50,6 @@ var disable_controls = false
 
 
 func _ready() -> void:
-	assert(len(brush_colors) > 0, "Must set at least one brush color")
-	assert(len(brush_colors) <= 9, "At most 9 brush colors are supported")
-	selected_brush_color = brush_colors[0]
-	
 	for wheel: VehicleWheel3D in [front_left_wheel, front_right_wheel]:
 		pass # man könnte hier iwie was berechnen
 		
@@ -90,7 +79,6 @@ func _physics_process(delta):
 	handle_speed_based_downforce()
 
 	process_decal()
-	process_brush_selected()
 
 func handle_vehicle_control(delta):
 	steering_input = Input.get_axis("player_right", "player_left")
@@ -127,24 +115,8 @@ func toggle_brush() -> void:
 
 func process_decal():
 	if brush_down and global_position.distance_to(last_pos) > distance_threshold:
-		spawn_decal()
+		$DecalSpawner.spawn_decal()
 		last_pos = global_position
-
-func process_brush_selected():
-	var brush_count = 9
-	for brush in range(brush_count):
-		if Input.is_action_just_pressed("player_brush_" + str(brush + 1)):
-			# Check if valid brush color
-			if brush < len(brush_colors):
-				selected_brush_color = brush_colors[brush]
-				print("Selected brush ", brush + 1)
-				break
-
-func spawn_decal():
-	var d = decal_scene.instantiate()
-	get_parent().add_child(d)
-	d.global_position = decal_spawn_point.global_position
-	d.modulate = selected_brush_color
 
 func get_camera() -> Camera3D:
 	return $SpringArm3D/Camera3D
