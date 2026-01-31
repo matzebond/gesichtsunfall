@@ -50,9 +50,9 @@ func evaluate():
 	for decalIndex in range(checkProgress,checkProgress+checksPerFrame):
 		if(decalIndex >= levelDecalPositions.size()):
 			break
-		for compareDecal in decalPositions.size():
+		for compareDecalIndex in decalPositions.size():
 			if levelDecalValid[decalIndex] == false:
-				if levelDecalPositions[decalIndex].distance_squared_to(decalPositions[compareDecal]) <= checkRadius:
+				if (levelDecalPositions[decalIndex].distance_squared_to(decalPositions[compareDecalIndex]) <= checkRadius) and (levelDecalColors[decalIndex]==decalColors[compareDecalIndex]):
 					levelDecalValid[decalIndex] = true
 					if(fakeDecalToggle):
 						levelFakeDecals[decalIndex].visible = false

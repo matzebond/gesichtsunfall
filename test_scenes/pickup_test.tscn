@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c4mejtt3sjnhd"]
+
+[ext_resource type="Script" uid="uid://he7esulmg7tu" path="res://test_scenes/pickup_test.gd" id="1_rc4di"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t6x36"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rc4di"]
+size = Vector3(1, 1.4404297, 1)
+
+[node name="Pickup" type="Node3D" unique_id=1450586532]
+script = ExtResource("1_rc4di")
+
+[node name="Timer" type="Timer" parent="." unique_id=1749203887]
+one_shot = true
+
+[node name="Pivot" type="Node3D" parent="." unique_id=645157376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot" unique_id=113463479]
+transform = Transform3D(0.8915052, -0.45301053, 0, 0.45301053, 0.8915052, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_t6x36")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2141264107]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1414722652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_rc4di")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
