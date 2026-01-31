@@ -5,6 +5,7 @@ extends Node3D
 
 # Decal Zeug
 var decal_scene = preload("res://decal/decal.tscn")
+var spawned_decals: Array[Decal] = []
 
 # Brush Zeug
 @export var brush_colors: Array[Color]
@@ -26,9 +27,22 @@ func enable_spawning(enable: bool):
 func _spawn_decal():
 	var d = decal_scene.instantiate()
 	root_node.get_parent().add_child(d)
-	d.global_position = decal_spawn_point.global_position
+	var new_decal_position = decal_spawn_point.global_position
+	d.global_position = new_decal_position
 	d.modulate = selected_brush_color
+	paint_over_decals(d.position)
+	spawned_decals.append(d)
 
+func paint_over_decals(new_decal_position: Vector3):
+	var decals_to_remove = []
+	for decal in spawned_decals:
+		if decal.position.distance_to(new_decal_position) < 0.8 and decal.modulate != selected_brush_color:
+			decals_to_remove.append(decal)
+	for i in range(spawned_decals.size() - 1, -1, -1):
+		if spawned_decals[i] in decals_to_remove:
+			spawned_decals[i].queue_free()
+			spawned_decals.remove_at(i)
+			
 func _process(_delta: float) -> void:
 	var brush_count = 9
 	for brush in range(brush_count):
