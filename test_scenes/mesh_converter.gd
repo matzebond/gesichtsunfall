@@ -57,7 +57,6 @@ func importMarkers():
 	markerColors = JSON.parse_string(save_file.get_line())
 	save_file.close()
 	for i in markerPositions.size():
-		
 		createMarker(str_to_var(markerPositions[i]),str_to_var(markerColors[i]),str(i))
 	pass
 
