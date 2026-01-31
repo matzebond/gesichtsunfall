@@ -6,7 +6,7 @@ var steering_input: float = 0.0
 
 @export_group("Speed")
 ## hängt auf jeden fall von mass ab
-@export var ENGINE_POWER = 450
+@export var ENGINE_POWER = 550
 ## alles fake
 @export var max_speed = 50.0
 ## eben so fake
@@ -14,7 +14,7 @@ var steering_input: float = 0.0
 var vehicle_linear_velocity: float = 0.0
 
 @export_group("Steering & Brake")
-@export var steering_speed = 5.5
+@export var steering_speed = 1.5
 @export var max_steering_angle = 0.65
 @export var handbrake_force = 5.0
 var handbrake: bool = false
