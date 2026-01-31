@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://hx2vfkfspbhn" path="res://global_player_cam.gd" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dkelp60jagl1e" path="res://game_state/game_state_manager.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://buabsabuo7yhv" path="res://game_state/dynamic_camera.gd" id="7_4c57u"]
-[ext_resource type="Script" path="res://area_3d.gd" id="7_5vw27"]
+[ext_resource type="Script" uid="uid://coad6f6mm35op" path="res://area_3d.gd" id="7_5vw27"]
 [ext_resource type="AudioStream" uid="uid://b3527wgiyspso" path="res://gui/nomnom.wav" id="8_4c57u"]
 [ext_resource type="Texture2D" uid="uid://dcaofdty3phmt" path="res://gui/verputzt.png" id="8_kek77"]
 
@@ -43,7 +43,6 @@ static_camera = NodePath("../PreviewStaticCamera")
 player = NodePath("../player")
 
 [node name="GameStateManager" parent="." unique_id=1001160322 instance=ExtResource("5_lquwl")]
-debug = true
 
 [node name="Area3D" type="Area3D" parent="." unique_id=397403153]
 script = ExtResource("7_5vw27")
