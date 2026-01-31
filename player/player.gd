@@ -3,6 +3,8 @@ extends VehicleBody3D
 # Movement Zeug
 var throttle: float = 0.0
 
+var prev_brush_down = false
+
 @export_group("Speed")
 ## hängt auf jeden fall von mass ab
 @export var ENGINE_POWER = 550
@@ -42,6 +44,9 @@ var downforce: Vector3
 var arm_angle = 0
 var spawn_position
 var disable_controls = false
+
+var in_air_time = 0
+var allow_yeehaw = 0
 
 
 func _ready() -> void:
@@ -109,9 +114,21 @@ func handle_speed_based_downforce():
 	apply_central_force(downforce)
 
 func handle_air_control(delta):
+	
 	var in_air = not any_wheel_in_contact()
-	if not in_air:
+	
+	if in_air:
+		in_air_time += get_process_delta_time()
+	else:
+		if in_air_time > 1:
+			AudioManager.play_one_shot("Land", transform)
+		in_air_time = 0
+		allow_yeehaw -= get_process_delta_time()
 		return
+		
+	if in_air_time >= 0.1 and allow_yeehaw <= 0:
+		AudioManager.play_one_shot("Yeehaw", transform)
+		allow_yeehaw = 5
 
 	var air_control_torque = global_transform.basis.y * steering_input * steering_speed_air
 	apply_torque(air_control_torque * delta)
@@ -121,13 +138,6 @@ func any_wheel_in_contact():
 		if wheel.is_in_contact():
 			return true
 	return false
-
-func toggle_brush() -> void:
-	brush_down = !brush_down
-	if brush_down:
-		AudioManager.play_event("Painting")
-	else:
-		AudioManager.stop_event("Painting")
 	
 func set_particle_color(color: Color):
 	$GPUParticles3D.draw_pass_1.material.albedo_color = color
@@ -136,6 +146,11 @@ func handle_decal():
 	var brush_down = Input.is_action_pressed("player_brush_down")
 	$GPUParticles3D.emitting = brush_down
 	$DecalSpawner.enable_spawning(brush_down)
+	if brush_down and not prev_brush_down:
+		AudioManager.play_event("Painting")
+	elif not brush_down and prev_brush_down:
+		AudioManager.stop_event("Painting")
+	prev_brush_down = brush_down
 
 func reset_position():
 	position = spawn_position

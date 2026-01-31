@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dbwulax7p345n"
+path="res://.godot/imported/Kieferbruch.mp3-f6cee215c2be7a821dfb47b379610b16.mp3str"
+
+[deps]
+
+source_file="res://fmod/gesichtsunfall 2.03/Assets/Kieferbruch.mp3"
+dest_files=["res://.godot/imported/Kieferbruch.mp3-f6cee215c2be7a821dfb47b379610b16.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

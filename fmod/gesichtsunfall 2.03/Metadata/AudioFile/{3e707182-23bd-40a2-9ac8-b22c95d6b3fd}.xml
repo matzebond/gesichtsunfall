@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{3e707182-23bd-40a2-9ac8-b22c95d6b3fd}">
+		<property name="assetPath">
+			<value>eat-03.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.618125</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{33e52964-01f8-440c-8484-724d496e9cd0}</destination>
+		</relationship>
+	</object>
+</objects>

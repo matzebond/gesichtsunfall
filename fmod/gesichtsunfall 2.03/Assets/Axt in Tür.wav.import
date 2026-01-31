@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://gde450b8l8gp"
+path="res://.godot/imported/Axt in Tür.wav-705b77a5ca144e48ee93ada9c845d540.sample"
+
+[deps]
+
+source_file="res://fmod/gesichtsunfall 2.03/Assets/Axt in Tür.wav"
+dest_files=["res://.godot/imported/Axt in Tür.wav-705b77a5ca144e48ee93ada9c845d540.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

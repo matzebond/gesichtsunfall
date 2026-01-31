@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{6ba16640-1b17-49b5-83c0-7c6034e81c79}">
+		<property name="assetPath">
+			<value>Axt zerbricht.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.45308390022675737</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{33e52964-01f8-440c-8484-724d496e9cd0}</destination>
+		</relationship>
+	</object>
+</objects>

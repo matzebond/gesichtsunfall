@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{772b43f1-59c5-4a50-8876-15419171183e}">
+		<property name="assetPath">
+			<value>sneeze.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.94040816326530607</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{33e52964-01f8-440c-8484-724d496e9cd0}</destination>
+		</relationship>
+	</object>
+</objects>

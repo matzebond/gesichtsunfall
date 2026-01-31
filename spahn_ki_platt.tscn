@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bsguomweibuj0"]
+[gd_scene load_steps=0 format=3 uid="uid://bsguomweibuj0"]
 
 [ext_resource type="PackedScene" uid="uid://dvpo78loegqfe" path="res://gesicht/spahn_ki_platt.glb" id="1_atvpq"]
 
