@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2dx672y2jms7"
+path="res://.godot/imported/car-accident-with-squeal-and-crash-6054.mp3-0e06636705b1da4ccf3a47bbcb03c358.mp3str"
+
+[deps]
+
+source_file="res://fmod/gesichtsunfall 2.03/Assets/car-accident-with-squeal-and-crash-6054.mp3"
+dest_files=["res://.godot/imported/car-accident-with-squeal-and-crash-6054.mp3-0e06636705b1da4ccf3a47bbcb03c358.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,6 +1,7 @@
 extends Node
 
 var bgm_event: FmodEvent = null
+var suppress_snapshot: FmodEvent = null
 var events: Dictionary = {}
 
 # Called when the node enters the scene tree for the first time.
@@ -68,3 +69,17 @@ func stop_all(stop_mode = 0):
 	for event_name in events.keys():
 		print("stopped " + event_name)
 		stop_event(event_name, stop_mode)
+		
+func suppress_bgm(suppress):
+	if suppress:
+		if suppress_snapshot != null:
+			if suppress_snapshot.get_playback_state() == FmodServer.FMOD_STUDIO_PLAYBACK_PLAYING:
+				return
+		suppress_snapshot = FmodServer.create_event_instance("snapshot:/Suppress")
+		suppress_snapshot.start()
+	else:
+		if suppress_snapshot != null:
+			if suppress_snapshot.get_playback_state() != FmodServer.FMOD_STUDIO_PLAYBACK_PLAYING:
+				return
+		suppress_snapshot.stop(0)
+		

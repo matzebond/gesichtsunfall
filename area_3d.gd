@@ -10,4 +10,5 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body is VehicleBody3D:
 		$TextureRect.visible = true
+		AudioManager.suppress_bgm(true)
 		AudioManager.play_one_shot("Nomnom")

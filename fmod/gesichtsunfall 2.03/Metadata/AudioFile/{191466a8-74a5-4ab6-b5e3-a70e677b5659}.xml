@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{191466a8-74a5-4ab6-b5e3-a70e677b5659}">
+		<property name="assetPath">
+			<value>car-accident-with-squeal-and-crash-6054.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.504</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{33e52964-01f8-440c-8484-724d496e9cd0}</destination>
+		</relationship>
+	</object>
+</objects>

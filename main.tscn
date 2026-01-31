@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://coqgf2w8jxdxq"]
+[gd_scene load_steps=20 format=3 uid="uid://coqgf2w8jxdxq"]
 
-[ext_resource type="Script" uid="uid://nbui8baxuiud" path="res://world_environment.gd" id="1_w48qg"]
+[ext_resource type="Script" path="res://world_environment.gd" id="1_w48qg"]
 [ext_resource type="PackedScene" uid="uid://3fcf3nkdn5su" path="res://player/player.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b4dhm7h2dvl66" path="res://ui/game_ui.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dkelp60jagl1e" path="res://game_state/game_state_manager.tscn" id="5_lquwl"]
@@ -36,44 +36,44 @@ size = Vector3(45, 10.68988, 12.757294)
 [sub_resource type="BoxShape3D" id="BoxShape3D_efxa6"]
 size = Vector3(11.416946, 3.0893784, 7.806549)
 
-[node name="root" type="Node3D" unique_id=1124768642]
+[node name="root" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2036193609]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vivmo")
 script = ExtResource("1_w48qg")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1934783813]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10.929583, 0)
 
-[node name="player" parent="." unique_id=116514080 instance=ExtResource("2_1bvp3")]
+[node name="player" parent="." instance=ExtResource("2_1bvp3")]
 transform = Transform3D(-0.24789521, 0, -0.96878684, 0, 1, 0, 0.96878684, 0, -0.24789521, -0.33164597, -11.117437, 55.410625)
 
-[node name="GameUI" parent="." unique_id=1594824260 instance=ExtResource("3_h2yge")]
+[node name="GameUI" parent="." instance=ExtResource("3_h2yge")]
 
-[node name="PreviewStaticCamera" type="Camera3D" parent="." unique_id=1926876491]
+[node name="PreviewStaticCamera" type="Camera3D" parent="."]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 76.92769, 18.186455)
 
-[node name="RatingStaticCamera" type="Camera3D" parent="." unique_id=1712956160]
+[node name="RatingStaticCamera" type="Camera3D" parent="."]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, -59.892223, 76.92769, 18.186455)
 
-[node name="DynamicCamera" type="Camera3D" parent="." unique_id=234388864 node_paths=PackedStringArray("static_camera_preview", "static_camera_rating", "player")]
+[node name="DynamicCamera" type="Camera3D" parent="." node_paths=PackedStringArray("static_camera_preview", "static_camera_rating", "player")]
 transform = Transform3D(1, -8.742278e-08, 8.742277e-08, 8.742278e-08, 1, 5.3731366e-16, -8.742277e-08, 7.1054274e-15, 1, 6.725232e-06, 95.114136, 95.11414)
 script = ExtResource("7_4c57u")
 static_camera_preview = NodePath("../PreviewStaticCamera")
 static_camera_rating = NodePath("../RatingStaticCamera")
 player = NodePath("../player")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=397403153]
+[node name="Area3D" type="Area3D" parent="."]
 script = ExtResource("7_5vw27")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=819064943]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31.15506, -20.78209)
 shape = SubResource("BoxShape3D_4c57u")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area3D" unique_id=449942279]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area3D"]
 stream = ExtResource("8_4c57u")
 
-[node name="TextureRect" type="TextureRect" parent="Area3D" unique_id=2052095938]
+[node name="TextureRect" type="TextureRect" parent="Area3D"]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,39 +83,39 @@ grow_vertical = 2
 texture = ExtResource("8_kek77")
 expand_mode = 2
 
-[node name="ScreenshotManager" parent="." unique_id=1855676447 instance=ExtResource("11_efxa6")]
+[node name="ScreenshotManager" parent="." instance=ExtResource("11_efxa6")]
 
-[node name="LevelManager" type="Node3D" parent="." unique_id=1885099075]
+[node name="LevelManager" type="Node3D" parent="."]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, -41.118, -7.183)
 script = ExtResource("10_dg77c")
 
-[node name="LevelMesh" type="Node3D" parent="LevelManager" unique_id=1510180362]
+[node name="LevelMesh" type="Node3D" parent="LevelManager"]
 
-[node name="Gesicht" parent="LevelManager/LevelMesh" unique_id=760186603 instance=ExtResource("10_4c57u")]
+[node name="Gesicht" parent="LevelManager/LevelMesh" instance=ExtResource("10_4c57u")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 
-[node name="LevelObjectiveMesh" type="Node3D" parent="LevelManager" unique_id=933945438]
+[node name="LevelObjectiveMesh" type="Node3D" parent="LevelManager"]
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122, 0, 0)
 
-[node name="Gesicht" parent="LevelManager/LevelObjectiveMesh" unique_id=1491393802 instance=ExtResource("10_4c57u")]
+[node name="Gesicht" parent="LevelManager/LevelObjectiveMesh" instance=ExtResource("10_4c57u")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 
-[node name="Level" parent="LevelManager/LevelObjectiveMesh" unique_id=159555151 instance=ExtResource("11_dg77c")]
+[node name="Level" parent="LevelManager/LevelObjectiveMesh" instance=ExtResource("11_dg77c")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="nasenwind" type="Area3D" parent="." unique_id=442696100]
+[node name="nasenwind" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31.15506, -20.78209)
 script = ExtResource("12_w48qg")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="nasenwind" unique_id=642082464]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="nasenwind"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4847031, 12.065269, 16.167948)
 shape = SubResource("BoxShape3D_efxa6")
 
-[node name="hatschi" type="AudioStreamPlayer" parent="nasenwind" unique_id=346290161]
+[node name="hatschi" type="AudioStreamPlayer" parent="nasenwind"]
 stream = ExtResource("12_dg77c")
 
-[node name="GameStateManager" parent="." unique_id=1001160322 instance=ExtResource("5_lquwl")]
+[node name="GameStateManager" parent="." instance=ExtResource("5_lquwl")]
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="nasenwind" to="nasenwind" method="_on_body_entered"]
