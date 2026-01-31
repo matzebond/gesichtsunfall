@@ -1,42 +1,28 @@
 @tool
 extends Node
 
-enum FaceScenes {
-	MERZ_TOON,
-	MERZ_REAL,
-	SPAHN_REAL,
-	SPAHN_TOON,
-	SUZANNE,
-}
-
-const FACE_SCENE_PATHS = {
-	FaceScenes.SPAHN_REAL: "res://gesicht/spahn_ki_platt.tscn",
-	FaceScenes.SPAHN_TOON: "res://gesicht/spahn_toon.tscn",
-	FaceScenes.MERZ_TOON: "res://gesicht/merz_toon.tscn",
-	FaceScenes.MERZ_REAL: "res://gesicht/merz_ki.tscn",
-	FaceScenes.SUZANNE: "res://gesicht/suzanne.tscn",
-}
-
-@export var selected_face: FaceScenes = FaceScenes.SPAHN_REAL:
+var face_scene: PackedScene
+@export var selected_face: Global.FaceScenes = Global.FaceScenes.SPAHN_REAL:
 	set(value):
 		selected_face = value
-		_load_face_from_enum()
+		face_scene = load_face_from_enum(selected_face)
+		print(face_scene)
 		if Engine.is_editor_hint():
 			_update_face()
-
-var face_scene: PackedScene
+			
+func load_face_from_enum(selected_face):
+	print(selected_face)
+	if Global.FACE_SCENE_PATHS.has(selected_face):
+		return load(Global.FACE_SCENE_PATHS[selected_face])
+	else:
+		assert(false, "Face '%s' not found" % selected_face)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_load_face_from_enum()
+	face_scene = load_face_from_enum(selected_face)
 	if not Engine.is_editor_hint():
 		_update_face()
-
-
-func _load_face_from_enum() -> void:
-	if FACE_SCENE_PATHS.has(selected_face):
-		face_scene = load(FACE_SCENE_PATHS[selected_face])
 
 
 func _update_face() -> void:
