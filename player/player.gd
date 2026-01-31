@@ -14,11 +14,21 @@ var jump_force = 5.0
 # Brush state
 var brush_down = false
 
+# Arm-Bewegungs-Zeug
+var arm_angle = 0
+
 func _ready() -> void:
 	pass # Replace with function body.
 
 @export var MAX_STEER = 0.2
 @export var ENGINE_POWER = 450
+
+func _process(delta: float) -> void:
+	if arm_angle < 360:
+		arm_angle += delta * 5
+	else:
+		arm_angle = 0
+	$player_model/Cylinder_001.rotation = Vector3(arm_angle,0,0)
 
 func _physics_process(delta):
 	steering = move_toward(steering, Input.get_axis("player_right", "player_left") * MAX_STEER, delta * 1.5)
