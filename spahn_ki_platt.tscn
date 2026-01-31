@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bsguomweibuj0"]
+
+[ext_resource type="PackedScene" uid="uid://dvpo78loegqfe" path="res://gesicht/spahn_ki_platt.glb" id="1_atvpq"]
+
+[node name="spahn_ki_platt" unique_id=1136553383 instance=ExtResource("1_atvpq")]
+
+[node name="CollisionShape3D" parent="spahn_001/StaticBody3D" parent_id_path=PackedInt32Array(832176726) index="0" unique_id=416226317]
+visible = false
+
+[node name="spawn" type="Node3D" parent="." index="1" unique_id=127477747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6907256, 0.44756162)
