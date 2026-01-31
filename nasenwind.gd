@@ -9,5 +9,5 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body is VehicleBody3D:
 		print("hatschi mein schatzi")
-		body.apply_impulse(Vector3(0,50,-1000))
+		body.apply_impulse(Vector3(0,150,-1000))
 		$hatschi.play()
