@@ -39,10 +39,6 @@ var downforce: Vector3
 @export_group("Brush")
 var brush_down = true
 
-# Decal Zeug
-var last_pos = Vector3.ZERO
-var distance_threshold = 0.5
-
 # Arm-Bewegungs-Zeug
 var arm_angle = 0
 
@@ -120,9 +116,7 @@ func reset_position():
 	angular_velocity = Vector3.ZERO
 
 func handle_decal():
-	if brush_down and global_position.distance_to(last_pos) > distance_threshold:
-		$DecalSpawner.spawn_decal()
-		last_pos = global_position
+	$DecalSpawner.enable_spawning(brush_down)
 
 func get_camera() -> Camera3D:
 	return $SpringArm3D/Camera3D
