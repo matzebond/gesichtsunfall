@@ -18,7 +18,7 @@ var checkProgress : int = 0
 
 func _ready() -> void:
 	if(!levelDecalsNode):
-		print("ERROR: Scorer is missing node for level decals")
+		print("ERROR: Scoring node is missing node for level decals")
 		return
 	for child in levelDecalsNode.get_children():
 		if child is Decal:
@@ -37,7 +37,7 @@ func _ready() -> void:
 
 func evaluate():
 	if(!playerDecalsNode):
-		print("ERROR: Scorer is missing node for player decals")
+		print("ERROR: Scoring node is missing node for player decals")
 		return
 	if(checkProgress==0):
 		decalPositions.clear()
@@ -63,7 +63,7 @@ func evaluate():
 					levelDecalValid[decalIndex] = false
 	checkProgress+=checksPerFrame		
 	if(checkProgress>=levelDecalPositions.size()):
-		print("Decals valid: " + str(validDecals) + "/" + str(levelDecalPositions.size()))
+		#print("Decals valid: " + str(validDecals) + "/" + str(levelDecalPositions.size()))
 		$LevelProgress.value=validDecals
 		checkProgress=0
 	pass		
