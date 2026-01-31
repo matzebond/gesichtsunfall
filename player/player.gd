@@ -46,12 +46,14 @@ var distance_threshold = 0.5
 # Arm-Bewegungs-Zeug
 var arm_angle = 0
 
+var spawn_position
 var disable_controls = false
 
 
 func _ready() -> void:
 	for wheel: VehicleWheel3D in [front_left_wheel, front_right_wheel]:
 		pass # man könnte hier iwie was berechnen
+	spawn_position = position
 		
 func _process(delta: float) -> void:
 	if arm_angle < 360:
@@ -59,7 +61,6 @@ func _process(delta: float) -> void:
 	else:
 		arm_angle = 0
 	$player_model/Cylinder_001.rotation = Vector3(arm_angle,0,0)
-	
 	
 	# Handle scene reset
 	if Input.is_action_just_pressed("ui_cancel"):  # ESC key
@@ -69,16 +70,16 @@ func _physics_process(delta):
 	if disable_controls:
 		return
 
-	# Handle brush toggle
 	if Input.is_action_just_pressed("player_brush"):
 		toggle_brush()
+	if Input.is_action_just_pressed("player_reset"):
+		reset_position()
 
 	handle_vehicle_control(delta)
 	handle_engine_velocity()
 	handle_anti_roll_force()
 	handle_speed_based_downforce()
-
-	process_decal()
+	handle_decal()
 
 func handle_vehicle_control(delta):
 	steering_input = Input.get_axis("player_right", "player_left")
@@ -112,8 +113,13 @@ func any_wheel_in_contact():
 
 func toggle_brush() -> void:
 	brush_down = !brush_down
+	
+func reset_position():
+	position = spawn_position
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO
 
-func process_decal():
+func handle_decal():
 	if brush_down and global_position.distance_to(last_pos) > distance_threshold:
 		$DecalSpawner.spawn_decal()
 		last_pos = global_position
