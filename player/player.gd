@@ -47,7 +47,7 @@ var disable_controls = false
 func _ready() -> void:
 	for wheel: VehicleWheel3D in [front_left_wheel, front_right_wheel]:
 		pass # man könnte hier iwie was berechnen
-	$GPUParticles3D.emitting = brush_down
+	$GPUParticles3D.emitting = false
 	spawn_position = position
 
 func _process(delta: float) -> void:
