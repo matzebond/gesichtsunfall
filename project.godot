@@ -84,3 +84,4 @@ player_brush={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+limits/cluster_builder/max_clustered_elements=8192.0

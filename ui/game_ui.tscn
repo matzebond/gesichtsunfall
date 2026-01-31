@@ -20,7 +20,21 @@ theme = ExtResource("1_dcmab")
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=470919712]
+[node name="LabelTime" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=470919712]
 layout_mode = 2
 theme = SubResource("Theme_0xm2m")
+theme_override_font_sizes/font_size = 48
 text = "<time>"
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=69065646]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1001014526]
+layout_mode = 2
+alignment = 1
+
+[node name="LabelFps" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=411353700]
+layout_mode = 2
+theme = SubResource("Theme_0xm2m")
+text = "<fps>"
