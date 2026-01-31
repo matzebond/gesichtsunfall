@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://c8a3y6nw25tsr"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=767686827]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1604894436]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=885661661]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer" unique_id=590537286]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1378624272]
+layout_mode = 2
+
+[node name="select_lvl_1_btn" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=313127128]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1"
+
+[node name="select_lvl_2_btn" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=31399538]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2"
+
+[node name="select_lvl_3_btn" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1790984102]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "3"
+
+[node name="select_lvl_4_btn" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1544143863]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "4"
+
+[node name="select_lvl_5_btn" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=421806724]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "5"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=428896060]
+layout_mode = 2
+
+[node name="select_lvl_6_btn" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer2" unique_id=319431777]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "6"
+
+[node name="select_lvl_7_btn" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer2" unique_id=12520295]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "7"
+
+[node name="select_lvl_8_btn" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer2" unique_id=89613317]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "8"
+
+[node name="select_lvl_9_btn" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer2" unique_id=1250938076]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "9"
+
+[node name="select_lvl_10_btn" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer2" unique_id=1121127914]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "10"
