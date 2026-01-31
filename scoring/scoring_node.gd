@@ -11,8 +11,8 @@ var decalColors = []
 
 var validDecals :int = 0
 var checkProgress : int = 0
-var checksPerFrame : int = 100
-var checkRadius : float = 10.0
+@export var checksPerFrame : int = 100
+@export var checkRadius : float = 10.0
 
 @onready var fakeDecalScene = preload("res://test_scenes/fakedecal.tscn")
 
