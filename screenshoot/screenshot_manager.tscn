@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bfaf5mxvrhjrs"]
+
+[ext_resource type="Script" uid="uid://nfrkx4673tqh" path="res://screenshoot/screenshot_manager.gd" id="1_6jt8c"]
+
+[node name="ScreenshotManager" type="Node" unique_id=1855676447]
+script = ExtResource("1_6jt8c")
+
+[node name="Timer" type="Timer" parent="." unique_id=231509513]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

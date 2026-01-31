@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://coad6f6mm35op" path="res://area_3d.gd" id="7_5vw27"]
 [ext_resource type="AudioStream" uid="uid://b3527wgiyspso" path="res://gui/nomnom.wav" id="8_4c57u"]
 [ext_resource type="Texture2D" uid="uid://dcaofdty3phmt" path="res://gui/verputzt.png" id="8_kek77"]
+[ext_resource type="PackedScene" uid="uid://bfaf5mxvrhjrs" path="res://screenshoot/screenshot_manager.tscn" id="11_efxa6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
 size = Vector3(45, 16, 18)
@@ -63,6 +64,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_kek77")
 expand_mode = 2
+
+[node name="ScreenshotManager" parent="." unique_id=1855676447 instance=ExtResource("11_efxa6")]
 
 [connection signal="playing_done" from="GameStateManager" to="player" method="_on_game_state_manager_playing_done"]
 [connection signal="playing_done" from="GameStateManager" to="GameUI" method="_on_game_state_manager_playing_done"]
