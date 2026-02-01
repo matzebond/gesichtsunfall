@@ -34,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 6
 script = ExtResource("4_2oyma")
 selected_face = 0
 
-[node name="Face" type="Node3D" parent="DynamicFace" unique_id=760186603 instance=ExtResource("4_shtmm")]
+[node name="@Node3D@37307" type="Node3D" parent="DynamicFace" unique_id=760186603 instance=ExtResource("4_shtmm")]
 script = ExtResource("5_d1qx4")
 
 [node name="Decals" type="Node3D" parent="." unique_id=1856804919]

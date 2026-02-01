@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://coqgf2w8jxdxq"]
 
-[ext_resource type="Script" path="res://world_environment.gd" id="1_w48qg"]
+[ext_resource type="Script" uid="uid://nbui8baxuiud" path="res://world_environment.gd" id="1_w48qg"]
 [ext_resource type="PackedScene" uid="uid://3fcf3nkdn5su" path="res://player/player.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b4dhm7h2dvl66" path="res://ui/game_ui.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dkelp60jagl1e" path="res://game_state/game_state_manager.tscn" id="5_lquwl"]
@@ -55,7 +55,7 @@ decal_root_node = NodePath("../Decals")
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 150, -50)
 
 [node name="RatingStaticCamera" type="Camera3D" parent="." unique_id=1712956160]
-transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, -111.55047, 150, -50)
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, -110, 150, -50)
 
 [node name="DynamicCamera" type="Camera3D" parent="." unique_id=234388864 node_paths=PackedStringArray("static_camera_preview", "static_camera_rating", "player")]
 transform = Transform3D(1, -8.742278e-08, 8.742277e-08, 8.742278e-08, 1, 5.3731366e-16, -8.742277e-08, 7.1054274e-15, 1, 6.725232e-06, 95.114136, 95.11414)
@@ -98,18 +98,19 @@ script = ExtResource("10_dg77c")
 script = ExtResource("11_2cqfq")
 selected_face = 0
 load_face_from_global = true
+metadata/_edit_lock_ = true
 
 [node name="LevelObjectiveMesh" type="Node3D" parent="LevelManager" unique_id=933945438]
 process_mode = 4
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1500, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 220, 0, 0)
 
 [node name="DynamicFace" type="Node3D" parent="LevelManager/LevelObjectiveMesh" unique_id=1692515508]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1113.5607, 0, 9.735057e-05)
 script = ExtResource("11_2cqfq")
 selected_face = 0
 load_face_from_global = true
 selected_mask = "res://level/levels/SPAHN_TOON--Panzerknacker Spahn.tscn"
 load_mask_from_global = true
+metadata/_edit_lock_ = true
 
 [node name="ScoringNode" parent="LevelManager" unique_id=1333813495 node_paths=PackedStringArray("playerDecalsNode") instance=ExtResource("9_vivmo")]
 transform = Transform3D(-1, 0, 8.742278e-08, 8.742278e-08, -4.371139e-08, 1, 3.821371e-15, 1, 4.371139e-08, 6.2795783e-07, 7.182998, 41.118)
