@@ -24,6 +24,7 @@ var mistakeCheckProgress : int = 0
 
 @export var checksPerFrame : int = 100
 @export var checkRadius : float = 10.0
+@export var mistakeCheckRadius : float = 40.0
 
 @onready var fakeDecalScene = preload("res://test_scenes/fakedecal.tscn")
 
@@ -102,7 +103,7 @@ func evaluateMistakes(final = false, checks = checksPerFrame):
 			break
 		for compareDecalIndex in levelDecalPositions.size():
 			if mistakeDecalValid[mistakeDecalIndex] == true:
-				if (mistakeDecalPositions[mistakeDecalIndex].distance_squared_to(levelDecalPositions[compareDecalIndex]) <= checkRadius) and (mistakeDecalColors[mistakeDecalIndex]==levelDecalColors[compareDecalIndex]):
+				if (mistakeDecalPositions[mistakeDecalIndex].distance_squared_to(levelDecalPositions[compareDecalIndex]) <= mistakeCheckRadius) and (mistakeDecalColors[mistakeDecalIndex]==levelDecalColors[compareDecalIndex]):
 					mistakeDecalValid[mistakeDecalIndex] = false
 					mistakeDecals-=1
 	mistakeCheckProgress+=checks
