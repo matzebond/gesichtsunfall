@@ -49,10 +49,6 @@ var MASKS_PER_FACE = {
 	],
 }
 
-var COLORS_PER_MASK = {
-	"res://level/levels/SPAHN_TOON--Querdenker.tscn": []
-}
-
 func parse_mask_scene(path: String):
 	var lvl_full_name: String = path.get_file().get_basename()
 	var _t = lvl_full_name.split("--") # by convention (enforced by the new level editor)
@@ -63,21 +59,18 @@ func parse_mask_scene(path: String):
 	return [level_face, level_name]
 
 
-enum BRUSH_COLOR_NAMES {
-	YELLOW, PINK, GREEN, VIOLET, RED, WHITE, BLUE, LIGHT_BLUE, BLACK
-}
+const BRUSH_COLORS = [
+	Color(0.9437293, 0.7933064, 0.18490851, 1),
+	Color(0.91240376, 0.2230595, 0.45916617, 1),
+	Color(0.25798154, 0.6871544, 0.4016019, 1),
+	Color(0.7435644, 0.16701159, 0.81802505, 1),
+	Color(0.92156863, 0.03137255, 0, 1),
+	Color(0.851769, 0.8517689, 0.85176885, 1),
+	Color(0, 0, 0.6745098, 1),
+	Color(0.47843137, 0.23137255, 0.7882353, 1),
+	Color(0, 0, 0, 1)
+]
 
-const BRUSH_COLORS = {
-	BRUSH_COLOR_NAMES.YELLOW: Color(0.9437293, 0.7933064, 0.18490851, 1),
-	BRUSH_COLOR_NAMES.PINK: Color(0.91240376, 0.2230595, 0.45916617, 1),
-	BRUSH_COLOR_NAMES.GREEN: Color(0.25798154, 0.6871544, 0.4016019, 1),
-	BRUSH_COLOR_NAMES.VIOLET: Color(0.7435644, 0.16701159, 0.81802505, 1),
-	BRUSH_COLOR_NAMES.RED: Color(0.92156863, 0.03137255, 0, 1),
-	BRUSH_COLOR_NAMES.WHITE: Color(0.851769, 0.8517689, 0.85176885, 1),
-	BRUSH_COLOR_NAMES.BLUE: Color(0, 0, 0.6745098, 1),
-	BRUSH_COLOR_NAMES.LIGHT_BLUE: Color(0.47843137, 0.23137255, 0.7882353, 1),
-	BRUSH_COLOR_NAMES.BLACK: Color(0, 0, 0, 1)
-}
 
 func _ready() -> void:
 	load_dyanmic_levels_from_path()
@@ -99,7 +92,7 @@ func load_dyanmic_levels_from_path():
 ## utils
 
 func dir_contents(path):
-	var scene_loads = []
+	var scene_loads = []	
 
 	var dir = DirAccess.open(path)
 	if dir:
