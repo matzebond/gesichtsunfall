@@ -72,11 +72,17 @@ const BRUSH_COLORS = [
 ]
 
 
-func _ready() -> void:
-	load_dyanmic_levels_from_path()
+var level_editor_load: bool = false
 
-func load_dyanmic_levels_from_path():
-	var level_scene_paths = dir_contents("res://level/levels")
+func _ready() -> void:
+	load_levels()
+	
+func load_levels():
+	load_dyanmic_levels_from_path()
+	load_dyanmic_levels_from_path("user://levels")
+
+func load_dyanmic_levels_from_path(path: String = "res://level/levels"):
+	var level_scene_paths = dir_contents(path)
 	for lvl_path in level_scene_paths:
 		var lvl_full_name: String = lvl_path.get_file().get_basename()
 		var _t = lvl_full_name.split("--") # by convention (enforced by the new level editor)

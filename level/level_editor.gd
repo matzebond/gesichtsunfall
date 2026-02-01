@@ -13,7 +13,6 @@ var distance_threshold = 0.5
 @export var save_path = "res://level/levels/%s--%s.tscn"
 @onready var log_label = $CanvasLayer/VBoxContainer/HBoxContainer/Label
 
-
 func _process(delta: float) -> void:
 	var paint = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
 	var erase = Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT)

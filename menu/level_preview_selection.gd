@@ -81,3 +81,8 @@ func _on_play_pressed() -> void:
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://menu/main_menu.tscn")
+
+
+func _on_editor_pressed() -> void:
+	Global.level_editor_load = true
+	get_tree().change_scene_to_file("res://level/dynamic_level_editor.tscn")

@@ -33,12 +33,12 @@ func load_mask(mask):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if load_face_from_global:
+	if load_face_from_global or Global.level_editor_load:
 		selected_face = Global.selected_face
 	else:
 		selected_face = selected_face # hack to run the setter
 		
-	if load_mask_from_global:
+	if load_mask_from_global or Global.level_editor_load:
 		selected_mask = Global.selected_mask
 	else:
 		selected_mask = selected_mask # more hacks

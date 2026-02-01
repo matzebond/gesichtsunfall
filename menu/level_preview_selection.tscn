@@ -79,6 +79,17 @@ layout_mode = 2
 text = ">
 "
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayerUI/MarginContainer/VBoxContainer" unique_id=718738890]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1739001837]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Editor" type="Button" parent="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1209038929]
+layout_mode = 2
+text = "Editor"
+
 [node name="Spacer" type="Control" parent="CanvasLayerUI/MarginContainer/VBoxContainer" unique_id=934411463]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -122,5 +133,6 @@ mesh = SubResource("PlaneMesh_rxme8")
 [connection signal="pressed" from="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer/FaceNext" to="." method="_on_face_next_pressed"]
 [connection signal="pressed" from="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer2/MaskPrev" to="." method="_on_mask_prev_pressed"]
 [connection signal="pressed" from="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer2/MaskNext" to="." method="_on_mask_next_pressed"]
+[connection signal="pressed" from="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer4/Editor" to="." method="_on_editor_pressed"]
 [connection signal="pressed" from="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer3/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer3/Play" to="." method="_on_play_pressed"]
