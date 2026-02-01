@@ -1,8 +1,10 @@
 extends Node3D
 
-@export var face_label:Label
-@export var mask_label:Label
+@export var face_label: Label
+@export var mask_label: Label
 @onready var dynamic_face = $DynamicFace
+@export var mask_prev: Button
+@export var mask_next: Button
 
 func _ready() -> void:
 	face_label.text = Global.Face.find_key(Global.selected_face)
@@ -30,12 +32,18 @@ func update_face():
 	dynamic_face.selected_face = Global.selected_face
 	
 	# select first mask & update text
-	if len(Global.MASKS_PER_FACE[Global.selected_face]) > 0:
+	var masks_count = len(Global.MASKS_PER_FACE[Global.selected_face])
+	if masks_count > 0:
 		print(Global.MASKS_PER_FACE[Global.selected_face][0])
 		Global.selected_mask = Global.MASKS_PER_FACE[Global.selected_face][0]
 	else:
 		Global.selected_mask = ""
 	update_mask()
+
+	# Hide next/prev mask buttons if face only has one mask
+	var should_show_mask_buttons = masks_count > 1
+	mask_prev.visible = should_show_mask_buttons
+	mask_next.visible = should_show_mask_buttons
 
 
 func _on_mask_prev_pressed() -> void:
