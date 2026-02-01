@@ -77,11 +77,16 @@ var level_editor_load: bool = false
 func _ready() -> void:
 	load_levels()
 	
+var save_path_res = "res://level/levels"
+var save_path_user = "user://levels"
+var level_name_format = "%s--%s.tscn"
+var save_path = save_path_res + "/" + level_name_format
+	
 func load_levels():
-	load_dyanmic_levels_from_path()
-	load_dyanmic_levels_from_path("user://levels")
+	load_dyanmic_levels_from_path(save_path_res)
+	load_dyanmic_levels_from_path(save_path_user)
 
-func load_dyanmic_levels_from_path(path: String = "res://level/levels"):
+func load_dyanmic_levels_from_path(path: String):
 	var level_scene_paths = dir_contents(path)
 	for lvl_path in level_scene_paths:
 		var lvl_full_name: String = lvl_path.get_file().get_basename()

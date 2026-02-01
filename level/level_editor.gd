@@ -10,8 +10,7 @@ var distance_threshold = 0.5
 @onready var face = $DynamicFace
 
 @export var level_name = "test"
-@export var save_path = "res://level/levels/%s--%s.tscn"
-@onready var log_label = $CanvasLayer/VBoxContainer/HBoxContainer/Label
+@export var log_label: Label
 
 func _process(delta: float) -> void:
 	var paint = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
@@ -51,8 +50,8 @@ func save():
 	if face:
 		face_name = Global.Face.find_key(face.selected_face)
 
-	var file_path = save_path % [face_name, level_name]
-	
+	var file_path = Global.save_path % [face_name, level_name]
+	print("trying save to ", file_path)
 	var err := ResourceSaver.save(scene, file_path)
 	if err != OK:
 		printerr("Save failed: %s" % err)
@@ -62,6 +61,8 @@ func save():
 	scene.take_over_path(file_path)
 	print("Successfully saved to %s (if it does not show/update try leaving and entering godot window again)" % file_path)
 	log_label.text = "OK"
+	
+	Global.selected_mask = file_path
 
 func _set_owner_recursive(n: Node, owner: Node) -> void:
 	n.owner = owner
@@ -74,3 +75,6 @@ func _on_name_text_changed(new_text: String) -> void:
 
 func _on_decal_spawner_color_changed(color: Color, key_id: int) -> void:
 	$CanvasLayer/ColorSelector.on_color_key_id_changed(key_id)
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://menu/level_preview_selection.tscn")

@@ -7,6 +7,7 @@ extends Node3D
 @export var mask_next: Button
 
 func _ready() -> void:
+	Global.load_levels()
 	face_label.text = Global.Face.find_key(Global.selected_face)
 	update_face()
 
