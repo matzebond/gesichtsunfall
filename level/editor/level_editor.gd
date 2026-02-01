@@ -8,10 +8,11 @@ var distance_threshold = 0.5
 @onready var decal_spawn_point = $DecalSpawnPoint
 @onready var camera: Camera3D = $Camera3D
 @onready var face = $DynamicFace
-@onready var name_edit = $CanvasLayer/VBoxContainer/Name
-@export var level_name = "test"
 
-@export var save_path = "res://level/editor/level--%s--%s.tscn"
+@export var level_name = "test"
+@export var save_path = "res://level/levels/%s--%s.tscn"
+@onready var log_label = $CanvasLayer/VBoxContainer/HBoxContainer/Label
+
 
 func _process(delta: float) -> void:
 	var paint = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
@@ -30,7 +31,7 @@ func _process(delta: float) -> void:
 				decal_spawner.erase_decals(pos)
 
 func save():
-	$CanvasLayer/Label.text = "Saving..."
+	log_label.text = "Saving..."
 	var root = Node3D.new()
 	root.name = "Level"
 	for child in $Decals.get_children():
@@ -44,29 +45,29 @@ func save():
 	
 	if ok != OK:
 		printerr("Failed to pack decals scene")
-		$CanvasLayer/Label.text = "Error"
+		log_label.text = "Error"
 		return
 		
-	var face_name
+	var face_name = "any"
 	if face:
-		face_name = Global.FaceScenes.find_key(face.selected_face)
-	else:
-		face_name = "any"
-	var level_name = "test"
+		face_name = Global.Face.find_key(face.selected_face)
+
 	var file_path = save_path % [face_name, level_name]
 	
 	var err := ResourceSaver.save(scene, file_path)
 	if err != OK:
 		printerr("Save failed: %s" % err)
-		$CanvasLayer/Label.text = "Error"
+		log_label.text = "Error"
 		return
 	
 	scene.take_over_path(file_path)
 	print("Successfully saved to %s (if it does not show/update try leaving and entering godot window again)" % file_path)
-	$CanvasLayer/Label.text = "OK"
-
+	log_label.text = "OK"
 
 func _set_owner_recursive(n: Node, owner: Node) -> void:
 	n.owner = owner
 	for c in n.get_children():
 		_set_owner_recursive(c, owner)
+
+func _on_name_text_changed(new_text: String) -> void:
+	level_name = new_text
