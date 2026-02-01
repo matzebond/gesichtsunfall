@@ -1,4 +1,5 @@
 extends Node3D
+signal score_percent_changed(float)
 @export var fakeDecalToggle : bool = false
 @export var levelDecalsNode : Node3D
 @export var playerDecalsNode : Node3D
@@ -31,8 +32,7 @@ func _on_game_state_manager_playing_started(game_timer: Timer) -> void:
 			fakeDecal.owner = get_tree().get_root()
 			fakeDecal.global_position = child.global_position
 			fakeDecal.visible = true
-	$LevelProgress.max_value = levelDecalPositions.size()
-	$LevelProgress/CheckProgress.max_value = levelDecalPositions.size()
+	$CheckProgress.max_value = levelDecalPositions.size()
 
 func evaluate():
 	if(!playerDecalsNode):
@@ -62,11 +62,13 @@ func evaluate():
 	checkProgress+=checksPerFrame		
 	if(checkProgress>=levelDecalPositions.size()):
 		#print("Decals valid: " + str(validDecals) + "/" + str(levelDecalPositions.size()))
-		$LevelProgress.value=validDecals
+		var levelDecalPositionsCount = levelDecalPositions.size()
+		var scorePercent = 100 * validDecals / levelDecalPositionsCount if levelDecalPositionsCount > 0 else 0
+		score_percent_changed.emit(scorePercent)
 		checkProgress=0
 	pass		
 
 func _process(delta):
 	evaluate()
-	$LevelProgress/CheckProgress.value = checkProgress
+	$CheckProgress.value = checkProgress
 	pass

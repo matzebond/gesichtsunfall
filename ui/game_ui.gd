@@ -1,8 +1,9 @@
 extends CanvasLayer
 
 var game_timer: Timer
-@onready var timer_label: Label = $VBoxContainer/HBoxContainer/LabelTime
-@onready var fps_label: Label = $VBoxContainer/HBoxContainer2/LabelFps
+@onready var timer_label: Label = $MarginContainer/VBoxContainer/HBoxContainer/Panel/LabelTime
+@onready var fps_label: Label = $MarginContainer/VBoxContainer/HBoxContainer2/LabelFps
+@onready var score_progress: ProgressBar = $MarginContainer/VBoxContainer/HBoxContainer/ProgressBar
 
 func _on_game_state_manager_playing_started(game_timer: Timer) -> void:
 	self.game_timer = game_timer
@@ -17,3 +18,7 @@ func _process(delta: float) -> void:
 
 func _on_game_state_manager_preview_started() -> void:
 	timer_label.text = ""
+
+
+func _on_scoring_percent_changed(percent: float) -> void:
+	score_progress.value = percent

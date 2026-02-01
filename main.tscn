@@ -126,6 +126,7 @@ stream = ExtResource("12_dg77c")
 [node name="GameStateManager" parent="." unique_id=1001160322 instance=ExtResource("5_lquwl")]
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="score_percent_changed" from="LevelManager/ScoringNode" to="GameUI" method="_on_scoring_percent_changed"]
 [connection signal="body_entered" from="nasenwind" to="nasenwind" method="_on_body_entered"]
 [connection signal="playing_done" from="GameStateManager" to="player" method="_on_game_state_manager_playing_done"]
 [connection signal="playing_done" from="GameStateManager" to="GameUI" method="_on_game_state_manager_playing_done"]

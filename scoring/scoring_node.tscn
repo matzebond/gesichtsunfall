@@ -1,40 +1,21 @@
 [gd_scene format=3 uid="uid://vqv6gey041o1"]
 
 [ext_resource type="Script" uid="uid://cudo1n10rxhoc" path="res://scoring/scoring_node.gd" id="1_w7td0"]
-[ext_resource type="Theme" uid="uid://dgedbhqrvjjcv" path="res://ui/theme/theme.tres" id="2_kosc7"]
 
 [node name="ScoringNode" type="Node3D" unique_id=1333813495]
 script = ExtResource("1_w7td0")
 
-[node name="LevelProgress" type="ProgressBar" parent="." unique_id=604942461]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -304.0
-offset_top = -67.0
-offset_right = 304.0
-offset_bottom = -40.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("2_kosc7")
-step = 1.0
-
-[node name="CheckProgress" type="ProgressBar" parent="LevelProgress" unique_id=1775993052]
+[node name="CheckProgress" type="ProgressBar" parent="." unique_id=1775993052]
 visible = false
-layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -304.0
-offset_top = -67.0
+offset_top = -138.0
 offset_right = 304.0
-offset_bottom = -40.0
+offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
