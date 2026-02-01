@@ -40,6 +40,10 @@ func update_face():
 	else:
 		Global.selected_mask = ""
 	update_mask()
+	
+	$Camera3D.position.y = Global.FACE_INFO[Global.selected_face]["zoom"]
+	$Camera3D.position.z = Global.FACE_INFO[Global.selected_face]["cam_pos"]
+
 
 	# Hide next/prev mask buttons if face only has one mask
 	var should_show_mask_buttons = masks_count > 1

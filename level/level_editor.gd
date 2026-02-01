@@ -12,6 +12,12 @@ var distance_threshold = 0.5
 @export var level_name = "test"
 @export var log_label: Label
 
+
+func _ready() -> void:
+	$Camera3D.position.y = Global.FACE_INFO[Global.selected_face]["zoom"]
+	$Camera3D.position.z = Global.FACE_INFO[Global.selected_face]["cam_pos"]
+
+
 func _process(delta: float) -> void:
 	var paint = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
 	var erase = Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT)

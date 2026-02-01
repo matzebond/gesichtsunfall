@@ -8,7 +8,7 @@
 albedo_color = Color(1, 0.8392157, 0.27058825, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rxme8"]
-size = Vector2(2000, 2000)
+size = Vector2(200000, 200000)
 
 [node name="LevelPreviewSelection" type="Node3D" unique_id=1299130847 node_paths=PackedStringArray("face_label", "mask_label", "mask_prev", "mask_next")]
 script = ExtResource("1_f1kbi")

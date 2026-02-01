@@ -30,6 +30,34 @@ const FACE_NAME = {
 	Face.SUZANNE: "Suzanne",
 }
 
+const FACE_INFO = {
+	Face.SPAHN_TOON: {
+		"name": "Jens Spahn",
+		"zoom": 160,
+		"cam_pos": 50,
+	},
+	Face.SPAHN_REAL: {
+		"name": "@realJensSpahn",
+		"zoom": 500,
+		"cam_pos": 220,
+	},
+	Face.MERZ_TOON: {
+		"name": "Friedrich Merz",
+		"zoom": 900,
+		"cam_pos": 250,
+	},
+	Face.MERZ_REAL: {
+		"name": "@realFriedrichMerz",
+		"zoom": 500,
+		"cam_pos": 250,
+	},
+	Face.SUZANNE: {
+		"name": "Suzanne",
+		"zoom": 320,
+		"cam_pos": 80,
+	},
+}
+
 var MASKS_PER_FACE = {
 	Face.SPAHN_TOON: [
 		"res://level/levels/SPAHN_TOON--Querdenker.tscn",
