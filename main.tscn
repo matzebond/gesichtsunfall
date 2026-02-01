@@ -3,9 +3,11 @@
 [ext_resource type="Script" path="res://world_environment.gd" id="1_w48qg"]
 [ext_resource type="PackedScene" uid="uid://3fcf3nkdn5su" path="res://player/player.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b4dhm7h2dvl66" path="res://ui/game_ui.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://bg1ktwk526e26" path="res://minimap_camera.gd" id="4_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dkelp60jagl1e" path="res://game_state/game_state_manager.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://buabsabuo7yhv" path="res://game_state/dynamic_camera.gd" id="7_4c57u"]
 [ext_resource type="PackedScene" uid="uid://vqv6gey041o1" path="res://scoring/scoring_node.tscn" id="9_vivmo"]
+[ext_resource type="Shader" path="res://test_scenes/minimap.gdshader" id="10_4c57u"]
 [ext_resource type="Script" uid="uid://dboxj5j43i1pf" path="res://level/level_manager.gd" id="10_dg77c"]
 [ext_resource type="Script" uid="uid://cn6urjnpr5bva" path="res://gesicht/DynamicFace.gd" id="11_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://bfaf5mxvrhjrs" path="res://screenshoot/screenshot_manager.tscn" id="11_efxa6"]
@@ -25,6 +27,25 @@ sky = SubResource("Sky_w48qg")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dg77c"]
+shader = ExtResource("10_4c57u")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/width = 0.1
+shader_parameter/size = 4.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ycdy4"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="Gradient" id="Gradient_4c57u"]
+offsets = PackedFloat32Array(0, 0.20481928, 0.28915662)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_efxa6"]
+gradient = SubResource("Gradient_4c57u")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+
 [node name="root" type="Node3D" unique_id=1124768642]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2036193609]
@@ -42,6 +63,16 @@ decal_root_node = NodePath("../Decals")
 
 [node name="PreviewStaticCamera" type="Camera3D" parent="." unique_id=1926876491]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 150, -50)
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1597775503]
+transparent_bg = true
+
+[node name="MinimapCamera" type="Camera3D" parent="SubViewport" unique_id=728072133]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 150, -50)
+cull_mask = 1048065
+projection = 1
+size = 300.0
+script = ExtResource("4_efxa6")
 
 [node name="RatingStaticCamera" type="Camera3D" parent="." unique_id=1712956160]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, -110, 150, -50)
@@ -81,6 +112,22 @@ playerDecalsNode = NodePath("../../Decals")
 checkRadius = 3.0
 
 [node name="GameStateManager" parent="." unique_id=1001160322 instance=ExtResource("5_lquwl")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1022632507]
+material = SubResource("ShaderMaterial_dg77c")
+position = Vector2(866, 177)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("ViewportTexture_ycdy4")
+centered = false
+
+[node name="PlayerMarker" type="Sprite2D" parent="." unique_id=1467520812]
+scale = Vector2(0.5, 0.5)
+texture = SubResource("GradientTexture2D_efxa6")
+
+[node name="Label" type="Label" parent="PlayerMarker" unique_id=2051295009]
+visible = false
+offset_right = 40.0
+offset_bottom = 33.0
 
 [connection signal="brush_color_changed" from="player" to="GameUI" method="_on_player_brush_color_changed"]
 [connection signal="score_percent_changed" from="LevelManager/ScoringNode" to="GameUI" method="_on_scoring_percent_changed"]
