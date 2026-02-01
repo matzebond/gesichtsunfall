@@ -42,6 +42,10 @@ enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
 import/blender/enabled=false
 
+[gui]
+
+theme/custom="uid://dgedbhqrvjjcv"
+
 [input]
 
 ui_accept={
