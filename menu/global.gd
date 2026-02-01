@@ -34,6 +34,9 @@ var MASKS_PER_FACE = {
 	Face.SPAHN_TOON: [
 		"res://level/levels/SPAHN_TOON--Querdenker.tscn",
 		"res://level/levels/SPAHN_TOON--Panzerknacker Spahn.tscn",
+		"res://level/levels/SPAHN_TOON--Spahnferkel.tscn",
+		"res://level/levels/SPAHN_TOON--Fawkes.tscn",
+		"res://level/levels/SPAHN_TOON--Kiss.tscn",
 	],
 	Face.SPAHN_REAL: [
 		"res://level/levels/SPAHN_REAL--Querdenker.tscn",
@@ -45,7 +48,8 @@ var MASKS_PER_FACE = {
 		"res://level/levels/MERZ_REAL--Querdenker.tscn",
 	],
 	Face.SUZANNE: [
-		"res://level/levels/SUZANNE--Querdenker.tscn"
+		"res://level/levels/SUZANNE--Querdenker.tscn",
+		"res://level/levels/SUZANNE--Clown.tscn"
 	],
 }
 

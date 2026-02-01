@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://bs3oyux0x1g73" path="res://level/level_editor.gd" id="1_0oc4p"]
 [ext_resource type="PackedScene" uid="uid://ddj7iodaol0cy" path="res://decal/decal_spawner.tscn" id="2_rytqy"]
 [ext_resource type="Script" uid="uid://cn6urjnpr5bva" path="res://gesicht/DynamicFace.gd" id="4_2oyma"]
-[ext_resource type="PackedScene" uid="uid://c5mfeci24775i" path="res://gesicht/spahn_toon.tscn" id="4_shtmm"]
+[ext_resource type="PackedScene" uid="uid://cop3imneylyer" path="res://gesicht/suzanne.tscn" id="4_d1qx4"]
+[ext_resource type="Script" uid="uid://dlj8lnntue4ls" path="res://gesicht/gesicht.gd" id="5_se1ol"]
 [ext_resource type="Script" uid="uid://difctcqvd0vnl" path="res://ui/color_selector.gd" id="6_d1qx4"]
 
 [node name="LevelEditor" type="Node3D" unique_id=142715042 node_paths=PackedStringArray("log_label")]
@@ -23,7 +24,7 @@ target_position = Vector3(-86, -700, 80)
 collide_with_areas = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=797726217]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 142.45981, 50.306396)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 312.4598, 94.3064)
 current = true
 size = 2000.0
 
@@ -32,9 +33,10 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 6
 
 [node name="DynamicFace" type="Node3D" parent="." unique_id=1540519704]
 script = ExtResource("4_2oyma")
-selected_face = 0
+selected_face = 4
 
-[node name="@Node3D@57503" parent="DynamicFace" unique_id=760186603 instance=ExtResource("4_shtmm")]
+[node name="@Node3D@28478" type="Node3D" parent="DynamicFace" unique_id=175588883 instance=ExtResource("4_d1qx4")]
+script = ExtResource("5_se1ol")
 
 [node name="Decals" type="Node3D" parent="." unique_id=1856804919]
 
