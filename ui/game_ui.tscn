@@ -25,7 +25,8 @@ theme = ExtResource("1_dcmab")
 layout_mode = 2
 alignment = 1
 
-[node name="Panel" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=518704431]
+[node name="Panel" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2091739541]
+custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
 
 [node name="LabelTime" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Panel" unique_id=470919712]
@@ -33,6 +34,7 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 20
 text = "<time>"
+horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2104554121]
 layout_mode = 2
