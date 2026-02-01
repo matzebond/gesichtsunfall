@@ -6,6 +6,7 @@ signal brush_color_changed(color: Color, key_id: int)
 var throttle: float = 0.0
 
 var prev_brush_down = false
+signal player_pause
 
 @export_group("Speed")
 ## hängt auf jeden fall von mass ab
@@ -59,7 +60,6 @@ var disable_controls = false
 var in_air_time = 0
 var allow_yeehaw = 0
 
-
 func _ready() -> void:
 	for wheel: VehicleWheel3D in [front_left_wheel, front_right_wheel]:
 		pass # man könnte hier iwie was berechnen
@@ -74,7 +74,8 @@ func _process(delta: float) -> void:
 
 	# Handle scene reset
 	if Input.is_action_just_pressed("ui_cancel"):  # ESC key
-		get_tree().reload_current_scene()
+		Global.emit_signal("pause_signal")
+		pass
 
 func _physics_process(delta):
 	if disable_controls:

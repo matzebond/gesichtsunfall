@@ -2,6 +2,8 @@ extends Node
 
 var selected_face: Face = Face.SPAHN_TOON
 var selected_mask: String = "res://level/levels/SPAHN_TOON--Panzerknacker Spahn.tscn"
+signal pause_signal
+signal unpause_signal
 
 enum Face {
 	SPAHN_TOON,

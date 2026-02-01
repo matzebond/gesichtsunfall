@@ -43,7 +43,6 @@ func _process(_delta: float) -> void:
 		color_changed.emit(selected_brush_color, brush_id)
 	if Input.is_action_just_pressed("player_brush_previous"):
 		var brush_id = Global.BRUSH_COLORS.find(selected_brush_color)
-		print("Selected brush id = " + str(brush_id))
 		brush_id = (brush_id-1)%(brush_count)
 		selected_brush_color = Global.BRUSH_COLORS[brush_id]
 		color_changed.emit(selected_brush_color, brush_id)
@@ -76,7 +75,7 @@ func spawn_decal(new_decal_position = null):
 	spawned_decals.append(d)
 
 func paint_over_decals(new_decal_position: Vector3):
-	print(new_decal_position)
+	#print(new_decal_position)
 	var decals_to_remove = []
 	var overlap_threshold = 0.8
 	var new_radius = size / 2.0

@@ -51,10 +51,10 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 text = "Controller"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1173554308]
+[node name="Steer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1173554308]
 layout_mode = 2
 
-[node name="Action" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2145061099]
+[node name="Action" type="Label" parent="MarginContainer/VBoxContainer/Steer" unique_id=2145061099]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.79607844, 0.10980392, 0.10980392, 1)
@@ -62,22 +62,22 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 text = "Steer"
 
-[node name="Key" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=921217342]
+[node name="Key" type="Label" parent="MarginContainer/VBoxContainer/Steer" unique_id=921217342]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "WASD / Arrow keys"
 
-[node name="Key2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1186601610]
+[node name="Key2" type="Label" parent="MarginContainer/VBoxContainer/Steer" unique_id=1186601610]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Control stick / DPad"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1108187598]
+[node name="Paint" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1108187598]
 layout_mode = 2
 
-[node name="Action" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=914332877]
+[node name="Action" type="Label" parent="MarginContainer/VBoxContainer/Paint" unique_id=914332877]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.79607844, 0.10980392, 0.10980392, 1)
@@ -85,22 +85,22 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 text = "Paint"
 
-[node name="Key" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=488578554]
+[node name="Key" type="Label" parent="MarginContainer/VBoxContainer/Paint" unique_id=488578554]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Hold space"
 
-[node name="Key2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2063119284]
+[node name="Key2" type="Label" parent="MarginContainer/VBoxContainer/Paint" unique_id=2063119284]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Hold top button"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1273528720]
+[node name="BrushColor" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1273528720]
 layout_mode = 2
 
-[node name="Action" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=643275665]
+[node name="Action" type="Label" parent="MarginContainer/VBoxContainer/BrushColor" unique_id=643275665]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.79607844, 0.10980392, 0.10980392, 1)
@@ -108,22 +108,45 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 text = "Select Brush Color"
 
-[node name="Key" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=196511807]
+[node name="Key" type="Label" parent="MarginContainer/VBoxContainer/BrushColor" unique_id=196511807]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1-9"
 
-[node name="Key2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1409013607]
+[node name="Key2" type="Label" parent="MarginContainer/VBoxContainer/BrushColor" unique_id=1409013607]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2134916165]
+[node name="BrushColorCycle" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=502110139]
 layout_mode = 2
 
-[node name="Action" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=578801839]
+[node name="Action" type="Label" parent="MarginContainer/VBoxContainer/BrushColorCycle" unique_id=655962454]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.79607844, 0.10980392, 0.10980392, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Cycle Brush Colors"
+
+[node name="Key" type="Label" parent="MarginContainer/VBoxContainer/BrushColorCycle" unique_id=182115030]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Q / E"
+
+[node name="Key2" type="Label" parent="MarginContainer/VBoxContainer/BrushColorCycle" unique_id=1022855219]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Left Trigger / Right Trigger"
+
+[node name="BrushSize" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2134916165]
+layout_mode = 2
+
+[node name="Action" type="Label" parent="MarginContainer/VBoxContainer/BrushSize" unique_id=578801839]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.79607844, 0.10980392, 0.10980392, 1)
@@ -131,13 +154,13 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 text = "Adjust Brush Size"
 
-[node name="Key" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1502120592]
+[node name="Key" type="Label" parent="MarginContainer/VBoxContainer/BrushSize" unique_id=1502120592]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "J + K"
 
-[node name="Key2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1252733719]
+[node name="Key2" type="Label" parent="MarginContainer/VBoxContainer/BrushSize" unique_id=1252733719]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
