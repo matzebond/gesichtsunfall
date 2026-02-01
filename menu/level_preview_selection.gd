@@ -10,6 +10,7 @@ func _ready() -> void:
 	Global.load_levels()
 	face_label.text = Global.Face.find_key(Global.selected_face)
 	update_face()
+	$CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer2/MaskNext.grab_focus()
 
 
 func _on_face_next_pressed() -> void:
