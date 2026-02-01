@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cn6urjnpr5bva" path="res://gesicht/DynamicFace.gd" id="4_2oyma"]
 [ext_resource type="PackedScene" uid="uid://c5mfeci24775i" path="res://gesicht/spahn_toon.tscn" id="4_shtmm"]
 [ext_resource type="Script" uid="uid://dlj8lnntue4ls" path="res://gesicht/gesicht.gd" id="5_d1qx4"]
+[ext_resource type="Script" uid="uid://difctcqvd0vnl" path="res://ui/color_selector.gd" id="6_d1qx4"]
 
 [node name="LevelEditor" type="Node3D" unique_id=142715042]
 script = ExtResource("1_0oc4p")
@@ -34,7 +35,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 6
 script = ExtResource("4_2oyma")
 selected_face = 0
 
-[node name="@Node3D@90542" type="Node3D" parent="DynamicFace" unique_id=760186603 instance=ExtResource("4_shtmm")]
+[node name="@Node3D@97453" type="Node3D" parent="DynamicFace" unique_id=760186603 instance=ExtResource("4_shtmm")]
 script = ExtResource("5_d1qx4")
 
 [node name="Decals" type="Node3D" parent="." unique_id=1856804919]
@@ -61,5 +62,16 @@ text = "Save"
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=787375262]
 layout_mode = 2
 
+[node name="ColorSelector" type="VBoxContainer" parent="CanvasLayer" unique_id=1918986033]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/separation = 7
+script = ExtResource("6_d1qx4")
+
+[connection signal="color_changed" from="DecalSpawner" to="." method="_on_decal_spawner_color_changed"]
 [connection signal="text_changed" from="CanvasLayer/VBoxContainer/Name" to="." method="_on_name_text_changed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/Save" to="." method="save"]

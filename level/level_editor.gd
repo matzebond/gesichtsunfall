@@ -71,3 +71,7 @@ func _set_owner_recursive(n: Node, owner: Node) -> void:
 
 func _on_name_text_changed(new_text: String) -> void:
 	level_name = new_text
+
+
+func _on_decal_spawner_color_changed(color: Color, key_id: int) -> void:
+	$CanvasLayer/ColorSelector.on_color_key_id_changed(key_id)

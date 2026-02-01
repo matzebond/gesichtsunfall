@@ -1,5 +1,5 @@
 @tool
-extends HBoxContainer
+extends Control
 
 var color_button_scene = preload("res://ui/color_button.tscn")
 
