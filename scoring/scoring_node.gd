@@ -3,15 +3,25 @@ signal score_percent_changed(float)
 @export var fakeDecalToggle : bool = false
 @export var levelDecalsNode : Node3D
 @export var playerDecalsNode : Node3D
+
 var levelDecalPositions : Array[Vector3] = []
 var levelDecalColors = []
 var levelDecalValid : Array[bool] = []
 var levelFakeDecals = []
+
 var decalPositions : Array[Vector3] = []
 var decalColors = []
 
-var validDecals :int = 0
+var mistakeDecalPositions : Array[Vector3] = []
+var mistakeDecalColors = []
+var mistakeDecalValid : Array[bool] = []
+
+var validDecals : int = 0
+var mistakeDecals : int = 0
+
 var checkProgress : int = 0
+var mistakeCheckProgress : int = 0
+
 @export var checksPerFrame : int = 100
 @export var checkRadius : float = 10.0
 
@@ -34,10 +44,13 @@ func _on_game_state_manager_playing_started(game_timer: Timer) -> void:
 			fakeDecal.visible = true
 	$CheckProgress.max_value = levelDecalPositions.size()
 
-func evaluate():
+func evaluate(final = false, checks = checksPerFrame):
 	if(!playerDecalsNode):
 		print("ERROR: Scoring node is missing node for player decals. evaluate")
 		return
+	if final:
+		checkProgress = 0
+		checks = levelDecalPositions.size()
 	if(checkProgress==0):
 		decalPositions.clear()
 		decalColors.clear()
@@ -47,7 +60,7 @@ func evaluate():
 		for child in playerDecalsNode.get_children():
 			decalPositions.push_back(child.global_position)
 			decalColors.push_back(child.modulate)
-	for decalIndex in range(checkProgress,checkProgress+checksPerFrame):
+	for decalIndex in range(checkProgress,checkProgress+checks):
 		if(decalIndex >= levelDecalPositions.size()):
 			break
 		for compareDecalIndex in decalPositions.size():
@@ -59,16 +72,51 @@ func evaluate():
 					validDecals += 1
 				else:
 					levelDecalValid[decalIndex] = false
-	checkProgress+=checksPerFrame		
+	checkProgress+=checks
 	if(checkProgress>=levelDecalPositions.size()):
 		#print("Decals valid: " + str(validDecals) + "/" + str(levelDecalPositions.size()))
 		var levelDecalPositionsCount = levelDecalPositions.size()
 		var scorePercent = 100 * validDecals / levelDecalPositionsCount if levelDecalPositionsCount > 0 else 0
 		score_percent_changed.emit(scorePercent)
 		checkProgress=0
-	pass		
+	pass
+	
+func evaluateMistakes(final = false, checks = checksPerFrame):
+	if(!playerDecalsNode):
+		print("ERROR: Scoring node is missing node for player decals. evaluate")
+		return
+	if(mistakeCheckProgress==0):
+		mistakeDecalPositions.clear()
+		mistakeDecalColors.clear()
+		mistakeDecalValid.clear()
+		for child in playerDecalsNode.get_children():
+			mistakeDecalPositions.push_back(child.global_position)
+			mistakeDecalColors.push_back(child.modulate)
+			mistakeDecalValid.push_back(true)
+		mistakeDecals = mistakeDecalValid.size()
+	if final:
+		checkProgress = 0
+		checks = mistakeDecals
+	for mistakeDecalIndex in range(mistakeCheckProgress,mistakeCheckProgress+checksPerFrame):
+		if(mistakeDecalIndex >= mistakeDecalPositions.size()):
+			break
+		for compareDecalIndex in levelDecalPositions.size():
+			if mistakeDecalValid[mistakeDecalIndex] == true:
+				if (mistakeDecalPositions[mistakeDecalIndex].distance_squared_to(levelDecalPositions[compareDecalIndex]) <= checkRadius) and (mistakeDecalColors[mistakeDecalIndex]==levelDecalColors[compareDecalIndex]):
+					mistakeDecalValid[mistakeDecalIndex] = false
+					mistakeDecals-=1
+	mistakeCheckProgress+=checks
+	if(mistakeCheckProgress>=mistakeDecalPositions.size()):
+		print("Decal mistakes: " + str(mistakeDecals) + "/" + str(mistakeDecalPositions.size()))
+		var mistakePositionsCount = mistakeDecalPositions.size()
+		var scorePercent = 100 * mistakeDecals / mistakePositionsCount if mistakePositionsCount > 0 else 0
+		#score_percent_changed.emit(scorePercent)
+		mistakeCheckProgress=0
+	pass
+pass
 
 func _process(delta):
 	evaluate()
+	evaluateMistakes(false,10)
 	$CheckProgress.value = checkProgress
 	pass

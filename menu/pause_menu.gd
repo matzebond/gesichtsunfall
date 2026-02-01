@@ -20,7 +20,9 @@ func _on_btn_continue_pressed() -> void:
 	
 
 func _on_btn_restart_pressed() -> void:
+	close()
 	get_tree().reload_current_scene()
 
 func _on_btn_menu_pressed() -> void:
+	close()
 	get_tree().change_scene_to_file("res://menu/main_menu.tscn")
