@@ -12,4 +12,4 @@ var _key_id: int = -1
 
 func on_color_key_id_changed(new_key_id: int):
 	var active = new_key_id == key_id
-	scale = Vector2.ONE * (1.2 if active else 1)
+	scale = Vector2.ONE * (1.2 if active else 1.)

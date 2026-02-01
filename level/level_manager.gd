@@ -1,8 +1,7 @@
 extends Node3D
 
-
-@onready var level_mesh: Node3D = $LevelMesh
-@onready var level_objective_mesh: Node3D = $LevelObjectiveMesh
+@onready var level_mesh: Node3D = $Face
+@onready var level_objective_mesh: Node3D = $FaceWithMask
 @onready var target_objective_final_position = level_objective_mesh.position
 
 func _on_game_state_manager_preview_started() -> void:
@@ -20,4 +19,4 @@ func _on_game_state_manager_playing_done() -> void:
 	level_objective_mesh.visible = true
 
 func _ready() -> void:
-	$ScoringNode.levelDecalsNode = $LevelObjectiveMesh/DynamicFace.mask_instance
+	$ScoringNode.levelDecalsNode = $FaceWithMask.mask_instance

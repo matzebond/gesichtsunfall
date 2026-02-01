@@ -75,7 +75,6 @@ func spawn_decal(new_decal_position = null):
 	spawned_decals.append(d)
 
 func paint_over_decals(new_decal_position: Vector3):
-	#print(new_decal_position)
 	var decals_to_remove = []
 	var overlap_threshold = 0.8
 	var new_radius = size / 2.0

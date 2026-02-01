@@ -68,9 +68,6 @@ func update_mask():
 	if Global.selected_mask == "":
 		print("no mask to select") ## TODO disable play button (or free play)
 		return
-		
-	print(Global.selected_mask)
-	print(Global.parse_mask_scene(Global.selected_mask))
 	
 	mask_label.text = Global.parse_mask_scene(Global.selected_mask)[1]
 	dynamic_face.selected_face = Global.selected_face
@@ -78,7 +75,7 @@ func update_mask():
 
 
 func _on_play_pressed() -> void:
-	print(Global.selected_mask)
+	print("Playing ", Global.selected_face, " with ", Global.selected_mask)
 	get_tree().change_scene_to_file("res://main.tscn")
 
 
