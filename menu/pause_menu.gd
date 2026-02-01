@@ -6,6 +6,8 @@ func _ready():
 func open():
 	self.show()
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+	$Panel/MarginContainer/VBoxContainer/btn_continue.grab_focus()
+	
 func close():
 	self.hide()
 	process_mode = Node.PROCESS_MODE_DISABLED

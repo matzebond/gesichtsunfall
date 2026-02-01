@@ -56,7 +56,7 @@ func _process(_delta: float) -> void:
 				print("Selected brush ", brush + 1)
 				AudioManager.set_global_parameter("Color", brush)
 				AudioManager.play_one_shot("ColorSwitch")
-				color_changed.emit(selected_brush_color)
+				color_changed.emit(selected_brush_color, brush)
 				break
 	if Input.is_action_just_pressed("player_increase_brush_size"):
 		change_size(size_increase)

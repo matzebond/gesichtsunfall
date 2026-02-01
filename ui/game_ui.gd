@@ -8,6 +8,7 @@ var game_timer: Timer
 @onready var top_bar: Control = $MarginContainer/VBoxContainer/HBoxContainer
 @onready var color_selector: Control = $MarginContainer/VBoxContainer/ColorSelector
 @onready var rating_ui: Control = $MarginContainer/VBoxContainer/Rating
+@onready var rating_ui_back_button: Control = $MarginContainer/VBoxContainer/Rating/BackButton
 
 func _ready() -> void:
 	rating_ui.visible = false
@@ -22,6 +23,8 @@ func _on_game_state_manager_playing_started(game_timer: Timer) -> void:
 func _on_game_state_manager_playing_done() -> void:
 	self.game_timer = null
 	rating_ui.visible = true
+	rating_ui_back_button.grab_focus()
+	color_selector.visible = false
 
 func _process(delta: float) -> void:
 	if game_timer:

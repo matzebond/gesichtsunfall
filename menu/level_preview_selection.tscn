@@ -41,6 +41,8 @@ layout_mode = 2
 [node name="FacePrev" type="Button" parent="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2145523814]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
+focus_neighbor_right = NodePath("../FaceNext")
+focus_neighbor_bottom = NodePath("../../HBoxContainer2/MaskPrev")
 text = "<"
 
 [node name="Face" type="Label" parent="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer" unique_id=737004249]
@@ -54,6 +56,8 @@ horizontal_alignment = 1
 [node name="FaceNext" type="Button" parent="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2014450991]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
+focus_neighbor_left = NodePath("../FacePrev")
+focus_neighbor_bottom = NodePath("../../HBoxContainer2/MaskNext")
 text = ">
 "
 
@@ -63,6 +67,8 @@ layout_mode = 2
 [node name="MaskPrev" type="Button" parent="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1840889981]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
+focus_neighbor_top = NodePath("../../HBoxContainer/FacePrev")
+focus_neighbor_right = NodePath("../MaskNext")
 text = "<"
 
 [node name="Mask" type="Label" parent="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2119953265]
@@ -76,6 +82,9 @@ horizontal_alignment = 1
 [node name="MaskNext" type="Button" parent="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=560607306]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
+focus_neighbor_left = NodePath("../MaskPrev")
+focus_neighbor_top = NodePath("../../HBoxContainer/FaceNext")
+focus_neighbor_bottom = NodePath("../../HBoxContainer4/Editor")
 text = ">
 "
 
@@ -88,6 +97,8 @@ size_flags_horizontal = 3
 
 [node name="Editor" type="Button" parent="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1209038929]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../HBoxContainer2/MaskNext")
+focus_neighbor_bottom = NodePath("../../HBoxContainer3/Play")
 text = "Editor"
 
 [node name="Spacer" type="Control" parent="CanvasLayerUI/MarginContainer/VBoxContainer" unique_id=934411463]
@@ -100,6 +111,8 @@ layout_mode = 2
 
 [node name="Back" type="Button" parent="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1557352204]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../HBoxContainer2/MaskPrev")
+focus_neighbor_right = NodePath("../Play")
 text = "Back"
 
 [node name="Spacer" type="Control" parent="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=44345965]
@@ -108,6 +121,8 @@ size_flags_horizontal = 3
 
 [node name="Play" type="Button" parent="CanvasLayerUI/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1927746766]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Back")
+focus_neighbor_top = NodePath("../../HBoxContainer4/Editor")
 text = "Play"
 
 [node name="DynamicFace" type="Node3D" parent="." unique_id=126665870]
