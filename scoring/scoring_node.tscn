@@ -22,3 +22,24 @@ size_flags_vertical = 4
 step = 1.0
 
 [node name="FakeDecals" type="Node3D" parent="." unique_id=2102576031]
+
+[node name="MistakesPanel" type="Panel" parent="." unique_id=2139539560]
+offset_left = 888.0
+offset_top = 567.0
+offset_right = 1147.0
+offset_bottom = 635.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MistakesLabel" type="RichTextLabel" parent="MistakesPanel" unique_id=1489166757]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 18.0
+offset_right = -12.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mistakes: 0 / 0"

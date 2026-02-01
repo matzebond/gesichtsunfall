@@ -107,7 +107,8 @@ func evaluateMistakes(final = false, checks = checksPerFrame):
 					mistakeDecals-=1
 	mistakeCheckProgress+=checks
 	if(mistakeCheckProgress>=mistakeDecalPositions.size()):
-		print("Decal mistakes: " + str(mistakeDecals) + "/" + str(mistakeDecalPositions.size()))
+		#print("Decal mistakes: " + str(mistakeDecals) + "/" + str(mistakeDecalPositions.size()))
+		$MistakesPanel/MistakesLabel.text = "Mistakes: " + str(mistakeDecals) + " / " + str(mistakeDecalPositions.size())
 		var mistakePositionsCount = mistakeDecalPositions.size()
 		var scorePercent = 100 * mistakeDecals / mistakePositionsCount if mistakePositionsCount > 0 else 0
 		#score_percent_changed.emit(scorePercent)
