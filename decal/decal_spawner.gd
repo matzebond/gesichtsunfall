@@ -36,6 +36,17 @@ func change_size(amount: float):
 
 func _process(_delta: float) -> void:
 	var brush_count = 9
+	if Input.is_action_just_pressed("player_brush_next"):
+		var brush_id = Global.BRUSH_COLORS.find(selected_brush_color)
+		brush_id = (brush_id+1)%(brush_count)
+		selected_brush_color = Global.BRUSH_COLORS[brush_id]
+		color_changed.emit(selected_brush_color, brush_id)
+	if Input.is_action_just_pressed("player_brush_previous"):
+		var brush_id = Global.BRUSH_COLORS.find(selected_brush_color)
+		print("Selected brush id = " + str(brush_id))
+		brush_id = (brush_id-1)%(brush_count)
+		selected_brush_color = Global.BRUSH_COLORS[brush_id]
+		color_changed.emit(selected_brush_color, brush_id)
 	for brush in range(brush_count):
 		if Input.is_action_just_pressed("player_brush_" + str(brush + 1)):
 			# Check if valid brush color
