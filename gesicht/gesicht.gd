@@ -14,3 +14,7 @@ func _ready() -> void:
 	if $Suzanne:
 		$Suzanne.create_trimesh_collision()
 		$Suzanne.get_child(0).get_child(0).shape.backface_collision = true
+		
+	if mesh_for_collider:
+		mesh_for_collider.create_trimesh_collision()
+		mesh_for_collider.get_child(0).get_child(0).shape.backface_collision = true
