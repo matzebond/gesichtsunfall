@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bkfs4sywdlihv"]
 
 [ext_resource type="PackedScene" uid="uid://c2wwfrnqpasgj" path="res://gesicht/gesicht.glb" id="1_uyghe"]
+[ext_resource type="Script" path="res://gesicht/gesicht.gd" id="2_m6vax"]
 
 [node name="gesicht" unique_id=1899767975 instance=ExtResource("1_uyghe")]
+script = ExtResource("2_m6vax")
 
 [node name="Plane" parent="." index="1" unique_id=346221532]
 transform = Transform3D(-10, -1.3200472e-13, -8.742278e-07, 0, -10, 1.509958e-06, -8.742278e-07, 1.509958e-06, 10, 0, -258.46768, 564.57587)
