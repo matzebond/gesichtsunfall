@@ -104,4 +104,3 @@ func dir_contents(path):
 	else:
 		print("An error occurred when trying to access the path.")
 	return scene_loads
->>>>>>> 78ad2b5 (level selection mit preview)
