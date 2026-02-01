@@ -44,16 +44,16 @@ const FACE_INFO = {
 	Face.MERZ_TOON: {
 		"name": "Friedrich Merz",
 		"zoom": 900,
-		"cam_pos": 250,
+		"cam_pos": 320,
 	},
 	Face.MERZ_REAL: {
 		"name": "@realFriedrichMerz",
-		"zoom": 500,
+		"zoom": 600,
 		"cam_pos": 250,
 	},
 	Face.SUZANNE: {
 		"name": "Suzanne",
-		"zoom": 320,
+		"zoom": 360,
 		"cam_pos": 80,
 	},
 }

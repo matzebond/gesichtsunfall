@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ciwwnxttkdecb" path="res://menu/level_preview_selection.gd" id="1_f1kbi"]
 [ext_resource type="Script" uid="uid://cn6urjnpr5bva" path="res://gesicht/DynamicFace.gd" id="1_w8pa5"]
 [ext_resource type="PackedScene" uid="uid://c5mfeci24775i" path="res://gesicht/spahn_toon.tscn" id="3_rxme8"]
+[ext_resource type="Script" uid="uid://dlj8lnntue4ls" path="res://gesicht/gesicht.gd" id="4_rxme8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rmis8"]
 albedo_color = Color(1, 0.8392157, 0.27058825, 1)
@@ -131,7 +132,8 @@ selected_face = 0
 load_face_from_global = true
 load_mask_from_global = true
 
-[node name="@Node3D@27325" parent="DynamicFace" unique_id=760186603 instance=ExtResource("3_rxme8")]
+[node name="Face" type="Node3D" parent="DynamicFace" unique_id=760186603 instance=ExtResource("3_rxme8")]
+script = ExtResource("4_rxme8")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=811730092]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 161.30264, 44.386627)

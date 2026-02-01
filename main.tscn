@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://vqv6gey041o1" path="res://scoring/scoring_node.tscn" id="9_vivmo"]
 [ext_resource type="Shader" uid="uid://8rujvmty2byx" path="res://test_scenes/minimap.gdshader" id="10_4c57u"]
 [ext_resource type="Script" uid="uid://dboxj5j43i1pf" path="res://level/level_manager.gd" id="10_dg77c"]
+[ext_resource type="PackedScene" uid="uid://c5mfeci24775i" path="res://gesicht/spahn_toon.tscn" id="10_w48qg"]
 [ext_resource type="Script" uid="uid://cn6urjnpr5bva" path="res://gesicht/DynamicFace.gd" id="11_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://bfaf5mxvrhjrs" path="res://screenshoot/screenshot_manager.tscn" id="11_efxa6"]
 
@@ -58,24 +59,24 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 [node name="GameUI" parent="." unique_id=1594824260 instance=ExtResource("3_h2yge")]
 
 [node name="player" parent="." unique_id=116514080 node_paths=PackedStringArray("decal_root_node") instance=ExtResource("2_1bvp3")]
-transform = Transform3D(-0.24789521, 0, -0.96878684, 0, 1, 0, 0.96878684, 0, -0.24789521, 0, 0, 0)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
 decal_root_node = NodePath("../Decals")
 
 [node name="PreviewStaticCamera" type="Camera3D" parent="." unique_id=1926876491]
-transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 150, -50)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 150, -50)
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1597775503]
 transparent_bg = true
 
 [node name="MinimapCamera" type="Camera3D" parent="SubViewport" unique_id=728072133]
-transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 150, -50)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 150, 50)
 cull_mask = 1048065
 projection = 1
 size = 300.0
 script = ExtResource("4_efxa6")
 
 [node name="RatingStaticCamera" type="Camera3D" parent="." unique_id=1712956160]
-transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, -110, 150, -50)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 110, 150, 50)
 
 [node name="DynamicCamera" type="Camera3D" parent="." unique_id=234388864 node_paths=PackedStringArray("static_camera_preview", "static_camera_rating", "player")]
 transform = Transform3D(1, -8.742278e-08, 8.742277e-08, 8.742278e-08, 1, 5.3731366e-16, -8.742277e-08, 7.1054274e-15, 1, 6.725232e-06, 95.114136, 95.11414)
@@ -88,14 +89,18 @@ player = NodePath("../player")
 
 [node name="Decals" type="Node3D" parent="." unique_id=1366461276]
 
-[node name="LevelManager" type="Node3D" parent="." unique_id=1885099075]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+[node name="LevelManager" type="Node3D" parent="." unique_id=1885099075 node_paths=PackedStringArray("preview_cam", "final_cam", "mini_cam")]
 script = ExtResource("10_dg77c")
+preview_cam = NodePath("../PreviewStaticCamera")
+final_cam = NodePath("../RatingStaticCamera")
+mini_cam = NodePath("../SubViewport/MinimapCamera")
 
 [node name="Face" type="Node3D" parent="LevelManager" unique_id=291660152]
 script = ExtResource("11_2cqfq")
 selected_face = 0
 load_face_from_global = true
+
+[node name="@Node3D@62582" parent="LevelManager/Face" unique_id=760186603 instance=ExtResource("10_w48qg")]
 
 [node name="FaceWithMask" type="Node3D" parent="LevelManager" unique_id=1692515508]
 process_mode = 4
