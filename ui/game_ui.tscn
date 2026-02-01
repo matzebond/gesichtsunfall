@@ -46,6 +46,14 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="Rating" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1573502462]
+layout_mode = 2
+alignment = 1
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/Rating" unique_id=1192932227]
+layout_mode = 2
+text = "Back"
+
 [node name="LabelFps" type="Label" parent="MarginContainer/VBoxContainer" unique_id=411353700]
 visible = false
 layout_mode = 2
@@ -57,3 +65,5 @@ horizontal_alignment = 1
 layout_mode = 2
 alignment = 1
 script = ExtResource("3_7hrjk")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Rating/BackButton" to="." method="_on_back_button_pressed"]

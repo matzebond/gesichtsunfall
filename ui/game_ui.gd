@@ -7,15 +7,21 @@ var game_timer: Timer
 @onready var score_progress: ProgressBar = $MarginContainer/VBoxContainer/HBoxContainer/ProgressBar
 @onready var top_bar: Control = $MarginContainer/VBoxContainer/HBoxContainer
 @onready var color_selector: Control = $MarginContainer/VBoxContainer/ColorSelector
+@onready var rating_ui: Control = $MarginContainer/VBoxContainer/Rating
+
+func _ready() -> void:
+	rating_ui.visible = false
 
 func _on_game_state_manager_playing_started(game_timer: Timer) -> void:
 	self.game_timer = game_timer
 	timer_label.text = ""
 	top_bar.visible = true
 	color_selector.visible = true
+	rating_ui.visible = false
 
 func _on_game_state_manager_playing_done() -> void:
 	self.game_timer = null
+	rating_ui.visible = true
 
 func _process(delta: float) -> void:
 	if game_timer:
@@ -33,3 +39,7 @@ func _on_scoring_percent_changed(percent: float) -> void:
 
 func _on_player_brush_color_changed(color: Color, key_id: int) -> void:
 	color_selector.on_color_key_id_changed(key_id)
+
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://menu/level_preview_selection.tscn")
