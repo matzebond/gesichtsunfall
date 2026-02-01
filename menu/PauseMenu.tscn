@@ -2,6 +2,12 @@
 
 [ext_resource type="Script" uid="uid://d0hebflq1r5f8" path="res://menu/pause_menu.gd" id="1_of6kd"]
 
+[sub_resource type="InputEventAction" id="InputEventAction_of6kd"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_aoqxd"]
+events = [SubResource("InputEventAction_of6kd")]
+
 [node name="PauseMenu" type="CanvasLayer" unique_id=724964722]
 script = ExtResource("1_of6kd")
 
@@ -39,6 +45,7 @@ layout_mode = 2
 
 [node name="btn_continue" type="Button" parent="Panel/MarginContainer/VBoxContainer/CenterContainer3" unique_id=985980711]
 layout_mode = 2
+shortcut = SubResource("Shortcut_aoqxd")
 text = "Continue"
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=569839381]

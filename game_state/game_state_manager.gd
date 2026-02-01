@@ -38,7 +38,6 @@ func set_current_state(new_state: GameState):
 	
 	match previous_state:
 		GameState.PAUSED:
-			$PauseMenu.hide()
 			$PlayingTimer.paused = false
 			get_tree().paused=false
 			if(current_state == GameState.PLAYING):
@@ -55,9 +54,9 @@ func set_current_state(new_state: GameState):
 				preview_done.emit()
 			playing_started.emit($PlayingTimer)
 		GameState.PAUSED:
-			$PauseMenu.show()
 			$PlayingTimer.paused = true
 			get_tree().paused=true
+			$PauseMenu.open()
 		GameState.RATING:
 			playing_done.emit()
 
