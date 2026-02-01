@@ -3,12 +3,12 @@ extends Node
 
 var face_scene: PackedScene
 var face_instance
-@export var selected_face: Global.Face = Global.selected_face:
+@export var selected_face: Global.Face:
 	set(value):
 		selected_face = value
 		face_scene = load_face_from_enum(selected_face)
 		_update_face()
-## if load Global.seleted_face 
+## if true load Global.seleted_face
 @export var load_face_from_global: bool = false
 
 var mask_scene: PackedScene
@@ -20,29 +20,26 @@ var mask_instance
 		_update_face()
 @export var load_mask_from_global: bool = false
 
-
 func load_face_from_enum(face):
 	if Global.FACE_SCENE_PATHS.has(face):
 		return load(Global.FACE_SCENE_PATHS[face])
 	else:
 		assert(false, "Face '%s' not found" % face)
-		
+
 func load_mask(mask):
 	print("loading Mask level '%s'" % mask)
 	return load(mask)
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if load_face_from_global or Global.level_editor_load:
+	if load_face_from_global or Global.level_editor_load or selected_face == null:
 		selected_face = Global.selected_face
 	else:
 		selected_face = selected_face # hack to run the setter
 		
-	if load_mask_from_global or Global.level_editor_load:
+	if load_mask_from_global or Global.level_editor_load or selected_mask == null:
 		selected_mask = Global.selected_mask
 	else:
 		selected_mask = selected_mask # more hacks
-
 
 func _update_face() -> void:
 	# Remove all existing children
@@ -64,7 +61,7 @@ func _update_face() -> void:
 		var new_mask = mask_scene.instantiate()
 		new_mask.name = "Level" + str(randf())
 		add_child(new_mask)
-		if Engine.is_editor_hint():
+		if Engine.is_editor_hint() and new_mask != null:
 			new_mask.set_owner(get_tree().edited_scene_root)
 		mask_instance = new_mask
 	else:

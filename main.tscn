@@ -97,7 +97,6 @@ mini_cam = NodePath("../SubViewport/MinimapCamera")
 
 [node name="Face" type="Node3D" parent="LevelManager" unique_id=291660152]
 script = ExtResource("11_2cqfq")
-selected_face = 0
 load_face_from_global = true
 
 [node name="@Node3D@62582" parent="LevelManager/Face" unique_id=760186603 instance=ExtResource("10_w48qg")]
@@ -106,7 +105,6 @@ load_face_from_global = true
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 220, 0, 0)
 script = ExtResource("11_2cqfq")
-selected_face = 0
 load_face_from_global = true
 selected_mask = "res://level/levels/SPAHN_TOON--Panzerknacker Spahn.tscn"
 load_mask_from_global = true
