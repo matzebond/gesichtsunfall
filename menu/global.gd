@@ -1,9 +1,7 @@
 extends Node
 
 var selected_face: Face = Face.SPAHN_TOON
-var selected_face_scene: PackedScene
-var selected_mask: String ## this is the res of the mask scene
-var selected_level: PackedScene ## legacy: should be calld seletcde_mask_scene now
+var selected_mask: String = "res://level/levels/SPAHN_TOON--Panzerknacker Spahn.tscn"
 
 enum Face {
 	SPAHN_TOON,
@@ -37,7 +35,6 @@ var MASKS_PER_FACE = {
 	],
 	Face.MERZ_REAL: [
 		"res://level/levels/MERZ_REAL--Querdenker.tscn",
-		"res://level/levels/MERZ_REAL--hitler.tscn",
 	],
 	Face.SUZANNE: [
 		"res://level/levels/SUZANNE--Querdenker.tscn"

@@ -19,7 +19,7 @@ var checkProgress : int = 0
 
 func _on_game_state_manager_playing_started(game_timer: Timer) -> void:
 	if(!levelDecalsNode):
-		print("ERROR: Scoring node is missing node for level decals")
+		print("ERROR: Scoring node is missing node for level decals. playing started")
 		return
 	for child in levelDecalsNode.get_children():
 		levelDecalPositions.push_back(child.global_position)
@@ -36,7 +36,7 @@ func _on_game_state_manager_playing_started(game_timer: Timer) -> void:
 
 func evaluate():
 	if(!playerDecalsNode):
-		print("ERROR: Scoring node is missing node for player decals")
+		print("ERROR: Scoring node is missing node for player decals. evaluate")
 		return
 	if(checkProgress==0):
 		decalPositions.clear()
