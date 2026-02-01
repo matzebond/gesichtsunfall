@@ -1,19 +1,14 @@
 [gd_scene format=3 uid="uid://coqgf2w8jxdxq"]
 
-[ext_resource type="Script" uid="uid://nbui8baxuiud" path="res://world_environment.gd" id="1_w48qg"]
+[ext_resource type="Script" path="res://world_environment.gd" id="1_w48qg"]
 [ext_resource type="PackedScene" uid="uid://3fcf3nkdn5su" path="res://player/player.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b4dhm7h2dvl66" path="res://ui/game_ui.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dkelp60jagl1e" path="res://game_state/game_state_manager.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://buabsabuo7yhv" path="res://game_state/dynamic_camera.gd" id="7_4c57u"]
-[ext_resource type="Script" uid="uid://coad6f6mm35op" path="res://area_3d.gd" id="7_5vw27"]
-[ext_resource type="AudioStream" uid="uid://b3527wgiyspso" path="res://gui/nomnom.wav" id="8_4c57u"]
-[ext_resource type="Texture2D" uid="uid://dcaofdty3phmt" path="res://gui/verputzt.png" id="8_kek77"]
 [ext_resource type="PackedScene" uid="uid://vqv6gey041o1" path="res://scoring/scoring_node.tscn" id="9_vivmo"]
 [ext_resource type="Script" uid="uid://dboxj5j43i1pf" path="res://level/level_manager.gd" id="10_dg77c"]
 [ext_resource type="Script" uid="uid://cn6urjnpr5bva" path="res://gesicht/DynamicFace.gd" id="11_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://bfaf5mxvrhjrs" path="res://screenshoot/screenshot_manager.tscn" id="11_efxa6"]
-[ext_resource type="AudioStream" uid="uid://1c64hqypufo8" path="res://gui/sneeze.mp3" id="12_dg77c"]
-[ext_resource type="Script" uid="uid://c4nql2cjjsb1n" path="res://nasenwind.gd" id="12_w48qg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ycdy4"]
 sky_top_color = Color(1, 0.39, 0.4001665, 1)
@@ -29,12 +24,6 @@ background_mode = 1
 sky = SubResource("Sky_w48qg")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
-size = Vector3(45, 10.68988, 12.757294)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_efxa6"]
-size = Vector3(11.416946, 3.0893784, 7.806549)
 
 [node name="root" type="Node3D" unique_id=1124768642]
 
@@ -63,26 +52,6 @@ script = ExtResource("7_4c57u")
 static_camera_preview = NodePath("../PreviewStaticCamera")
 static_camera_rating = NodePath("../RatingStaticCamera")
 player = NodePath("../player")
-
-[node name="Area3D" type="Area3D" parent="." unique_id=397403153]
-script = ExtResource("7_5vw27")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=819064943]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31.15506, -20.78209)
-shape = SubResource("BoxShape3D_4c57u")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area3D" unique_id=449942279]
-stream = ExtResource("8_4c57u")
-
-[node name="TextureRect" type="TextureRect" parent="Area3D" unique_id=2052095938]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_kek77")
-expand_mode = 2
 
 [node name="ScreenshotManager" parent="." unique_id=1855676447 instance=ExtResource("11_efxa6")]
 
@@ -117,23 +86,10 @@ transform = Transform3D(-1, 0, 8.742278e-08, 8.742278e-08, -4.371139e-08, 1, 3.8
 playerDecalsNode = NodePath("../../Decals")
 checkRadius = 3.0
 
-[node name="nasenwind" type="Area3D" parent="." unique_id=442696100]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31.15506, -20.78209)
-script = ExtResource("12_w48qg")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="nasenwind" unique_id=642082464]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4847031, 12.065269, 16.167948)
-shape = SubResource("BoxShape3D_efxa6")
-
-[node name="hatschi" type="AudioStreamPlayer" parent="nasenwind" unique_id=346290161]
-stream = ExtResource("12_dg77c")
-
 [node name="GameStateManager" parent="." unique_id=1001160322 instance=ExtResource("5_lquwl")]
 
 [connection signal="brush_color_changed" from="player" to="GameUI" method="_on_player_brush_color_changed"]
-[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="score_percent_changed" from="LevelManager/ScoringNode" to="GameUI" method="_on_scoring_percent_changed"]
-[connection signal="body_entered" from="nasenwind" to="nasenwind" method="_on_body_entered"]
 [connection signal="playing_done" from="GameStateManager" to="GameUI" method="_on_game_state_manager_playing_done"]
 [connection signal="playing_done" from="GameStateManager" to="player" method="_on_game_state_manager_playing_done"]
 [connection signal="playing_done" from="GameStateManager" to="DynamicCamera" method="_on_game_state_manager_playing_done"]

@@ -3,6 +3,9 @@
 [ext_resource type="Script" path="res://gesicht/gesicht.gd" id="1_tpk04"]
 [ext_resource type="Script" uid="uid://c4nql2cjjsb1n" path="res://nasenwind.gd" id="2_0f081"]
 [ext_resource type="AudioStream" uid="uid://1c64hqypufo8" path="res://gui/sneeze.mp3" id="3_kjakm"]
+[ext_resource type="Script" uid="uid://coad6f6mm35op" path="res://area_3d.gd" id="4_2vecf"]
+[ext_resource type="AudioStream" uid="uid://b3527wgiyspso" path="res://gui/nomnom.wav" id="5_28d1j"]
+[ext_resource type="Texture2D" uid="uid://dcaofdty3phmt" path="res://gui/verputzt.png" id="6_50uv4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvngw"]
 resource_name = "haut"
@@ -161,6 +164,9 @@ shadow_mesh = SubResource("ArrayMesh_fuj6v")
 [sub_resource type="SphereShape3D" id="SphereShape3D_tqpdr"]
 radius = 5.9177313
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1sg0x"]
+size = Vector3(63.80725, 20.416344, 11.433823)
+
 [node name="Gesicht" type="Node3D" unique_id=760186603]
 script = ExtResource("1_tpk04")
 
@@ -190,5 +196,27 @@ shape = SubResource("SphereShape3D_tqpdr")
 [node name="hatschi" type="AudioStreamPlayer" parent="nasenwind rechts" unique_id=1518227829]
 stream = ExtResource("3_kjakm")
 
+[node name="Maulifauli" type="Area3D" parent="." unique_id=58021817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.154032, 122.59148)
+script = ExtResource("4_2vecf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maulifauli" unique_id=604650146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.355511, -0.66173553)
+shape = SubResource("BoxShape3D_1sg0x")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Maulifauli" unique_id=1334830532]
+stream = ExtResource("5_28d1j")
+
+[node name="TextureRect" type="TextureRect" parent="Maulifauli" unique_id=1249939439]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_50uv4")
+expand_mode = 2
+
 [connection signal="body_entered" from="nasenwind links" to="nasenwind links" method="_on_body_entered"]
 [connection signal="body_entered" from="nasenwind rechts" to="nasenwind rechts" method="_on_body_entered"]
+[connection signal="body_entered" from="Maulifauli" to="Maulifauli" method="_on_body_entered"]
