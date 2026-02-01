@@ -46,11 +46,11 @@ script = ExtResource("1_w48qg")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1934783813]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10.929583, 0)
 
+[node name="GameUI" parent="." unique_id=1594824260 instance=ExtResource("3_h2yge")]
+
 [node name="player" parent="." unique_id=116514080 node_paths=PackedStringArray("decal_root_node") instance=ExtResource("2_1bvp3")]
 transform = Transform3D(-0.24789521, 0, -0.96878684, 0, 1, 0, 0.96878684, 0, -0.24789521, -0.33164597, -11.117437, 55.410625)
 decal_root_node = NodePath("../Decals")
-
-[node name="GameUI" parent="." unique_id=1594824260 instance=ExtResource("3_h2yge")]
 
 [node name="PreviewStaticCamera" type="Camera3D" parent="." unique_id=1926876491]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 76.92769, 18.186455)
@@ -126,6 +126,7 @@ stream = ExtResource("12_dg77c")
 
 [node name="GameStateManager" parent="." unique_id=1001160322 instance=ExtResource("5_lquwl")]
 
+[connection signal="brush_color_changed" from="player" to="GameUI" method="_on_player_brush_color_changed"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="score_percent_changed" from="LevelManager/ScoringNode" to="GameUI" method="_on_scoring_percent_changed"]
 [connection signal="body_entered" from="nasenwind" to="nasenwind" method="_on_body_entered"]

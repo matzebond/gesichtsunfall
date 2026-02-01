@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://3fcf3nkdn5su"]
+[gd_scene format=4 uid="uid://3fcf3nkdn5su"]
 
 [ext_resource type="Script" uid="uid://ctuuxdhbpmy2n" path="res://player/player.gd" id="1_7y2xn"]
 [ext_resource type="PackedScene" uid="uid://ddj7iodaol0cy" path="res://decal/decal_spawner.tscn" id="2_rkbax"]
@@ -326,7 +326,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4ircj")
 
-[node name="player" type="VehicleBody3D" node_paths=PackedStringArray("front_left_wheel", "front_right_wheel", "rear_left_wheel", "rear_right_wheel")]
+[node name="player" type="VehicleBody3D" unique_id=118860680 node_paths=PackedStringArray("front_left_wheel", "front_right_wheel", "rear_left_wheel", "rear_right_wheel")]
 mass = 100.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(-0.5, 0, 0)
@@ -339,15 +339,15 @@ front_right_wheel = NodePath("VehicleWheel3DFrontRight")
 rear_left_wheel = NodePath("VehicleWheel3DBackLeft")
 rear_right_wheel = NodePath("VehicleWheel3DBackLeft")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1827712239]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.29036236, 1.1234249, 0)
 shape = SubResource("BoxShape3D_rkbax")
 
-[node name="CollisionShape3DNose" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3DNose" type="CollisionShape3D" parent="." unique_id=304333456]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -1.161362, 0.64550185, 0)
 shape = SubResource("CapsuleShape3D_oul6g")
 
-[node name="VehicleWheel3DBackRight" type="VehicleWheel3D" parent="."]
+[node name="VehicleWheel3DBackRight" type="VehicleWheel3D" parent="." unique_id=1224466134]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0.5110731, 0.6)
 visible = false
 use_as_traction = true
@@ -355,12 +355,12 @@ wheel_roll_influence = 1.0
 wheel_friction_slip = 2000.0
 suspension_stiffness = 50.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DBackRight"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DBackRight" unique_id=404674921]
 transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, -1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 0, 0, 0)
 layers = 2
 mesh = SubResource("CylinderMesh_rkbax")
 
-[node name="VehicleWheel3DBackLeft" type="VehicleWheel3D" parent="."]
+[node name="VehicleWheel3DBackLeft" type="VehicleWheel3D" parent="." unique_id=649745897]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0.5110731, -0.6)
 visible = false
 use_as_traction = true
@@ -368,12 +368,12 @@ wheel_roll_influence = 1.0
 wheel_friction_slip = 2000.0
 suspension_stiffness = 50.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DBackLeft"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DBackLeft" unique_id=1358627158]
 transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, -1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 0, 0, 0)
 layers = 2
 mesh = SubResource("CylinderMesh_rkbax")
 
-[node name="VehicleWheel3DFrontRight" type="VehicleWheel3D" parent="."]
+[node name="VehicleWheel3DFrontRight" type="VehicleWheel3D" parent="." unique_id=1661849023]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.297, 0.5110731, 0.6)
 visible = false
 use_as_traction = true
@@ -382,12 +382,12 @@ wheel_roll_influence = 1.0
 wheel_friction_slip = 2000.0
 suspension_stiffness = 50.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DFrontRight"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DFrontRight" unique_id=1282512257]
 transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, -1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 0, 0, 0)
 layers = 2
 mesh = SubResource("CylinderMesh_rkbax")
 
-[node name="VehicleWheel3DFrontLeft" type="VehicleWheel3D" parent="."]
+[node name="VehicleWheel3DFrontLeft" type="VehicleWheel3D" parent="." unique_id=1107604399]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.297, 0.5110731, -0.6)
 visible = false
 use_as_traction = true
@@ -396,19 +396,19 @@ wheel_roll_influence = 1.0
 wheel_friction_slip = 2000.0
 suspension_stiffness = 50.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DFrontLeft"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3DFrontLeft" unique_id=1572480137]
 transform = Transform3D(-4.3711385e-08, 1, 4.371139e-08, -1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 0, 0, 0)
 layers = 2
 mesh = SubResource("CylinderMesh_rkbax")
 
-[node name="DecalSpawner" parent="." node_paths=PackedStringArray("decal_spawn_point", "root_node") instance=ExtResource("2_rkbax")]
+[node name="DecalSpawner" parent="." unique_id=1677421053 node_paths=PackedStringArray("decal_spawn_point", "root_node") instance=ExtResource("2_rkbax")]
 decal_spawn_point = NodePath("../DecalSpawnPoint")
 root_node = NodePath("..")
 
-[node name="DecalSpawnPoint" type="Node3D" parent="."]
+[node name="DecalSpawnPoint" type="Node3D" parent="." unique_id=1267783343]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4310081, 0, 0)
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=365603843]
 transform = Transform3D(0.9579727, -0.28685895, 0, 0.28685895, 0.9579727, 0, 0, 0, 1, 1.1107408, 0.58645195, 0)
 amount = 64
 lifetime = 0.5
@@ -416,40 +416,40 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_oul6g")
 draw_pass_1 = SubResource("QuadMesh_oul6g")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=2078030190]
 transform = Transform3D(-4.2452704e-08, -0.23824526, 0.9712049, -1.04140305e-08, 0.9712049, 0.2382453, -0.9999999, 5.2939553e-23, -4.371138e-08, 0.95181286, 1.8440077, 0)
 spring_length = 3.0
 
-[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=922890631]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 current = true
 
-[node name="FmodListener3D" type="FmodListener3D" parent="SpringArm3D/Camera3D"]
+[node name="FmodListener3D" type="FmodListener3D" parent="SpringArm3D/Camera3D" unique_id=511101997]
 transform = Transform3D(1, -8.742278e-08, 8.742277e-08, 1.1848047e-07, 0.47559348, -0.8796652, 3.5325073e-08, 0.8796652, 0.47559348, -1.3484898, -31.303139, 118.66805)
 
-[node name="player_model" type="Node3D" parent="."]
+[node name="player_model" type="Node3D" parent="." unique_id=1297619049]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="tube" type="MeshInstance3D" parent="player_model"]
+[node name="tube" type="MeshInstance3D" parent="player_model" unique_id=133708841]
 layers = 2
 mesh = SubResource("ArrayMesh_oswxj")
 
-[node name="arm_mit_hut" type="MeshInstance3D" parent="player_model"]
+[node name="arm_mit_hut" type="MeshInstance3D" parent="player_model" unique_id=38067067]
 transform = Transform3D(0.26613456, 0, 0, 0, 0.26613456, 0, 0, 0, 0.26613456, -0.20327397, 1.4758152, 0.17468272)
 layers = 2
 mesh = SubResource("ArrayMesh_v7dtd")
 
-[node name="linkes_bein" type="MeshInstance3D" parent="player_model"]
+[node name="linkes_bein" type="MeshInstance3D" parent="player_model" unique_id=864795064]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3074428, 0)
 layers = 2
 mesh = SubResource("ArrayMesh_pipap")
 
-[node name="Cylinder" type="MeshInstance3D" parent="player_model"]
+[node name="Cylinder" type="MeshInstance3D" parent="player_model" unique_id=1499552797]
 transform = Transform3D(0.18010275, 0, 0, 0, 0.6109561, 0, 0, 0, 0.18010275, 0.43698367, 0.5374727, -0.08908683)
 layers = 2
 mesh = SubResource("ArrayMesh_lmiwe")
 
-[node name="Cylinder_001" type="MeshInstance3D" parent="player_model"]
+[node name="Cylinder_001" type="MeshInstance3D" parent="player_model" unique_id=115835852]
 transform = Transform3D(0.18010275, 0, 0, 0, 0.6109561, 0, 0, 0, 0.18010275, -0.43270466, 0.5182075, -0.08908683)
 layers = 2
 mesh = SubResource("ArrayMesh_4pbki")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bomh347lkp48s"]
+
+[ext_resource type="Theme" uid="uid://dgedbhqrvjjcv" path="res://ui/theme/theme.tres" id="1_bdsk4"]
+[ext_resource type="Script" uid="uid://cf1jdmerrlhm7" path="res://ui/color_button.gd" id="1_pd1k7"]
+
+[node name="ColorButton" type="PanelContainer" unique_id=456104869]
+custom_minimum_size = Vector2(54, 0)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("1_bdsk4")
+script = ExtResource("1_pd1k7")
+
+[node name="Label" type="Label" parent="." unique_id=298163846]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Label" unique_id=153701161]
+modulate = Color(1, 1, 1, 0.5058824)
+z_index = -1
+layout_mode = 0
+offset_left = -6.0
+offset_top = -6.3871
+offset_right = 37.0
+offset_bottom = 39.3871
+color = Color(0.9437293, 0.7933064, 0.18490851, 1)

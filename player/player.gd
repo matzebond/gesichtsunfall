@@ -1,5 +1,7 @@
 extends VehicleBody3D
 
+signal brush_color_changed(color: Color, key_id: int)
+
 # Movement Zeug
 var throttle: float = 0.0
 
@@ -183,5 +185,6 @@ func _on_game_state_manager_playing_done() -> void:
 	visible = false
 	process_mode = Node.PROCESS_MODE_DISABLED
 
-func _on_decal_spawner_color_changed(color: Color) -> void:
+func _on_decal_spawner_color_changed(color: Color, key_id: int) -> void:
 	set_particle_color(color)
+	brush_color_changed.emit(color, key_id)

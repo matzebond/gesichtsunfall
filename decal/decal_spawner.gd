@@ -1,6 +1,6 @@
 extends Node3D
 
-signal color_changed(color: Color)
+signal color_changed(color: Color, key_id: int)
 @export var decal_spawn_point: Node3D
 @export var root_node: Node3D
 
@@ -9,7 +9,6 @@ var decal_scene = preload("res://decal/decal.tscn")
 var spawned_decals: Array[Decal] = []
 
 # Brush Zeug
-@export var brush_colors: Array[Color]
 var selected_brush_color: Color
 
 # Decal Zeug
@@ -22,10 +21,10 @@ var spawning_enabled = false
 @export var min_size = 1
 
 func _ready() -> void:
-	assert(len(brush_colors) > 0, "Must set at least one brush color")
-	assert(len(brush_colors) <= 9, "At most 9 brush colors are supported")
-	selected_brush_color = brush_colors[0]
-	color_changed.emit(selected_brush_color)
+	assert(len(Global.BRUSH_COLORS) > 0, "Must set at least one brush color")
+	assert(len(Global.BRUSH_COLORS) <= 9, "At most 9 brush colors are supported")
+	selected_brush_color = Global.BRUSH_COLORS[0]
+	color_changed.emit(selected_brush_color, 0)
 
 func enable_spawning(enable: bool):
 	spawning_enabled = enable
@@ -40,10 +39,10 @@ func _process(_delta: float) -> void:
 	for brush in range(brush_count):
 		if Input.is_action_just_pressed("player_brush_" + str(brush + 1)):
 			# Check if valid brush color
-			if brush < len(brush_colors):
-				selected_brush_color = brush_colors[brush]
+			if brush < len(Global.BRUSH_COLORS):
+				selected_brush_color = Global.BRUSH_COLORS[brush]
 				print("Selected brush ", brush + 1)
-				color_changed.emit(selected_brush_color)
+				color_changed.emit(selected_brush_color, brush)
 				break
 	if Input.is_action_just_pressed("player_increase_brush_size"):
 		change_size(size_increase)
