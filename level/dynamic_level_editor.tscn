@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://bxxss8025e6bw"]
+[gd_scene format=3 uid="uid://cahex4b31eauj"]
 
 [ext_resource type="Script" uid="uid://bs3oyux0x1g73" path="res://level/level_editor.gd" id="1_0oc4p"]
 [ext_resource type="PackedScene" uid="uid://ddj7iodaol0cy" path="res://decal/decal_spawner.tscn" id="2_rytqy"]
 [ext_resource type="Script" uid="uid://cn6urjnpr5bva" path="res://gesicht/DynamicFace.gd" id="4_2oyma"]
-[ext_resource type="PackedScene" uid="uid://bsguomweibuj0" path="res://gesicht/spahn_ki_platt.tscn" id="4_v0ei4"]
+[ext_resource type="PackedScene" uid="uid://c5mfeci24775i" path="res://gesicht/spahn_toon.tscn" id="4_shtmm"]
+[ext_resource type="Script" uid="uid://dlj8lnntue4ls" path="res://gesicht/gesicht.gd" id="5_d1qx4"]
 
 [node name="LevelEditor" type="Node3D" unique_id=142715042]
 script = ExtResource("1_0oc4p")
@@ -11,7 +12,7 @@ script = ExtResource("1_0oc4p")
 [node name="DecalSpawner" parent="." unique_id=818907089 node_paths=PackedStringArray("decal_spawn_point", "root_node") instance=ExtResource("2_rytqy")]
 decal_spawn_point = NodePath("../DecalSpawnPoint")
 root_node = NodePath("../Decals")
-size = 30.0
+size = 3.5
 size_increase = 5.0
 
 [node name="DecalSpawnPoint" type="Node3D" parent="." unique_id=1426239805]
@@ -21,14 +22,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86, 280, 80)
 target_position = Vector3(-86, -700, 80)
 collide_with_areas = true
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=708539691]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 280.7309, 509.24512)
-projection = 1
+[node name="Camera3D" type="Camera3D" parent="." unique_id=797726217]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 142.45981, 50.306396)
 current = true
-size = 2000.0
-
-[node name="Camera3D2" type="Camera3D" parent="." unique_id=797726217]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1000, 400)
 size = 2000.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=569254838]
@@ -36,9 +32,10 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 6
 
 [node name="DynamicFace" type="Node3D" parent="." unique_id=1540519704]
 script = ExtResource("4_2oyma")
-selected_face = 1
+selected_face = 0
 
-[node name="@Node3D@18816" type="Node3D" parent="DynamicFace" unique_id=1136553383 instance=ExtResource("4_v0ei4")]
+[node name="Face" type="Node3D" parent="DynamicFace" unique_id=760186603 instance=ExtResource("4_shtmm")]
+script = ExtResource("5_d1qx4")
 
 [node name="Decals" type="Node3D" parent="." unique_id=1856804919]
 
