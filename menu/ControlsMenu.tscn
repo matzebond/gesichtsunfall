@@ -72,7 +72,7 @@ text = "WASD / Arrow keys"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Control stick / DPad"
+text = "Control stick / R2 + L2"
 
 [node name="Paint" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1108187598]
 layout_mode = 2
@@ -118,7 +118,6 @@ text = "1-9"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "..."
 
 [node name="BrushColorCycle" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=502110139]
 layout_mode = 2
@@ -135,13 +134,13 @@ text = "Cycle Brush Colors"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Q / E"
+text = "Q + E"
 
 [node name="Key2" type="Label" parent="MarginContainer/VBoxContainer/BrushColorCycle" unique_id=1022855219]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Left Trigger / Right Trigger"
+text = "DPad up + down"
 
 [node name="BrushSize" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2134916165]
 layout_mode = 2
@@ -164,7 +163,29 @@ text = "J + K"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "R1 + R2"
+text = "R1 + L1"
+
+[node name="PauseGame" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1146611166]
+layout_mode = 2
+
+[node name="Action" type="Label" parent="MarginContainer/VBoxContainer/PauseGame" unique_id=1674022482]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.79607844, 0.10980392, 0.10980392, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Pause Game"
+
+[node name="Key" type="Label" parent="MarginContainer/VBoxContainer/PauseGame" unique_id=1463249285]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "ESC"
+
+[node name="Key2" type="Label" parent="MarginContainer/VBoxContainer/PauseGame" unique_id=1315623367]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer" unique_id=2059440664]
 layout_mode = 2
