@@ -19,7 +19,7 @@ func _on_btn_continue_pressed() -> void:
 	close()
 	
 
-func _on_btn_reset_pressed() -> void:
+func _on_btn_restart_pressed() -> void:
 	get_tree().reload_current_scene()
 
 func _on_btn_menu_pressed() -> void:

@@ -51,9 +51,9 @@ text = "Continue"
 [node name="CenterContainer" type="CenterContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=569839381]
 layout_mode = 2
 
-[node name="btn_reset" type="Button" parent="Panel/MarginContainer/VBoxContainer/CenterContainer" unique_id=1593431634]
+[node name="btn_restart" type="Button" parent="Panel/MarginContainer/VBoxContainer/CenterContainer" unique_id=1593431634]
 layout_mode = 2
-text = "Reset"
+text = "Restart"
 
 [node name="CenterContainer2" type="CenterContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=586368511]
 layout_mode = 2
@@ -63,5 +63,5 @@ layout_mode = 2
 text = "Main Menu"
 
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/CenterContainer3/btn_continue" to="." method="_on_btn_continue_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/CenterContainer/btn_reset" to="." method="_on_btn_reset_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/CenterContainer/btn_restart" to="." method="_on_btn_restart_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/CenterContainer2/btn_menu" to="." method="_on_btn_menu_pressed"]
