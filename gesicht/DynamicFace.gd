@@ -1,42 +1,47 @@
 @tool
 extends Node
 
-enum FaceScenes {
-	MERZ_TOON,
-	MERZ_REAL,
-	SPAHN_REAL,
-	SPAHN_TOON,
-	SUZANNE,
-}
-
-const FACE_SCENE_PATHS = {
-	FaceScenes.SPAHN_REAL: "res://gesicht/spahn_ki_platt.tscn",
-	FaceScenes.SPAHN_TOON: "res://gesicht/spahn_toon.tscn",
-	FaceScenes.MERZ_TOON: "res://gesicht/merz_toon.tscn",
-	FaceScenes.MERZ_REAL: "res://gesicht/merz_ki.tscn",
-	FaceScenes.SUZANNE: "res://gesicht/suzanne.tscn",
-}
-
-@export var selected_face: FaceScenes = FaceScenes.SPAHN_REAL:
+var face_scene: PackedScene
+var face_instance
+@export var selected_face: Global.Face = Global.selected_face:
 	set(value):
 		selected_face = value
-		_load_face_from_enum()
-		if Engine.is_editor_hint():
-			_update_face()
+		face_scene = load_face_from_enum(selected_face)
+		_update_face()
+## if load Global.seleted_face 
+@export var load_face_from_global: bool = false
 
-var face_scene: PackedScene
+var mask_scene: PackedScene
+var mask_instance
+@export_file("*.tscn") var selected_mask: String:
+	set(value):
+		selected_mask = value
+		mask_scene = load_mask(selected_mask)
+		_update_face()
+@export var load_mask_from_global: bool = false
 
+
+func load_face_from_enum(face):
+	if Global.FACE_SCENE_PATHS.has(face):
+		return load(Global.FACE_SCENE_PATHS[face])
+	else:
+		assert(false, "Face '%s' not found" % face)
+		
+func load_mask(mask):
+	print("loading Mask level '%s'" % mask)
+	return load(mask)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_load_face_from_enum()
-	if not Engine.is_editor_hint():
-		_update_face()
-
-
-func _load_face_from_enum() -> void:
-	if FACE_SCENE_PATHS.has(selected_face):
-		face_scene = load(FACE_SCENE_PATHS[selected_face])
+	if load_face_from_global or Global.level_editor_load:
+		selected_face = Global.selected_face
+	else:
+		selected_face = selected_face # hack to run the setter
+		
+	if load_mask_from_global or Global.level_editor_load:
+		selected_mask = Global.selected_mask
+	else:
+		selected_mask = selected_mask # more hacks
 
 
 func _update_face() -> void:
@@ -47,6 +52,20 @@ func _update_face() -> void:
 	# Add new face instance if scene is set
 	if face_scene != null:
 		var new_face = face_scene.instantiate()
+		new_face.name = "Face"
 		add_child(new_face)
 		if Engine.is_editor_hint():
 			new_face.set_owner(get_tree().edited_scene_root)
+		face_instance = new_face
+	else:
+		face_instance = null
+			
+	if mask_scene != null:
+		var new_mask = mask_scene.instantiate()
+		new_mask.name = "Level" + str(randf())
+		add_child(new_mask)
+		if Engine.is_editor_hint():
+			new_mask.set_owner(get_tree().edited_scene_root)
+		mask_instance = new_mask
+	else:
+		mask_instance = null

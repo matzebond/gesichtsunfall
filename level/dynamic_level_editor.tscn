@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cahex4b31eauj"]
+
+[ext_resource type="Script" uid="uid://bs3oyux0x1g73" path="res://level/level_editor.gd" id="1_0oc4p"]
+[ext_resource type="PackedScene" uid="uid://ddj7iodaol0cy" path="res://decal/decal_spawner.tscn" id="2_rytqy"]
+[ext_resource type="Script" uid="uid://cn6urjnpr5bva" path="res://gesicht/DynamicFace.gd" id="4_2oyma"]
+[ext_resource type="PackedScene" uid="uid://cop3imneylyer" path="res://gesicht/suzanne.tscn" id="4_d1qx4"]
+[ext_resource type="Script" uid="uid://dlj8lnntue4ls" path="res://gesicht/gesicht.gd" id="5_se1ol"]
+[ext_resource type="Script" uid="uid://difctcqvd0vnl" path="res://ui/color_selector.gd" id="6_d1qx4"]
+
+[node name="LevelEditor" type="Node3D" unique_id=142715042 node_paths=PackedStringArray("log_label")]
+script = ExtResource("1_0oc4p")
+log_label = NodePath("CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2/Log")
+
+[node name="DecalSpawner" parent="." unique_id=818907089 node_paths=PackedStringArray("decal_spawn_point", "root_node") instance=ExtResource("2_rytqy")]
+decal_spawn_point = NodePath("../DecalSpawnPoint")
+root_node = NodePath("../Decals")
+size = 3.5
+
+[node name="DecalSpawnPoint" type="Node3D" parent="." unique_id=1426239805]
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1709459298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86, 280, 80)
+target_position = Vector3(-86, -700, 80)
+collide_with_areas = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=797726217]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 312.4598, 94.3064)
+current = true
+size = 2000.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=569254838]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 68.832, 56.06381)
+
+[node name="DynamicFace" type="Node3D" parent="." unique_id=1540519704]
+script = ExtResource("4_2oyma")
+selected_face = 4
+
+[node name="@Node3D@28478" type="Node3D" parent="DynamicFace" unique_id=175588883 instance=ExtResource("4_d1qx4")]
+script = ExtResource("5_se1ol")
+
+[node name="Decals" type="Node3D" parent="." unique_id=1856804919]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1914393313]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1386375019]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=237519080]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1968014810]
+layout_mode = 2
+
+[node name="Name" type="LineEdit" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1463450640]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "level name"
+
+[node name="Log" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=787375262]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=913643399]
+layout_mode = 2
+
+[node name="Save" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=14571240]
+layout_mode = 2
+text = "Save"
+
+[node name="Back" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1163773096]
+layout_mode = 2
+text = "Back
+"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=407355726]
+layout_mode = 2
+
+[node name="ColorSelector" type="VBoxContainer" parent="CanvasLayer" unique_id=1918986033]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/separation = 7
+script = ExtResource("6_d1qx4")
+
+[connection signal="color_changed" from="DecalSpawner" to="." method="_on_decal_spawner_color_changed"]
+[connection signal="text_changed" from="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2/Name" to="." method="_on_name_text_changed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/Save" to="." method="save"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://chw22xi1hp3t6"]
+
+[ext_resource type="PackedScene" uid="uid://3fcf3nkdn5su" path="res://player/player.tscn" id="2_1d6aj"]
+[ext_resource type="PackedScene" uid="uid://b4dhm7h2dvl66" path="res://ui/game_ui.tscn" id="3_ordqi"]
+[ext_resource type="Script" uid="uid://cn6urjnpr5bva" path="res://gesicht/DynamicFace.gd" id="4_ordqi"]
+[ext_resource type="Script" uid="uid://hx2vfkfspbhn" path="res://global_player_cam.gd" id="4_yh764"]
+[ext_resource type="PackedScene" uid="uid://bsguomweibuj0" path="res://gesicht/spahn_ki_platt.tscn" id="5_1d6aj"]
+
+[node name="root" type="Node3D" unique_id=1124768642]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1934783813]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10.929583, 0)
+
+[node name="player" parent="." unique_id=116514080 instance=ExtResource("2_1d6aj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=153819132]
+transform = Transform3D(1, 0, 0, 0, 0.47559348, 0.8796652, 0, -0.8796652, 0.47559348, 1.3484964, 14.089825, 11.140112)
+
+[node name="GameUI" parent="." unique_id=1594824260 instance=ExtResource("3_ordqi")]
+
+[node name="GlobalPlayerCam" type="Camera3D" parent="." unique_id=857239195 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 0.47559348, 0.8796652, 0, -0.8796652, 0.47559348, -8.063936, 2.3274899, 32.34933)
+script = ExtResource("4_yh764")
+target = NodePath("../player")
+
+[node name="DynamicFace" type="Node3D" parent="." unique_id=731690039]
+script = ExtResource("4_ordqi")
+
+[node name="spahn_ki_platt" parent="DynamicFace" unique_id=1136553383 instance=ExtResource("5_1d6aj")]

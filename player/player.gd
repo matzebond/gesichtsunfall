@@ -1,9 +1,12 @@
 extends VehicleBody3D
 
+signal brush_color_changed(color: Color, key_id: int)
+
 # Movement Zeug
 var throttle: float = 0.0
 
 var prev_brush_down = false
+signal player_pause
 
 @export_group("Speed")
 ## hängt auf jeden fall von mass ab
@@ -16,9 +19,19 @@ var vehicle_linear_velocity: float = 0.0
 
 @export_group("Steering & Brake")
 var steering_input
-@export var steering_speed = 2.5
-@export var max_steering_angle = 1.65
+@export var steering_speed = 3.5
+@export var max_steering_angle = 0.8
 @export var steering_speed_air = 40000.0
+
+@export var braking_power = 60.0 # Real brake force
+@export var drag_force = 0.05	# Air resistance
+@export var engine_brake = 2.0   # Slow down when coasting
+
+@export_group("Wheel Physics")
+## Force these values in code to ensure grip (fixes ice feeling)
+@export var wheel_friction: float = 2.0
+@export var suspension_stiffness: float = 50.0
+
 ## unused
 @export var handbrake_force = 5.0
 var handbrake: bool = false
@@ -58,22 +71,26 @@ var in_air_time = 0
 var allow_yeehaw = 0
 var can_brake = true
 
-
 func _ready() -> void:
-	for wheel: VehicleWheel3D in [front_left_wheel, front_right_wheel]:
-		pass # man könnte hier iwie was berechnen
+	var wheels = [front_left_wheel, front_right_wheel, rear_left_wheel, rear_right_wheel]
+	for wheel: VehicleWheel3D in wheels:
+		if wheel:
+			wheel.wheel_friction_slip = wheel_friction
+			wheel.suspension_stiffness = suspension_stiffness
+
 	$GPUParticles3D.emitting = false
 	spawn_position = position
 
 func _process(delta: float) -> void:
-	
+
 	arm_angle = fmod(arm_angle + delta * linear_velocity.length() * 0.75, 360)
-	
+
 	$player_model/arm_mit_hut.rotation = Vector3(-arm_angle,0,0)
 
 	# Handle scene reset
 	if Input.is_action_just_pressed("ui_cancel"):  # ESC key
-		get_tree().reload_current_scene()
+		Global.emit_signal("pause_signal")
+		pass
 
 func _physics_process(delta):
 	if disable_controls:
@@ -94,8 +111,16 @@ func handle_vehicle_control(delta):
 	steering = move_toward(steering, steering_input * max_steering_angle, delta * steering_speed)
 
 func handle_engine_velocity():
-	engine_force = Input.get_axis("player_down", "player_up") * ENGINE_POWER
-	
+	# Always maintain 1% of engine power
+	engine_force = max(0.01 * ENGINE_POWER, Input.get_axis("player_down", "player_up") * ENGINE_POWER)
+
+	if Input.is_action_pressed("player_down"):
+		$player_model/Cylinder.rotation_degrees = Vector3(-15,0,0)
+		$player_model/Cylinder_001.rotation_degrees = Vector3(-15,0,0)
+	else:
+		$player_model/Cylinder.rotation_degrees = Vector3(30,0,0)
+		$player_model/Cylinder_001.rotation_degrees = Vector3(30,0,0)
+
 	# Calculate engine force
 	vehicle_linear_velocity = linear_velocity.length()
 	var speed_factor = 1.0 - min(vehicle_linear_velocity / max_speed, 1.0)
@@ -130,9 +155,9 @@ func handle_speed_based_downforce():
 	apply_central_force(downforce)
 
 func handle_air_control(delta):
-	
+
 	var in_air = not any_wheel_in_contact()
-	
+
 	if in_air:
 		in_air_time += get_process_delta_time()
 	else:
@@ -141,7 +166,7 @@ func handle_air_control(delta):
 		in_air_time = 0
 		allow_yeehaw -= get_process_delta_time()
 		return
-		
+
 	if in_air_time >= 0.1 and allow_yeehaw <= 0:
 		AudioManager.play_one_shot("Yeehaw", transform)
 		allow_yeehaw = 5
@@ -154,7 +179,7 @@ func any_wheel_in_contact():
 		if wheel.is_in_contact():
 			return true
 	return false
-	
+
 func set_particle_color(color: Color):
 	$GPUParticles3D.draw_pass_1.material.albedo_color = color
 
@@ -191,5 +216,6 @@ func _on_game_state_manager_playing_done() -> void:
 	visible = false
 	process_mode = Node.PROCESS_MODE_DISABLED
 
-func _on_decal_spawner_color_changed(color: Color) -> void:
+func _on_decal_spawner_color_changed(color: Color, key_id: int) -> void:
 	set_particle_color(color)
+	brush_color_changed.emit(color, key_id)
