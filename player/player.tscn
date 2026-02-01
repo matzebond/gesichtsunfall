@@ -404,6 +404,7 @@ mesh = SubResource("CylinderMesh_rkbax")
 [node name="DecalSpawner" parent="." unique_id=1677421053 node_paths=PackedStringArray("decal_spawn_point", "root_node") instance=ExtResource("2_rkbax")]
 decal_spawn_point = NodePath("../DecalSpawnPoint")
 root_node = NodePath("..")
+size = 3.0
 
 [node name="DecalSpawnPoint" type="Node3D" parent="." unique_id=1267783343]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4310081, 0, 0)
