@@ -5,6 +5,7 @@ extends Node3D
 
 func _ready() -> void:
 	face_label.text = Global.Face.find_key(Global.selected_face)
+	update_face()
 
 
 func _on_face_next_pressed() -> void:
@@ -24,7 +25,7 @@ func _on_face_prev_pressed() -> void:
 
 func update_face():
 	# Update face global & text
-	face_label.text = Global.Face.find_key(Global.selected_face)
+	face_label.text = Global.FACE_NAME[Global.selected_face]
 	$DynamicFace.selected_face = Global.selected_face
 	
 	# select first mask & update text

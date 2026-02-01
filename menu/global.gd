@@ -20,6 +20,14 @@ const FACE_SCENE_PATHS = {
 	Face.SUZANNE: "res://gesicht/suzanne.tscn",
 }
 
+const FACE_NAME = {
+	Face.SPAHN_TOON: "Jens Spahn",
+	Face.SPAHN_REAL: "@realJensSpahn",
+	Face.MERZ_TOON: "Friedrich Merz",
+	Face.MERZ_REAL: "@realFriedrichMerz",
+	Face.SUZANNE: "Suzanne",
+}
+
 var MASKS_PER_FACE = {
 	Face.SPAHN_TOON: [
 		"res://level/levels/SPAHN_TOON--Querdenker.tscn",

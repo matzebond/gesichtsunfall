@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ciwwnxttkdecb" path="res://menu/level_preview_selection.gd" id="1_f1kbi"]
 [ext_resource type="Script" uid="uid://cn6urjnpr5bva" path="res://gesicht/DynamicFace.gd" id="1_w8pa5"]
+[ext_resource type="PackedScene" uid="uid://c5mfeci24775i" path="res://gesicht/spahn_toon.tscn" id="3_rxme8"]
+[ext_resource type="Script" path="res://gesicht/gesicht.gd" id="4_u3h8q"]
 
 [node name="LevelPreviewSelection" type="Node3D" unique_id=1299130847 node_paths=PackedStringArray("face_label", "mask_label")]
 script = ExtResource("1_f1kbi")
@@ -10,8 +12,12 @@ mask_label = NodePath("CanvasLayer/VBoxContainer/HBoxContainer2/Mask")
 
 [node name="DynamicFace" type="Node3D" parent="." unique_id=126665870]
 script = ExtResource("1_w8pa5")
-load_from_global = true
-selected_mask = null
+selected_face = 0
+load_face_from_global = true
+load_mask_from_global = true
+
+[node name="@Node3D@27325" type="Node3D" parent="DynamicFace" unique_id=760186603 instance=ExtResource("3_rxme8")]
+script = ExtResource("4_u3h8q")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1054226063]
 
