@@ -21,7 +21,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Gesichtsunfall"
 run/main_scene="uid://c5gtyvofhsbvo"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://dro8iawibqrn5"
 
 [autoload]
 
@@ -181,4 +181,5 @@ player_brush_next={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
 limits/cluster_builder/max_clustered_elements=8192.0

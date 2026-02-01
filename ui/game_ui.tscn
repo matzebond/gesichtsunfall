@@ -47,6 +47,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="LabelFps" type="Label" parent="MarginContainer/VBoxContainer" unique_id=411353700]
+visible = false
 layout_mode = 2
 theme = SubResource("Theme_0xm2m")
 text = "<fps>"
