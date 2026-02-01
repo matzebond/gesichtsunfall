@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://coqgf2w8jxdxq"]
 
-[ext_resource type="Script" path="res://world_environment.gd" id="1_w48qg"]
+[ext_resource type="Script" uid="uid://nbui8baxuiud" path="res://world_environment.gd" id="1_w48qg"]
 [ext_resource type="PackedScene" uid="uid://3fcf3nkdn5su" path="res://player/player.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b4dhm7h2dvl66" path="res://ui/game_ui.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://bg1ktwk526e26" path="res://minimap_camera.gd" id="4_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dkelp60jagl1e" path="res://game_state/game_state_manager.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://buabsabuo7yhv" path="res://game_state/dynamic_camera.gd" id="7_4c57u"]
 [ext_resource type="PackedScene" uid="uid://vqv6gey041o1" path="res://scoring/scoring_node.tscn" id="9_vivmo"]
-[ext_resource type="Shader" path="res://test_scenes/minimap.gdshader" id="10_4c57u"]
+[ext_resource type="Shader" uid="uid://8rujvmty2byx" path="res://test_scenes/minimap.gdshader" id="10_4c57u"]
 [ext_resource type="Script" uid="uid://dboxj5j43i1pf" path="res://level/level_manager.gd" id="10_dg77c"]
 [ext_resource type="Script" uid="uid://cn6urjnpr5bva" path="res://gesicht/DynamicFace.gd" id="11_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://bfaf5mxvrhjrs" path="res://screenshoot/screenshot_manager.tscn" id="11_efxa6"]
@@ -113,18 +113,18 @@ checkRadius = 3.0
 
 [node name="GameStateManager" parent="." unique_id=1001160322 instance=ExtResource("5_lquwl")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1022632507]
+[node name="Minimap" type="Sprite2D" parent="." unique_id=1022632507]
 material = SubResource("ShaderMaterial_dg77c")
 position = Vector2(866, 177)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("ViewportTexture_ycdy4")
 centered = false
 
-[node name="PlayerMarker" type="Sprite2D" parent="." unique_id=1467520812]
-scale = Vector2(0.5, 0.5)
+[node name="PlayerMarker" type="Sprite2D" parent="Minimap" unique_id=1467520812]
+position = Vector2(-1732, -354)
 texture = SubResource("GradientTexture2D_efxa6")
 
-[node name="Label" type="Label" parent="PlayerMarker" unique_id=2051295009]
+[node name="Label" type="Label" parent="Minimap/PlayerMarker" unique_id=2051295009]
 visible = false
 offset_right = 40.0
 offset_bottom = 33.0
@@ -133,15 +133,18 @@ offset_bottom = 33.0
 [connection signal="score_percent_changed" from="LevelManager/ScoringNode" to="GameUI" method="_on_scoring_percent_changed"]
 [connection signal="playing_done" from="GameStateManager" to="GameUI" method="_on_game_state_manager_playing_done"]
 [connection signal="playing_done" from="GameStateManager" to="player" method="_on_game_state_manager_playing_done"]
+[connection signal="playing_done" from="GameStateManager" to="SubViewport/MinimapCamera" method="_on_game_state_manager_playing_done"]
 [connection signal="playing_done" from="GameStateManager" to="DynamicCamera" method="_on_game_state_manager_playing_done"]
 [connection signal="playing_done" from="GameStateManager" to="LevelManager" method="_on_game_state_manager_playing_done"]
 [connection signal="playing_started" from="GameStateManager" to="GameUI" method="_on_game_state_manager_playing_started"]
 [connection signal="playing_started" from="GameStateManager" to="player" method="_on_game_state_manager_playing_started"]
+[connection signal="playing_started" from="GameStateManager" to="SubViewport/MinimapCamera" method="_on_game_state_manager_playing_started"]
 [connection signal="playing_started" from="GameStateManager" to="LevelManager" method="_on_game_state_manager_playing_started"]
 [connection signal="playing_started" from="GameStateManager" to="LevelManager/ScoringNode" method="_on_game_state_manager_playing_started"]
 [connection signal="preview_done" from="GameStateManager" to="DynamicCamera" method="_on_game_state_manager_preview_done"]
 [connection signal="preview_started" from="GameStateManager" to="GameUI" method="_on_game_state_manager_preview_started"]
 [connection signal="preview_started" from="GameStateManager" to="player" method="_on_game_state_manager_preview_started"]
+[connection signal="preview_started" from="GameStateManager" to="SubViewport/MinimapCamera" method="_on_game_state_manager_preview_started"]
 [connection signal="preview_started" from="GameStateManager" to="DynamicCamera" method="_on_game_state_manager_preview_started"]
 [connection signal="preview_started" from="GameStateManager" to="LevelManager" method="_on_game_state_manager_preview_started"]
 
