@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbitgqipregge"
 path.s3tc="res://.godot/imported/merz_ki_merz_baked_tex.png-d315bf33725cc1c87c0499c1b2f0b957.s3tc.ctex"
+path.etc2="res://.godot/imported/merz_ki_merz_baked_tex.png-d315bf33725cc1c87c0499c1b2f0b957.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://gesicht/merz_ki_merz_baked_tex.png"
-dest_files=["res://.godot/imported/merz_ki_merz_baked_tex.png-d315bf33725cc1c87c0499c1b2f0b957.s3tc.ctex"]
+dest_files=["res://.godot/imported/merz_ki_merz_baked_tex.png-d315bf33725cc1c87c0499c1b2f0b957.s3tc.ctex", "res://.godot/imported/merz_ki_merz_baked_tex.png-d315bf33725cc1c87c0499c1b2f0b957.etc2.ctex"]
 
 [params]
 
