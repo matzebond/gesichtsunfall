@@ -17,10 +17,15 @@ var mistakeDecalColors = []
 var mistakeDecalValid : Array[bool] = []
 
 var validDecals : int = 0
+var lastValidDecals := 0
 var mistakeDecals : int = 0
+var lastMistakeDecals := 0
 
 var checkProgress : int = 0
 var mistakeCheckProgress : int = 0
+
+var lastTotalScore := 0
+var lastPlayerDecalsCount := 0
 
 @export var checksPerFrame : int = 100
 @export var checkRadius : float = 10.0
@@ -76,9 +81,7 @@ func evaluate(final = false, checks = checksPerFrame):
 	checkProgress+=checks
 	if(checkProgress>=levelDecalPositions.size()):
 		#print("Decals valid: " + str(validDecals) + "/" + str(levelDecalPositions.size()))
-		var levelDecalPositionsCount = levelDecalPositions.size()
-		var scorePercent = 100 * validDecals / levelDecalPositionsCount if levelDecalPositionsCount > 0 else 0
-		score_percent_changed.emit(scorePercent)
+		lastValidDecals = validDecals
 		checkProgress=0
 	pass
 	
@@ -110,15 +113,22 @@ func evaluateMistakes(final = false, checks = checksPerFrame):
 	if(mistakeCheckProgress>=mistakeDecalPositions.size()):
 		#print("Decal mistakes: " + str(mistakeDecals) + "/" + str(mistakeDecalPositions.size()))
 		$MistakesPanel/MistakesLabel.text = "Mistakes: " + str(mistakeDecals) + " / " + str(mistakeDecalPositions.size())
-		var mistakePositionsCount = mistakeDecalPositions.size()
-		var scorePercent = 100 * mistakeDecals / mistakePositionsCount if mistakePositionsCount > 0 else 0
-		#score_percent_changed.emit(scorePercent)
+		lastMistakeDecals = mistakeDecals
+		lastPlayerDecalsCount = playerDecalsNode.get_child_count()
 		mistakeCheckProgress=0
 	pass
 pass
 
 func _process(delta):
 	evaluate()
-	evaluateMistakes(false,10)
+	evaluateMistakes(false, 10)
+	
+	var scorePlus = lastValidDecals / float(levelDecalPositions.size()) if levelDecalPositions.size() > 0 else 0
+	var scoreMinus = lastMistakeDecals / float(lastPlayerDecalsCount) if lastPlayerDecalsCount > 0 else 0
+	var totalScore = max(0, scorePlus - 0.2 * scoreMinus)
+	
+	if totalScore != lastTotalScore:
+		score_percent_changed.emit(totalScore * 100)
+	
 	$CheckProgress.value = checkProgress
 	pass

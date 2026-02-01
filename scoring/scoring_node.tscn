@@ -25,6 +25,7 @@ step = 1.0
 [node name="FakeDecals" type="Node3D" parent="." unique_id=2102576031]
 
 [node name="MistakesPanel" type="Panel" parent="." unique_id=2139539560]
+visible = false
 offset_left = 888.0
 offset_top = 567.0
 offset_right = 1147.0
