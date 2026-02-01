@@ -14,7 +14,6 @@ log_label = NodePath("CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2/L
 decal_spawn_point = NodePath("../DecalSpawnPoint")
 root_node = NodePath("../Decals")
 size = 3.5
-size_increase = 5.0
 
 [node name="DecalSpawnPoint" type="Node3D" parent="." unique_id=1426239805]
 

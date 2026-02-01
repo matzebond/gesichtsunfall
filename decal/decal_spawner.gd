@@ -13,7 +13,7 @@ var selected_brush_color: Color
 
 # Decal Zeug
 var last_pos = Vector3.ZERO
-var distance_threshold = 0.5
+@export var distance_threshold = 1
 var spawning_enabled = false
 @export var size = 2.0
 @export var size_increase = 0.5
