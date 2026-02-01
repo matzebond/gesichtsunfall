@@ -10,7 +10,7 @@ signal player_pause
 
 @export_group("Speed")
 ## hängt auf jeden fall von mass ab
-@export var ENGINE_POWER = 800
+@export var ENGINE_POWER = 550
 ## alles fake
 @export var max_speed = 50.0
 ## eben so fake
@@ -110,7 +110,8 @@ func handle_vehicle_control(delta):
 	steering = move_toward(steering, steering_input * max_steering_angle, delta * steering_speed)
 
 func handle_engine_velocity():
-	engine_force = Input.get_axis("player_down", "player_up") * ENGINE_POWER
+	# Always maintain 1% of engine power
+	engine_force = max(0.01 * ENGINE_POWER, Input.get_axis("player_down", "player_up") * ENGINE_POWER)
 
 	if Input.is_action_pressed("player_down"):
 		$player_model/Cylinder.rotation_degrees = Vector3(-15,0,0)
