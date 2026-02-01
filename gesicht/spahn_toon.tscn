@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://c5mfeci24775i"]
 
 [ext_resource type="Script" path="res://gesicht/gesicht.gd" id="1_tpk04"]
+[ext_resource type="Script" uid="uid://c4nql2cjjsb1n" path="res://nasenwind.gd" id="2_0f081"]
+[ext_resource type="AudioStream" uid="uid://1c64hqypufo8" path="res://gui/sneeze.mp3" id="3_kjakm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvngw"]
 resource_name = "haut"
@@ -156,9 +158,37 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fuj6v")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_tqpdr"]
+radius = 5.9177313
+
 [node name="Gesicht" type="Node3D" unique_id=760186603]
 script = ExtResource("1_tpk04")
 
 [node name="spahn" type="MeshInstance3D" parent="." unique_id=1854574958]
 transform = Transform3D(175, 0, 0, 0, -7.6494925e-06, 175, 0, -175, -7.6494925e-06, 0, -42.470047, 97.5163)
 mesh = SubResource("ArrayMesh_pnfkl")
+
+[node name="nasenwind links" type="Area3D" parent="." unique_id=1116892536]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.3799365, -3.2437294, 93.209305)
+script = ExtResource("2_0f081")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="nasenwind links" unique_id=58625656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25969887, 1.6803818, -0.4273584)
+shape = SubResource("SphereShape3D_tqpdr")
+
+[node name="hatschi" type="AudioStreamPlayer" parent="nasenwind links" unique_id=2000730785]
+stream = ExtResource("3_kjakm")
+
+[node name="nasenwind rechts" type="Area3D" parent="." unique_id=1609549460]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -6.595026, -3.2437294, 93.209305)
+script = ExtResource("2_0f081")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="nasenwind rechts" unique_id=1628041867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25969887, 1.6803818, -0.4273584)
+shape = SubResource("SphereShape3D_tqpdr")
+
+[node name="hatschi" type="AudioStreamPlayer" parent="nasenwind rechts" unique_id=1518227829]
+stream = ExtResource("3_kjakm")
+
+[connection signal="body_entered" from="nasenwind links" to="nasenwind links" method="_on_body_entered"]
+[connection signal="body_entered" from="nasenwind rechts" to="nasenwind rechts" method="_on_body_entered"]
