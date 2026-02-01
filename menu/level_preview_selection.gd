@@ -7,7 +7,6 @@ extends Node3D
 func _ready() -> void:
 	face_label.text = Global.Face.find_key(Global.selected_face)
 	update_face()
-	update_mask()
 
 
 func _on_face_next_pressed() -> void:
@@ -36,6 +35,7 @@ func update_face():
 		Global.selected_mask = Global.MASKS_PER_FACE[Global.selected_face][0]
 	else:
 		Global.selected_mask = ""
+	update_mask()
 
 
 func _on_mask_prev_pressed() -> void:
