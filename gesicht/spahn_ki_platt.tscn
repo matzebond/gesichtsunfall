@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://bsguomweibuj0"]
 
 [ext_resource type="PackedScene" uid="uid://dvpo78loegqfe" path="res://gesicht/spahn_ki_platt.glb" id="1_atvpq"]
+[ext_resource type="Script" uid="uid://c4nql2cjjsb1n" path="res://nasenwind.gd" id="2_nkhcs"]
+[ext_resource type="AudioStream" uid="uid://1c64hqypufo8" path="res://gui/sneeze.mp3" id="3_3bs5p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mmd27"]
+size = Vector3(43.44413, 32.933464, 19.003372)
 
 [node name="spahn_ki_platt" unique_id=1136553383 instance=ExtResource("1_atvpq")]
 
@@ -12,3 +17,26 @@ visible = false
 
 [node name="spawn" type="Node3D" parent="." index="1" unique_id=127477747]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6907256, -152.25723)
+
+[node name="nasenwind links" type="Area3D" parent="." index="2" unique_id=1637702719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.54924, 5.8352623, 529.87274)
+script = ExtResource("2_nkhcs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="nasenwind links" index="0" unique_id=2046066977]
+shape = SubResource("BoxShape3D_mmd27")
+
+[node name="hatschi" type="AudioStreamPlayer" parent="nasenwind links" index="1" unique_id=1121518662]
+stream = ExtResource("3_3bs5p")
+
+[node name="nasenwind rechts" type="Area3D" parent="." index="3" unique_id=1654890118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.950844, 9.875301, 529.87274)
+script = ExtResource("2_nkhcs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="nasenwind rechts" index="0" unique_id=1832854945]
+shape = SubResource("BoxShape3D_mmd27")
+
+[node name="hatschi" type="AudioStreamPlayer" parent="nasenwind rechts" index="1" unique_id=1826191843]
+stream = ExtResource("3_3bs5p")
+
+[connection signal="body_entered" from="nasenwind links" to="nasenwind links" method="_on_body_entered"]
+[connection signal="body_entered" from="nasenwind rechts" to="nasenwind rechts" method="_on_body_entered"]
