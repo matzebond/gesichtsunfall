@@ -2,10 +2,12 @@ extends Node3D
 
 @export var face_label:Label
 @export var mask_label:Label
+@onready var dynamic_face = $DynamicFace
 
 func _ready() -> void:
 	face_label.text = Global.Face.find_key(Global.selected_face)
 	update_face()
+	update_mask()
 
 
 func _on_face_next_pressed() -> void:
@@ -26,7 +28,7 @@ func _on_face_prev_pressed() -> void:
 func update_face():
 	# Update face global & text
 	face_label.text = Global.FACE_NAME[Global.selected_face]
-	$DynamicFace.selected_face = Global.selected_face
+	dynamic_face.selected_face = Global.selected_face
 	
 	# select first mask & update text
 	if len(Global.MASKS_PER_FACE[Global.selected_face]) > 0:
@@ -63,10 +65,14 @@ func update_mask():
 	print(Global.parse_mask_scene(Global.selected_mask))
 	
 	mask_label.text = Global.parse_mask_scene(Global.selected_mask)[1]
-	$DynamicFace.selected_face = Global.selected_face
-	$DynamicFace.selected_mask = Global.selected_mask
+	dynamic_face.selected_face = Global.selected_face
+	dynamic_face.selected_mask = Global.selected_mask
 
 
 func _on_play_pressed() -> void:
 	print(Global.selected_mask)
 	get_tree().change_scene_to_file("res://main.tscn")
+
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://menu/main_menu.tscn")
