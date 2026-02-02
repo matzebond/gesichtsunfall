@@ -25,5 +25,7 @@ The level editor saves to:
 ## Technology
 
 Game Engine: [Godot 4.6](https://godotengine.org/)
+
 Sound: [fmod](https://www.fmod.com/)
+
 3D: [Blender](https://www.blender.org/) & [Keentools FaceBuilder](https://keentools.io/products/facebuilder-for-blender)
