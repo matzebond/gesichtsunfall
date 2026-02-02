@@ -37,7 +37,6 @@ func update_face():
 	# select first mask & update text
 	var masks_count = len(Global.MASKS_PER_FACE[Global.selected_face])
 	if masks_count > 0:
-		print(Global.MASKS_PER_FACE[Global.selected_face][0])
 		Global.selected_mask = Global.MASKS_PER_FACE[Global.selected_face][0]
 	else:
 		Global.selected_mask = ""

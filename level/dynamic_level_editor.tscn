@@ -7,9 +7,10 @@
 [ext_resource type="Script" uid="uid://dlj8lnntue4ls" path="res://gesicht/gesicht.gd" id="5_se1ol"]
 [ext_resource type="Script" uid="uid://difctcqvd0vnl" path="res://ui/color_selector.gd" id="6_d1qx4"]
 
-[node name="LevelEditor" type="Node3D" unique_id=142715042 node_paths=PackedStringArray("log_label")]
+[node name="LevelEditor" type="Node3D" unique_id=142715042 node_paths=PackedStringArray("log_label", "persistent_notice_label")]
 script = ExtResource("1_0oc4p")
 log_label = NodePath("CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2/Log")
+persistent_notice_label = NodePath("CanvasLayer/MarginContainer/VBoxContainer/PersistentNotice")
 
 [node name="DecalSpawner" parent="." unique_id=818907089 node_paths=PackedStringArray("decal_spawn_point", "root_node") instance=ExtResource("2_rytqy")]
 decal_spawn_point = NodePath("../DecalSpawnPoint")
@@ -49,6 +50,12 @@ offset_bottom = 40.0
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=237519080]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="PersistentNotice" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=2847362719]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Non-persistent filesystem - saves may be lost!"
+visible = false
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1968014810]
 layout_mode = 2

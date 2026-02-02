@@ -11,11 +11,19 @@ var distance_threshold = 0.5
 
 @export var level_name = "test"
 @export var log_label: Label
+@export var persistent_notice_label: Label
 
 
 func _ready() -> void:
+	print("will save levels ", ProjectSettings.globalize_path(Global.save_path))
+	
 	$Camera3D.position.y = Global.FACE_INFO[Global.selected_face]["zoom"]
 	$Camera3D.position.z = Global.FACE_INFO[Global.selected_face]["cam_pos"]
+
+	if persistent_notice_label:
+		if not OS.is_userfs_persistent():
+			persistent_notice_label.text = "Non-persistent filesystem - saves may be lost!"
+			persistent_notice_label.show()
 
 
 func _process(delta: float) -> void:

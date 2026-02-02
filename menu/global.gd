@@ -105,18 +105,22 @@ const BRUSH_COLORS = [
 
 
 var level_editor_load: bool = false
+var save_path_res = "res://level/levels/"
+var save_path_user = "user://"
+var level_name_format = "%s--%s.tscn"
+var save_path = save_path_res + level_name_format
 
 func _ready() -> void:
+	if not OS.is_debug_build() or true:
+		save_path = save_path_user + level_name_format
 	load_levels()
 	
-var save_path_res = "res://level/levels"
-var save_path_user = "user://levels"
-var level_name_format = "%s--%s.tscn"
-var save_path = save_path_res + "/" + level_name_format
-	
 func load_levels():
+	print("loading from resources")
 	load_dyanmic_levels_from_path(save_path_res)
+	print("loading from user")
 	load_dyanmic_levels_from_path(save_path_user)
+	print()
 
 func load_dyanmic_levels_from_path(path: String):
 	var level_scene_paths = dir_contents(path)
@@ -127,9 +131,10 @@ func load_dyanmic_levels_from_path(path: String):
 			continue
 		var level_face = _t[0]
 		var level_name = _t[1]
-		if Face.has(level_face) and MASKS_PER_FACE[Face[level_face]].find(lvl_path):
+		if Face.has(level_face) and MASKS_PER_FACE[Face[level_face]].find(lvl_path) == -1:
 			MASKS_PER_FACE[Face[level_face]].append(lvl_path)
 			print("dynamically loaded %s for %s" % [level_name, level_face])
+			print(MASKS_PER_FACE[Face[level_face]])
 
 
 ## utils
@@ -142,12 +147,13 @@ func dir_contents(path):
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
-			if dir.current_is_dir():
-				print("Found directory: " + file_name)
-			else:
+			if not dir.current_is_dir():
 				if file_name.get_extension() == "tscn":
 					var full_path = path.path_join(file_name)
 					scene_loads.append(full_path)
+			else:
+				#print("Found directory: " + file_name)
+				pass
 			file_name = dir.get_next()
 	else:
 		print("An error occurred when trying to access the path.")
