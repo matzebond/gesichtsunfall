@@ -31,11 +31,7 @@ The level editor saves to:
 
 ## Technology
 
-Game Engine: [God## Licenses
-
-- **Code:** [your license]
-- **Suzanne** (Blender's monkey mesh, © Blender Foundation; modelled by Willem-Paul van Overbruggen):
-  [GNU GPL v2 or later](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), as part of [Blender](https://www.blender.org/about/license/).ot 4.6](https://godotengine.org/)
+Game Engine: [Godot 4.6](https://godotengine.org/)
 
 Sound: [fmod](https://www.fmod.com/)
 
@@ -43,6 +39,6 @@ Sound: [fmod](https://www.fmod.com/)
 
 ## Licenses
 
-- **Code:** *Let's talk ;-)*
 - **Suzanne** (Blender's monkey mesh, © Blender Foundation; modelled by Willem-Paul van Overbruggen):
   [GNU GPL v2 or later](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), as part of [Blender](https://www.blender.org/about/license/).
+- **Code & other assets:** *Let's talk ;-)*
