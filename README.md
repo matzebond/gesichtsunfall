@@ -1,5 +1,12 @@
 # Gesichtsunfall - Global Game Jam 2026
-Use your driving skills to follow the mask pattern - the more accurately you drop the right colors the more points you'll get.
+Use your driving skills to follow the mask pattern – alternatively, get creative and paint your very own
+> ### **Gesichtsunfall**, der
+> **/ɡə.ˈzɪçts.ʔʊn.ˌfal/** · *gen.* *-(e)s*, *pl.* *-fälle*
+>
+> ***1.*** *(colloq., pej., hum.)* **ugly mug**; **face like a car crash**; *(person)* **eyesore**
+>
+> ***2.*** *(rare, lit.)* **facial injury** *(from an accident)*
+
 
 ![Title Image](https://ggjv4.s3.us-west-1.amazonaws.com/files/styles/sidebar_full/s3/games/2026/869244/featured/banner.png)
 
@@ -24,8 +31,18 @@ The level editor saves to:
 
 ## Technology
 
-Game Engine: [Godot 4.6](https://godotengine.org/)
+Game Engine: [God## Licenses
+
+- **Code:** [your license]
+- **Suzanne** (Blender's monkey mesh, © Blender Foundation; modelled by Willem-Paul van Overbruggen):
+  [GNU GPL v2 or later](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), as part of [Blender](https://www.blender.org/about/license/).ot 4.6](https://godotengine.org/)
 
 Sound: [fmod](https://www.fmod.com/)
 
 3D: [Blender](https://www.blender.org/) & [Keentools FaceBuilder](https://keentools.io/products/facebuilder-for-blender)
+
+## Licenses
+
+- **Code:** *Let's talk ;-)*
+- **Suzanne** (Blender's monkey mesh, © Blender Foundation; modelled by Willem-Paul van Overbruggen):
+  [GNU GPL v2 or later](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), as part of [Blender](https://www.blender.org/about/license/).
